@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>บริหาร PP7 - Dashboard Mockup</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    * { font-family: 'Prompt', sans-serif; }
+    .tab-active { border-bottom: 3px solid #2563eb; color: #2563eb; background:#eff6ff; }
+    .card { box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08); }
+  </style>
+</head>
+<body class="bg-slate-50 min-h-screen text-slate-800">
+  <header class="bg-gradient-to-r from-sky-600 to-blue-700 text-white py-6 px-4 shadow-lg">
+    <div class="max-w-7xl mx-auto">
+      <h1 class="text-3xl font-bold">📊 บริหาร PP7</h1>
+      <p class="text-blue-100 mt-1">Dashboard mockup สำหรับงาน Pakorn · แยกจากงาน PAD โดยสมบูรณ์</p>
+    </div>
+  </header>
+
+  <div class="bg-white shadow sticky top-0 z-20 overflow-x-auto">
+    <div class="max-w-7xl mx-auto flex min-w-max">
+      <button onclick="showTab('executive')" id="tab-executive" class="px-5 py-4 font-medium tab-active">📌 สรุปผู้บริหาร</button>
+      <button onclick="showTab('recruit')" id="tab-recruit" class="px-5 py-4 font-medium text-slate-600 hover:text-blue-600">🔎 แสวงหา</button>
+      <button onclick="showTab('assess')" id="tab-assess" class="px-5 py-4 font-medium text-slate-600 hover:text-blue-600">🧭 หยั่งประเมิน</button>
+      <button onclick="showTab('match')" id="tab-match" class="px-5 py-4 font-medium text-slate-600 hover:text-blue-600">🤝 จับคู่คนกับงาน</button>
+      <button onclick="showTab('performance')" id="tab-performance" class="px-5 py-4 font-medium text-slate-600 hover:text-blue-600">📈 ประเมินผล</button>
+      <button onclick="showTab('develop')" id="tab-develop" class="px-5 py-4 font-medium text-slate-600 hover:text-blue-600">🎓 พัฒนา</button>
+      <button onclick="showTab('welfare')" id="tab-welfare" class="px-5 py-4 font-medium text-slate-600 hover:text-blue-600">💰 สวัสดิการและค่าตอบแทน</button>
+      <button onclick="showTab('quality')" id="tab-quality" class="px-5 py-4 font-medium text-slate-600 hover:text-blue-600">🌿 คุณภาพชีวิต</button>
+    </div>
+  </div>
+
+  <main class="max-w-7xl mx-auto px-4 py-8">
+    <section id="content-executive" class="space-y-8">
+      <div class="grid md:grid-cols-2 xl:grid-cols-4 gap-6">
+        <div class="bg-white rounded-2xl p-6 card"><div class="text-sm text-slate-500">People in pipeline</div><div class="text-4xl font-bold text-blue-600 mt-2">--</div><div class="text-slate-400 mt-1">รอเชื่อมข้อมูลจริง</div></div>
+        <div class="bg-white rounded-2xl p-6 card"><div class="text-sm text-slate-500">Match rate</div><div class="text-4xl font-bold text-emerald-600 mt-2">--</div><div class="text-slate-400 mt-1">รอเชื่อมข้อมูลจริง</div></div>
+        <div class="bg-white rounded-2xl p-6 card"><div class="text-sm text-slate-500">Performance score</div><div class="text-4xl font-bold text-violet-600 mt-2">--</div><div class="text-slate-400 mt-1">รอเชื่อมข้อมูลจริง</div></div>
+        <div class="bg-white rounded-2xl p-6 card"><div class="text-sm text-slate-500">Welfare / payout</div><div class="text-4xl font-bold text-amber-600 mt-2">--</div><div class="text-slate-400 mt-1">รอเชื่อมข้อมูลจริง</div></div>
+      </div>
+
+      <div class="grid lg:grid-cols-3 gap-6">
+        <div class="bg-white rounded-2xl p-6 card lg:col-span-2">
+          <h2 class="text-2xl font-bold text-blue-700 mb-4">📌 Executive Summary</h2>
+          <div class="grid md:grid-cols-3 gap-4 mb-5">
+            <div class="bg-slate-50 rounded-xl p-4"><div class="text-sm text-slate-500">สถานะรวม</div><div class="text-lg font-semibold mt-2">เตรียมเชื่อมหลายระบบ</div></div>
+            <div class="bg-slate-50 rounded-xl p-4"><div class="text-sm text-slate-500">การอัปเดตล่าสุด</div><div class="text-lg font-semibold mt-2">จะเติมอัตโนมัติ</div></div>
+            <div class="bg-slate-50 rounded-xl p-4"><div class="text-sm text-slate-500">แหล่งข้อมูล</div><div class="text-lg font-semibold mt-2">Master + links ย่อย</div></div>
+          </div>
+          <div class="h-64 rounded-2xl bg-gradient-to-r from-blue-50 to-indigo-50 border border-dashed border-blue-200 flex items-center justify-center text-slate-400">
+            พื้นที่กราฟภาพรวมผู้บริหาร
+          </div>
+        </div>
+        <div class="bg-white rounded-2xl p-6 card">
+          <h2 class="text-xl font-bold text-blue-700 mb-4">💡 Insight Box</h2>
+          <ul class="space-y-3 text-sm text-slate-700 list-disc ml-5">
+            <li>รวมประเด็นสำคัญจากทุก tab</li>
+            <li>highlight สิ่งที่เปลี่ยนแปลงล่าสุด</li>
+            <li>จับประเด็นเสี่ยง / โอกาส / จุดต้องติดตาม</li>
+          </ul>
+          <div class="mt-5 p-4 rounded-xl bg-blue-50 text-sm text-blue-700">หน้านี้จะเป็นมุมมองผู้บริหารแบบอ่านเร็วและเห็นภาพรวมทันที</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="content-recruit" class="hidden"><div class="bg-white rounded-2xl p-6 card"><h2 class="text-2xl font-bold text-blue-700 mb-4">🔎 Tab แสวงหา</h2><div class="grid md:grid-cols-4 gap-4 mb-6"><div class="bg-slate-50 rounded-xl p-4">ตัวเลขสรุป</div><div class="bg-slate-50 rounded-xl p-4">ranking</div><div class="bg-slate-50 rounded-xl p-4">insight</div><div class="bg-slate-50 rounded-xl p-4">status</div></div><div class="h-64 rounded-2xl bg-slate-50 border border-dashed flex items-center justify-center text-slate-400">พื้นที่กราฟ / ตาราง / movement feed</div></div></section>
+    <section id="content-assess" class="hidden"><div class="bg-white rounded-2xl p-6 card"><h2 class="text-2xl font-bold text-blue-700 mb-4">🧭 Tab หยั่งประเมิน</h2><div class="h-64 rounded-2xl bg-slate-50 border border-dashed flex items-center justify-center text-slate-400">พื้นที่ข้อมูลจริงของระบบหยั่งประเมิน</div></div></section>
+    <section id="content-match" class="hidden"><div class="bg-white rounded-2xl p-6 card"><h2 class="text-2xl font-bold text-blue-700 mb-4">🤝 Tab จับคู่คนกับงาน</h2><div class="h-64 rounded-2xl bg-slate-50 border border-dashed flex items-center justify-center text-slate-400">พื้นที่ข้อมูล match / ranking / conversion</div></div></section>
+    <section id="content-performance" class="hidden"><div class="bg-white rounded-2xl p-6 card"><h2 class="text-2xl font-bold text-blue-700 mb-4">📈 Tab ประเมินผล</h2><div class="h-64 rounded-2xl bg-slate-50 border border-dashed flex items-center justify-center text-slate-400">พื้นที่คะแนน / trend / performance table</div></div></section>
+    <section id="content-develop" class="hidden"><div class="bg-white rounded-2xl p-6 card"><h2 class="text-2xl font-bold text-blue-700 mb-4">🎓 Tab พัฒนา</h2><div class="h-64 rounded-2xl bg-slate-50 border border-dashed flex items-center justify-center text-slate-400">พื้นที่ learning / progress / development plan</div></div></section>
+    <section id="content-welfare" class="hidden"><div class="bg-white rounded-2xl p-6 card"><h2 class="text-2xl font-bold text-blue-700 mb-4">💰 Tab สวัสดิการและค่าตอบแทน</h2><div class="h-64 rounded-2xl bg-slate-50 border border-dashed flex items-center justify-center text-slate-400">พื้นที่ budget / payout / benefits summary</div></div></section>
+    <section id="content-quality" class="hidden"><div class="bg-white rounded-2xl p-6 card"><h2 class="text-2xl font-bold text-blue-700 mb-4">🌿 Tab คุณภาพชีวิต</h2><div class="h-64 rounded-2xl bg-slate-50 border border-dashed flex items-center justify-center text-slate-400">พื้นที่ quality-of-life metrics / survey / wellbeing trend</div></div></section>
+  </main>
+
+  <script>
+    function showTab(tabName) {
+      const tabs = ['executive','recruit','assess','match','performance','develop','welfare','quality'];
+      tabs.forEach(tab => {
+        document.getElementById('content-' + tab).classList.add('hidden');
+        document.getElementById('tab-' + tab).classList.remove('tab-active');
+        document.getElementById('tab-' + tab).classList.add('text-slate-600');
+      });
+      document.getElementById('content-' + tabName).classList.remove('hidden');
+      document.getElementById('tab-' + tabName).classList.add('tab-active');
+      document.getElementById('tab-' + tabName).classList.remove('text-slate-600');
+    }
+  </script>
+</body>
+</html>
