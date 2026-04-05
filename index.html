@@ -300,12 +300,13 @@
     <div class="overflow-x-auto">
       <table id="dept-table">
         <thead><tr><th data-i18n="dept">ฝ่าย</th><th data-i18n="count">จำนวน</th><th>Avg Score</th><th>Turnover</th><th data-i18n="status">สถานะ</th></tr></thead>
-        <tbody><tr><td>Tech / Engineering</td><td>28</td><td>3.58</td><td>7.4%</td><td><span class="badge badge-red">เฝ้าระวัง</span></td></tr>
+        <tbody>
+<tr><td>Tech / Engineering</td><td>28</td><td>3.58</td><td>7.4%</td><td><span class="badge badge-red">เฝ้าระวัง</span></td></tr>
 <tr><td>Sales & Marketing</td><td>22</td><td>3.55</td><td>7.1%</td><td><span class="badge badge-red">เฝ้าระวัง</span></td></tr>
-<tr><td>Operations</td><td>20</td><td>3.53</td><td>7.5%</td><td><span class="badge badge-red">เฝ้าระวัง</span></td></tr>
-<tr><td>Finance & Admin</td><td>14</td><td>3.36</td><td>6.8%</td><td><span class="badge badge-red">เฝ้าระวัง</span></td></tr>
+<tr><td>Operations</td><td>20</td><td>3.53</td><td>7.5%</td><td><span class="badge badge-amber">ต้องติดตาม</span></td></tr>
+<tr><td>Finance & Admin</td><td>14</td><td>3.36</td><td>6.8%</td><td><span class="badge badge-blue">ปกติ</span></td></tr>
 <tr><td>HR & Legal</td><td>8</td><td>3.33</td><td>7.9%</td><td><span class="badge badge-red">เฝ้าระวัง</span></td></tr>
-<tr><td>R&D</td><td>8</td><td>3.42</td><td>6.2%</td><td><span class="badge badge-red">เฝ้าระวัง</span></td></tr>
+<tr><td>R&D</td><td>8</td><td>3.42</td><td>6.2%</td><td><span class="badge badge-green">ดี</span></td></tr>
 </tbody>
       </table>
     </div>
@@ -499,11 +500,26 @@
       <table id="match-table" data-sortable="true">
         <thead><tr><th data-i18n="id">ID</th><th data-i18n="name">ชื่อ-สกุล</th><th data-i18n="skills">ทักษะหลัก</th><th data-i18n="matchedPos">ตำแหน่งที่จับคู่</th><th>Match Score</th><th data-i18n="recommendation">ข้อเสนอแนะ</th><th data-i18n="status">สถานะ</th></tr></thead>
         <tbody>
-          <tr><td>M-001</td><td>วริศ แก้วมณี</td><td>Python, SQL, ML</td><td>Data Analyst</td><td><span class="font-bold text-emerald-600">0.95</span></td><td data-i18n="rec1">ตรงตำแหน่งมาก — รับทันที</td><td><span class="badge badge-green" data-i18n="matched">จับคู่แล้ว</span></td></tr>
-          <tr><td>M-002</td><td>พิมพ์ใจ ศรีสุข</td><td>PM, Agile, UX</td><td>Product Manager</td><td><span class="font-bold text-emerald-600">0.91</span></td><td data-i18n="rec2">มีประสบการณ์ตรง — เหมาะมาก</td><td><span class="badge badge-green" data-i18n="matched">จับคู่แล้ว</span></td></tr>
-          <tr><td>M-003</td><td>สมชาย จันทร์เพ็ญ</td><td>React, Node, AWS</td><td>Sr. Developer</td><td><span class="font-bold text-blue-600">0.84</span></td><td data-i18n="rec3">ทักษะตรงแต่ประสบการณ์ยังน้อย</td><td><span class="badge badge-amber" data-i18n="evaluating">กำลังประเมิน</span></td></tr>
-          <tr><td>M-004</td><td>กัลยา รุ่งเรือง</td><td>Figma, Research</td><td>UX Designer</td><td><span class="font-bold text-emerald-600">0.88</span></td><td data-i18n="rec4">Portfolio ดี — review ขั้นสุดท้าย</td><td><span class="badge badge-green" data-i18n="matched">จับคู่แล้ว</span></td></tr>
-          <tr><td>M-005</td><td>ณัฐพล วงศ์สุวรรณ</td><td>Linux, Docker, K8s</td><td>DevOps Engineer</td><td><span class="font-bold text-blue-600">0.76</span></td><td data-i18n="rec5">ขาด cert cloud — ต้อง upskill</td><td><span class="badge badge-amber" data-i18n="developing">พัฒนาเพิ่ม</span></td></tr>
+          <tr><td>M-001</td><td>วริศ แก้วมณี</td><td>Python, SQL, ML</td><td>Data Analyst</td><td><span class="font-bold text-emerald-600">0.95</span></td><td>ตรงตำแหน่งมาก — รับทันที</td><td><span class="badge badge-green">จับคู่แล้ว</span></td></tr>
+          <tr><td>M-002</td><td>พิมพ์ใจ ศรีสุข</td><td>PM, Agile, UX</td><td>Product Manager</td><td><span class="font-bold text-emerald-600">0.91</span></td><td>มีประสบการณ์ตรง — เหมาะมาก</td><td><span class="badge badge-green">จับคู่แล้ว</span></td></tr>
+          <tr><td>M-003</td><td>สมชาย จันทร์เพ็ญ</td><td>React, Node, AWS</td><td>Sr. Developer</td><td><span class="font-bold text-blue-600">0.84</span></td><td>ทักษะตรงแต่ประสบการณ์ยังน้อย</td><td><span class="badge badge-amber">กำลังประเมิน</span></td></tr>
+          <tr><td>M-004</td><td>กัลยา รุ่งเรือง</td><td>Figma, Research</td><td>UX Designer</td><td><span class="font-bold text-emerald-600">0.88</span></td><td>Portfolio ดี — review ขั้นสุดท้าย</td><td><span class="badge badge-green">จับคู่แล้ว</span></td></tr>
+          <tr><td>M-005</td><td>ณัฐพล วงศ์สุวรรณ</td><td>Linux, Docker, K8s</td><td>DevOps Engineer</td><td><span class="font-bold text-blue-600">0.76</span></td><td>ขาด cert cloud — ต้อง upskill</td><td><span class="badge badge-amber">พัฒนาเพิ่ม</span></td></tr>
+          <tr><td>M-006</td><td>วรรณี สมบูรณ์</td><td>Python, TensorFlow, NLP</td><td>ML Engineer</td><td><span class="font-bold text-emerald-600">0.93</span></td><td>ทักษะครบ — senior level</td><td><span class="badge badge-green">จับคู่แล้ว</span></td></tr>
+          <tr><td>M-007</td><td>วิไลวรรณ แก้วประเสริฐ</td><td>Java, Spring Boot, Micro</td><td>Backend Lead</td><td><span class="font-bold text-emerald-600">0.89</span></td><td>เหมาะสม — มี leadership skill</td><td><span class="badge badge-green">จับคู่แล้ว</span></td></tr>
+          <tr><td>M-008</td><td>สมหมาย จันทร์เพ็ญ</td><td>Sales Strategy, CRM</td><td>Sales Director</td><td><span class="font-bold text-emerald-600">0.92</span></td><td>ประสบการณ์สูง — เหมาะ leadership</td><td><span class="badge badge-green">จับคู่แล้ว</span></td></tr>
+          <tr><td>M-009</td><td>ประมวล ใจดี</td><td>Operations, Lean, Six Sigma</td><td>Ops Manager</td><td><span class="font-bold text-emerald-600">0.87</span></td><td>ตรงสายงาน — มี certification</td><td><span class="badge badge-green">จับคู่แล้ว</span></td></tr>
+          <tr><td>M-010</td><td>ชัยยศ มั่นคง</td><td>Project Mgmt, PMP, Agile</td><td>PMO Lead</td><td><span class="font-bold text-emerald-600">0.90</span></td><td>PMP cert — เหมาะบทบาทนี้</td><td><span class="badge badge-green">จับคู่แล้ว</span></td></tr>
+          <tr><td>M-011</td><td>นภัสสร แก้วประเสริฐ</td><td>Full-Stack, TypeScript, React</td><td>Tech Lead</td><td><span class="font-bold text-blue-600">0.82</span></td><td>ทักษะดี แต่ leadership ต้องพัฒนา</td><td><span class="badge badge-amber">กำลังประเมิน</span></td></tr>
+          <tr><td>M-012</td><td>ธนพล วงศ์วิโรจน์</td><td>Digital Marketing, SEO, SEM</td><td>Marketing Lead</td><td><span class="font-bold text-emerald-600">0.86</span></td><td>ประสบการณ์ตรง — campaign level สูง</td><td><span class="badge badge-green">จับคู่แล้ว</span></td></tr>
+          <tr><td>M-013</td><td>สุรกิจ ใจดี</td><td>Accounting, Tax, IFRS</td><td>Finance Analyst</td><td><span class="font-bold text-blue-600">0.78</span></td><td>พื้นฐานดี ต้องเพิ่ม analytical skill</td><td><span class="badge badge-amber">กำลังประเมิน</span></td></tr>
+          <tr><td>M-014</td><td>วีระ พรหมมา</td><td>Business Dev, Partnership</td><td>BD Manager</td><td><span class="font-bold text-emerald-600">0.88</span></td><td>network กว้าง — เหมาะ BD</td><td><span class="badge badge-green">จับคู่แล้ว</span></td></tr>
+          <tr><td>M-015</td><td>ธนพร แก้วประเสริฐ</td><td>HR Analytics, OD</td><td>HRBP</td><td><span class="font-bold text-blue-600">0.80</span></td><td>HR พื้นฐานดี ต้องเพิ่ม data skill</td><td><span class="badge badge-amber">พัฒนาเพิ่ม</span></td></tr>
+          <tr><td>M-016</td><td>กิตติ ธรรมรักษ์</td><td>AI Research, Publication</td><td>Research Scientist</td><td><span class="font-bold text-emerald-600">0.94</span></td><td>publication เยอะ — research level สูง</td><td><span class="badge badge-green">จับคู่แล้ว</span></td></tr>
+          <tr><td>M-017</td><td>พิชัย ทองดี</td><td>QA Auto, Selenium, CI/CD</td><td>QA Lead</td><td><span class="font-bold text-blue-600">0.83</span></td><td>automation ดี ต้องเพิ่ม leadership</td><td><span class="badge badge-amber">กำลังประเมิน</span></td></tr>
+          <tr><td>M-018</td><td>สุรศักดิ์ ธรรมรักษ์</td><td>Supply Chain, Logistics</td><td>SC Analyst</td><td><span class="font-bold text-blue-600">0.75</span></td><td>ประสบการณ์ตรง ต้องเพิ่ม analytics</td><td><span class="badge badge-amber">พัฒนาเพิ่ม</span></td></tr>
+          <tr><td>M-019</td><td>ณัฐกานต์ รัตนมาลี</td><td>Content, Copy, Branding</td><td>Content Strategist</td><td><span class="font-bold text-emerald-600">0.85</span></td><td>content strategy ดี — เหมาะตำแหน่ง</td><td><span class="badge badge-green">จับคู่แล้ว</span></td></tr>
+          <tr><td>M-020</td><td>สิทธิชัย ธรรมรักษ์</td><td>Cloud, Security, Compliance</td><td>Security Engineer</td><td><span class="font-bold text-amber-600">0.71</span></td><td>ต้อง cert เพิ่ม (CISSP) — upskill ต่อ</td><td><span class="badge badge-amber">พัฒนาเพิ่ม</span></td></tr>
         </tbody>
       </table>
     </div>
