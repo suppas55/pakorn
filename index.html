@@ -8,6 +8,7 @@
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
+  <script src="emp_data.js"></script>
   <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <style>
     *{font-family:'Prompt',sans-serif}
@@ -237,7 +238,7 @@
   <div class="grid grid-cols-2 lg:grid-cols-4 gap-4">
     <div class="card border-l-4 border-l-blue-500 hover:shadow-lg transition-shadow cursor-pointer" onclick="openDrill('headcount')">
       <div class="text-sm text-slate-400" data-i18n="kpi1Label">บุคลากรทั้งหมด</div>
-      <div class="kpi-num text-blue-600">100</div>
+      <div class="kpi-num text-blue-600"><span id="kpi-total">...</span></div>
       <div class="text-xs text-emerald-600 mt-1">▲ +12 <span data-i18n="thisMonth">เดือนนี้</span></div>
       <div class="sparkline"><span style="height:60%"></span><span style="height:65%"></span><span style="height:70%"></span><span style="height:75%"></span><span style="height:80%"></span><span style="height:90%;background:#10b981"></span></div>
     </div>
@@ -300,14 +301,7 @@
     <div class="overflow-x-auto">
       <table id="dept-table">
         <thead><tr><th data-i18n="dept">ฝ่าย</th><th data-i18n="count">จำนวน</th><th>Avg Score</th><th>Turnover</th><th data-i18n="status">สถานะ</th></tr></thead>
-        <tbody>
-<tr><td>Tech / Engineering</td><td>28</td><td>3.58</td><td>7.4%</td><td><span class="badge badge-red">เฝ้าระวัง</span></td></tr>
-<tr><td>Sales & Marketing</td><td>22</td><td>3.55</td><td>7.1%</td><td><span class="badge badge-red">เฝ้าระวัง</span></td></tr>
-<tr><td>Operations</td><td>20</td><td>3.53</td><td>7.5%</td><td><span class="badge badge-amber">ต้องติดตาม</span></td></tr>
-<tr><td>Finance & Admin</td><td>14</td><td>3.36</td><td>6.8%</td><td><span class="badge badge-blue">ปกติ</span></td></tr>
-<tr><td>HR & Legal</td><td>8</td><td>3.33</td><td>7.9%</td><td><span class="badge badge-red">เฝ้าระวัง</span></td></tr>
-<tr><td>R&D</td><td>8</td><td>3.42</td><td>6.2%</td><td><span class="badge badge-green">ดี</span></td></tr>
-</tbody>
+        <tbody id="dept-tbody"><tr><td class="font-medium">${wg["PMSG"]?.name || "PMSG"}</td><td class="text-right font-semibold">${wg["PMSG"]?.count || 0}</td><td class="text-right">${(wg["PMSG"]?.avgScore || 3.5).toFixed(2)}</td><td class="text-right">${(wg["PMSG"]?.turnover || 5).toFixed(1)}%</td><td class="text-center"><span class="badge ${(wg["PMSG"]?.avgScore || 3.5) >= 3.7 ? "badge-green" : (wg["PMSG"]?.avgScore || 3.5) >= 3.5 ? "badge-blue" : (wg["PMSG"]?.avgScore || 3.5) >= 3.4 ? "badge-amber" : "badge-red"}">${(wg["PMSG"]?.avgScore || 3.5) >= 3.7 ? "ดี" : (wg["PMSG"]?.avgScore || 3.5) >= 3.5 ? "ปกติ" : (wg["PMSG"]?.avgScore || 3.5) >= 3.4 ? "ต้องติดตาม" : "เฝ้าระวัง"}</span></td></tr>\n<tr><td class="font-medium">${wg["AAMG"]?.name || "AAMG"}</td><td class="text-right font-semibold">${wg["AAMG"]?.count || 0}</td><td class="text-right">${(wg["AAMG"]?.avgScore || 3.5).toFixed(2)}</td><td class="text-right">${(wg["AAMG"]?.turnover || 5).toFixed(1)}%</td><td class="text-center"><span class="badge ${(wg["AAMG"]?.avgScore || 3.5) >= 3.7 ? "badge-green" : (wg["AAMG"]?.avgScore || 3.5) >= 3.5 ? "badge-blue" : (wg["AAMG"]?.avgScore || 3.5) >= 3.4 ? "badge-amber" : "badge-red"}">${(wg["AAMG"]?.avgScore || 3.5) >= 3.7 ? "ดี" : (wg["AAMG"]?.avgScore || 3.5) >= 3.5 ? "ปกติ" : (wg["AAMG"]?.avgScore || 3.5) >= 3.4 ? "ต้องติดตาม" : "เฝ้าระวัง"}</span></td></tr>\n<tr><td class="font-medium">${wg["CPDG"]?.name || "CPDG"}</td><td class="text-right font-semibold">${wg["CPDG"]?.count || 0}</td><td class="text-right">${(wg["CPDG"]?.avgScore || 3.5).toFixed(2)}</td><td class="text-right">${(wg["CPDG"]?.turnover || 5).toFixed(1)}%</td><td class="text-center"><span class="badge ${(wg["CPDG"]?.avgScore || 3.5) >= 3.7 ? "badge-green" : (wg["CPDG"]?.avgScore || 3.5) >= 3.5 ? "badge-blue" : (wg["CPDG"]?.avgScore || 3.5) >= 3.4 ? "badge-amber" : "badge-red"}">${(wg["CPDG"]?.avgScore || 3.5) >= 3.7 ? "ดี" : (wg["CPDG"]?.avgScore || 3.5) >= 3.5 ? "ปกติ" : (wg["CPDG"]?.avgScore || 3.5) >= 3.4 ? "ต้องติดตาม" : "เฝ้าระวัง"}</span></td></tr>\n<tr><td class="font-medium">${wg["RPLCG"]?.name || "RPLCG"}</td><td class="text-right font-semibold">${wg["RPLCG"]?.count || 0}</td><td class="text-right">${(wg["RPLCG"]?.avgScore || 3.5).toFixed(2)}</td><td class="text-right">${(wg["RPLCG"]?.turnover || 5).toFixed(1)}%</td><td class="text-center"><span class="badge ${(wg["RPLCG"]?.avgScore || 3.5) >= 3.7 ? "badge-green" : (wg["RPLCG"]?.avgScore || 3.5) >= 3.5 ? "badge-blue" : (wg["RPLCG"]?.avgScore || 3.5) >= 3.4 ? "badge-amber" : "badge-red"}">${(wg["RPLCG"]?.avgScore || 3.5) >= 3.7 ? "ดี" : (wg["RPLCG"]?.avgScore || 3.5) >= 3.5 ? "ปกติ" : (wg["RPLCG"]?.avgScore || 3.5) >= 3.4 ? "ต้องติดตาม" : "เฝ้าระวัง"}</span></td></tr>\n<tr><td class="font-medium">${wg["RAFCOG"]?.name || "RAFCOG"}</td><td class="text-right font-semibold">${wg["RAFCOG"]?.count || 0}</td><td class="text-right">${(wg["RAFCOG"]?.avgScore || 3.5).toFixed(2)}</td><td class="text-right">${(wg["RAFCOG"]?.turnover || 5).toFixed(1)}%</td><td class="text-center"><span class="badge ${(wg["RAFCOG"]?.avgScore || 3.5) >= 3.7 ? "badge-green" : (wg["RAFCOG"]?.avgScore || 3.5) >= 3.5 ? "badge-blue" : (wg["RAFCOG"]?.avgScore || 3.5) >= 3.4 ? "badge-amber" : "badge-red"}">${(wg["RAFCOG"]?.avgScore || 3.5) >= 3.7 ? "ดี" : (wg["RAFCOG"]?.avgScore || 3.5) >= 3.5 ? "ปกติ" : (wg["RAFCOG"]?.avgScore || 3.5) >= 3.4 ? "ต้องติดตาม" : "เฝ้าระวัง"}</span></td></tr>\n<tr><td class="font-medium">${wg["PGHG"]?.name || "PGHG"}</td><td class="text-right font-semibold">${wg["PGHG"]?.count || 0}</td><td class="text-right">${(wg["PGHG"]?.avgScore || 3.5).toFixed(2)}</td><td class="text-right">${(wg["PGHG"]?.turnover || 5).toFixed(1)}%</td><td class="text-center"><span class="badge ${(wg["PGHG"]?.avgScore || 3.5) >= 3.7 ? "badge-green" : (wg["PGHG"]?.avgScore || 3.5) >= 3.5 ? "badge-blue" : (wg["PGHG"]?.avgScore || 3.5) >= 3.4 ? "badge-amber" : "badge-red"}">${(wg["PGHG"]?.avgScore || 3.5) >= 3.7 ? "ดี" : (wg["PGHG"]?.avgScore || 3.5) >= 3.5 ? "ปกติ" : (wg["PGHG"]?.avgScore || 3.5) >= 3.4 ? "ต้องติดตาม" : "เฝ้าระวัง"}</span></td></tr>\n<tr><td class="font-medium">${wg["21RTG"]?.name || "21RTG"}</td><td class="text-right font-semibold">${wg["21RTG"]?.count || 0}</td><td class="text-right">${(wg["21RTG"]?.avgScore || 3.5).toFixed(2)}</td><td class="text-right">${(wg["21RTG"]?.turnover || 5).toFixed(1)}%</td><td class="text-center"><span class="badge ${(wg["21RTG"]?.avgScore || 3.5) >= 3.7 ? "badge-green" : (wg["21RTG"]?.avgScore || 3.5) >= 3.5 ? "badge-blue" : (wg["21RTG"]?.avgScore || 3.5) >= 3.4 ? "badge-amber" : "badge-red"}">${(wg["21RTG"]?.avgScore || 3.5) >= 3.7 ? "ดี" : (wg["21RTG"]?.avgScore || 3.5) >= 3.5 ? "ปกติ" : (wg["21RTG"]?.avgScore || 3.5) >= 3.4 ? "ต้องติดตาม" : "เฝ้าระวัง"}</span></td></tr>\n<tr><td class="font-medium">${wg["Other"]?.name || "Other"}</td><td class="text-right font-semibold">${wg["Other"]?.count || 0}</td><td class="text-right">${(wg["Other"]?.avgScore || 3.5).toFixed(2)}</td><td class="text-right">${(wg["Other"]?.turnover || 5).toFixed(1)}%</td><td class="text-center"><span class="badge ${(wg["Other"]?.avgScore || 3.5) >= 3.7 ? "badge-green" : (wg["Other"]?.avgScore || 3.5) >= 3.5 ? "badge-blue" : (wg["Other"]?.avgScore || 3.5) >= 3.4 ? "badge-amber" : "badge-red"}">${(wg["Other"]?.avgScore || 3.5) >= 3.7 ? "ดี" : (wg["Other"]?.avgScore || 3.5) >= 3.5 ? "ปกติ" : (wg["Other"]?.avgScore || 3.5) >= 3.4 ? "ต้องติดตาม" : "เฝ้าระวัง"}</span></td></tr></tbody>
       </table>
     </div>
   </div>
@@ -1372,6 +1366,37 @@ function initCharts(tab){
   if(tab==='quality'){
     new Chart(document.getElementById('chart-wellbeing'),{type:'line',data:{labels:['ต.ค.','พ.ย.','ธ.ค.','ม.ค.','ก.พ.','มี.ค.'],datasets:[{label:'Wellbeing Index',data:[74,76,78,80,81,82],borderColor:chartColors.emerald,backgroundColor:'rgba(16,185,129,.08)',fill:true,tension:.4},{label:'Engagement',data:[3.5,3.6,3.7,3.8,4.0,4.2],borderColor:chartColors.blue,backgroundColor:'transparent',tension:.4}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{labels:{font:{family:'Prompt'}}}},scales:{x:{ticks:{font:{family:'Prompt',size:11}}},y:{ticks:{font:{family:'Prompt',size:11}},beginAtZero:false}}}});
     new Chart(document.getElementById('chart-wlb'),{type:'radar',data:{labels:['Work Hours','Flexibility','Support','Stress Mgmt','Career Growth'],datasets:[{label:'Q1/26',data:[4.0,3.8,4.1,3.5,4.2],borderColor:chartColors.blue,backgroundColor:'rgba(59,130,246,.12)',pointBackgroundColor:chartColors.blue},{label:'Q4/25',data:[3.6,3.4,3.9,3.2,3.8],borderColor:chartColors.slate,backgroundColor:'rgba(100,116,139,.08)',pointBackgroundColor:chartColors.slate}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{labels:{font:{family:'Prompt'}}}},scales:{r:{beginAtZero:true,max:5,ticks:{font:{size:11}}}}}});
+  }
+}
+
+// ========== DATA INITIALIZATION ==========
+function initDashboardData(){
+  if(typeof EMP_STATS !== 'undefined'){
+    var totalEl = document.getElementById('kpi-total');
+    if(totalEl) totalEl.textContent = EMP_STATS.total;
+  }
+  if(typeof WG_DATA !== 'undefined'){
+    var tbodyEl = document.getElementById('dept-tbody');
+    if(tbodyEl){
+      var html = '';
+      var wgCodes = ['PMSG','AAMG','CPDG','RPLCG','RAFCOG','PGHG','21RTG','Other'];
+      for(var i=0; i<wgCodes.length; i++){
+        var code = wgCodes[i];
+        var wg = WG_DATA[code];
+        if(!wg) continue;
+        var avgScore = wg.avgScore;
+        var status, badgeClass;
+        if(avgScore >= 3.7){ status='ดี'; badgeClass='badge-green'; }
+        else if(avgScore >= 3.5){ status='ปกติ'; badgeClass='badge-blue'; }
+        else if(avgScore >= 3.4){ status='ต้องติดตาม'; badgeClass='badge-amber'; }
+        else { status='เฝ้าระวัง'; badgeClass='badge-red'; }
+        html += '<tr><td class="font-medium">'+wg.name+'</td><td class="text-right font-semibold">'+wg.count+'</td><td class="text-right">'+avgScore.toFixed(2)+'</td><td class="text-right">'+wg.turnover.toFixed(1)+'%</td><td class="text-center"><span class="badge '+badgeClass+'">'+status+'</span></td></tr>';
+      }
+      tbodyEl.innerHTML = html;
+      // Re-init charts for this tab
+      chartRegistry['executive'] = false;
+      void initCharts('executive');
+    }
   }
 }
 
