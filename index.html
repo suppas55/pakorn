@@ -671,7 +671,23 @@
     <div class="card text-center"><div class="text-sm text-slate-400">Avg Score / 5</div><div class="kpi-num text-blue-600">4.3</div></div>
     <div class="card text-center"><div class="text-sm text-slate-400" data-i18n="budgetUsed">Budget ใช้ไป</div><div class="kpi-num text-amber-600">78%</div></div>
   </div>
-  <div class="card"><h3 class="font-semibold text-pp7-800 mb-3">📊 Training Hours by Department</h3><div class="chart-box"><canvas id="chart-training-hrs"></canvas></div></div>
+  <div class="card">
+    <h3 class="font-semibold text-pp7-800 mb-3">🔍 Skill Gap Analysis</h3>
+    <div class="overflow-x-auto">
+      <table><thead><tr><th>ทักษะ</th><th>Required</th><th>Avg Current</th><th>Gap</th><th>Priority</th></tr></thead>
+      <tbody>
+        <tr><td>Cloud Architecture</td><td>4.0</td><td>3.1</td><td style="color:#ef4444">-0.9</td><td><span class="badge badge-red">สูงมาก</span></td></tr>
+        <tr><td>Data Analytics</td><td>4.0</td><td>3.3</td><td style="color:#f59e0b">-0.7</td><td><span class="badge badge-amber">สูง</span></td></tr>
+        <tr><td>Cybersecurity</td><td>4.5</td><td>2.8</td><td style="color:#ef4444">-1.7</td><td><span class="badge badge-red">สูงมาก</span></td></tr>
+        <tr><td>Leadership</td><td>4.0</td><td>3.5</td><td style="color:#3b82f6">-0.5</td><td><span class="badge badge-blue">ปานกลาง</span></td></tr>
+        <tr><td>Communication</td><td>4.0</td><td>3.7</td><td style="color:#10b981">-0.3</td><td><span class="badge badge-green">ต่ำ</span></td></tr>
+        <tr><td>AI/ML Fundamentals</td><td>3.5</td><td>2.4</td><td style="color:#ef4444">-1.1</td><td><span class="badge badge-red">สูงมาก</span></td></tr>
+        <tr><td>Agile/Scrum</td><td>4.0</td><td>3.8</td><td style="color:#10b981">-0.2</td><td><span class="badge badge-green">ต่ำ</span></td></tr>
+        <tr><td>Financial Literacy</td><td>3.5</td><td>3.1</td><td style="color:#3b82f6">-0.4</td><td><span class="badge badge-blue">ปานกลาง</span></td></tr>
+      </tbody></table>
+    </div>
+  </div>
+    <div class="card"><h3 class="font-semibold text-pp7-800 mb-3">📊 Training Hours by Department</h3><div class="chart-box"><canvas id="chart-training-hrs"></canvas></div></div>
   <div class="card">
     <h3 class="font-semibold text-pp7-800 mb-3">📋 <span data-i18n="devTable">คอร์สและการพัฒนา</span></h3>
     <div class="overflow-x-auto">
@@ -1232,7 +1248,28 @@ const drillData={
     <div class="mt-4"><h4 class="font-semibold mb-2">Quarterly Trend</h4>
     <table><thead><tr><th>Quarter</th><th>Score</th><th>Change</th></tr></thead>
     <tbody><tr><td>Q1/25</td><td>3.48</td><td>—</td></tr><tr><td>Q2/25</td><td>3.52</td><td style="color:#10b981">▲ +0.04</td></tr><tr><td>Q3/25</td><td>3.61</td><td style="color:#10b981">▲ +0.09</td></tr><tr><td>Q4/25</td><td>3.64</td><td style="color:#10b981">▲ +0.03</td></tr><tr><td>Q1/26</td><td style="font-weight:700;color:#8b5cf6">3.72</td><td style="color:#10b981">▲ +0.08</td></tr></tbody></table></div>`},
-  welfare:{title:'💰 Welfare Detail',body:`
+  openPos:{title:'เปิดรับสมัคร',body:`
+    <div class="detail-grid">
+      <div class="detail-item"><div class="label">ตำแหน่งเปิด</div><div class="value">42</div></div>
+      <div class="detail-item"><div class="label">ปิดรับสมัครแล้ว</div><div class="value">18</div></div>
+      <div class="detail-item"><div class="label">กำลังรอสัมภาษณ์</div><div class="value">15</div></div>
+      <div class="detail-item"><div class="label">Offer Sent</div><div class="value">9</div></div>
+    </div>
+    <div class="mt-4"><h4 class="font-semibold mb-2">ตำแหน่งเร่งด่วน</h4>
+    <table><thead><tr><th>ตำแหน่ง</th><th>ฝ่าย</th><th>ผู้สมัคร</th><th>สถานะ</th></tr></thead>
+    <tbody><tr><td>Senior Developer</td><td>Tech</td><td>34</td><td style="color:#10b981">สัมภาษณ์</td></tr><tr><td>Data Scientist</td><td>Tech</td><td>28</td><td style="color:#f59e0b">กำลัง filter</td></tr><tr><td>UX Researcher</td><td>R&D</td><td>19</td><td style="color:#3b82f6">เปิดรับ</td></tr><tr><td>Sales Manager</td><td>Sales</td><td>42</td><td style="color:#10b981">สัมภาษณ์</td></tr><tr><td>HRBP</td><td>HR</td><td>15</td><td style="color:#3b82f6">เปิดรับ</td></tr></tbody></table></div>`},
+  pipeline:{title:'Recruitment Pipeline',body:`
+    <div class="detail-grid">
+      <div class="detail-item"><div class="label">ใน Pipeline</div><div class="value" style="color:#3b82f6">186</div></div>
+      <div class="detail-item"><div class="label">HR Screen</div><div class="value">78</div></div>
+      <div class="detail-item"><div class="label">Technical Interview</div><div class="value">58</div></div>
+      <div class="detail-item"><div class="label">Final Round</div><div class="value">34</div></div>
+    </div>
+    <div class="mt-4"><h4 class="font-semibold mb-2">Conversion Rate</h4>
+    <table><thead><tr><th>Stage</th><th>จำนวน</th><th>Conversion</th></tr></thead>
+    <tbody><tr><td>Application → Screen</td><td>186 → 112</td><td style="color:#10b981">60.2%</td></tr><tr><td>Screen → Interview</td><td>112 → 58</td><td style="color:#10b981">51.8%</td></tr><tr><td>Interview → Offer</td><td>58 → 34</td><td style="color:#10b981">58.6%</td></tr><tr><td>Offer → Hired</td><td>34 → 19</td><td style="color:#f59e0b">55.9%</td></tr></tbody></table>
+    <div class="mt-3 p-3 bg-blue-50 rounded-xl text-sm text-blue-700">Overall conversion: 10.2% (19/186). Above industry average (8%). Avg time-to-hire: 24 days.</div></div>`},
+    welfare:{title:'💰 Welfare Detail',body:`
     <div class="detail-grid">
       <div class="detail-item"><div class="label">Monthly Budget</div><div class="value">฿2.8M</div></div>
       <div class="detail-item"><div class="label">Used (Mar)</div><div class="value text-amber-600">฿2.4M (86%)</div></div>
