@@ -1172,18 +1172,44 @@ function resetFilters(){
 
 // ========== Export ==========
 function exportPDF(){
-  const el=document.getElementById('main-content');
-  // Show all tabs
-  document.querySelectorAll('.tab-pane').forEach(p=>{p.classList.remove('hidden');p.style.display='block'});
-  document.querySelectorAll('.sticky-nav,.toolbar,.search-box,.notif-btn').forEach(e=>e.style.display='none');
-  html2pdf().set({margin:5,filename:'pakorn-dashboard.pdf',image:{type:'jpeg',quality:0.98},html2canvas:{scale:2,useCORS:true},jsPDF:{unit:'mm',format:'a4',orientation:'landscape'}}).from(el).save().then(()=>{
-    document.querySelectorAll('.tab-pane').forEach((p,i)=>{
+  const wrapper=document.getElementById('app-wrapper');
+  var wasBlurred = wrapper && wrapper.classList.contains('content-blur');
+  
+  function restore(){
+    document.querySelectorAll('.tab-pane').forEach(function(p,i){
       p.style.display='';
-      if(i>0)p.classList.add('hidden');
+      if(i>0) p.classList.add('hidden');
     });
-    document.querySelectorAll('.sticky-nav,.toolbar,.search-box,.notif-btn').forEach(e=>e.style.display='');
+    document.querySelectorAll('.sticky-nav,.toolbar,.search-box,.notif-btn').forEach(function(e){e.style.display=''});
+    if(wasBlurred && wrapper) wrapper.classList.add('content-blur');
+  }
+  
+  if(wrapper) wrapper.classList.remove('content-blur');
+  document.querySelectorAll('.sticky-nav,.toolbar,.search-box,.notif-btn').forEach(e=>{e.style.display='none'});
+  
+  // Show all tabs and init their charts so html2canvas captures them
+  ['executive','recruit','assess','match','performance','develop','welfare','quality'].forEach(function(tab){
+    document.getElementById('tab-'+tab).classList.remove('hidden');
+    document.getElementById('tab-'+tab).style.display='block';
+    initCharts(tab);
   });
+  
+  // Wait for chart.js to render
+  setTimeout(function(){
+    var el = document.getElementById('tab-executive');
+    html2pdf().set({
+      margin:5,
+      filename:'pakorn-executive.pdf',
+      image:{type:'jpeg',quality:0.98},
+      html2canvas:{scale:2,useCORS:true,windowWidth:1280,backgroundColor:'#f1f5f9'},
+      jsPDF:{unit:'mm',format:'a4',orientation:'landscape'}
+    }).from(el).save().then(restore).catch(function(err){
+      alert('Export failed: '+err.message);
+      restore();
+    });
+  }, 1000);
 }
+
 
 function exportExcel(){
   const wb=XLSX.utils.book_new();
