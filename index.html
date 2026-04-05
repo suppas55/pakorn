@@ -97,12 +97,53 @@
       .tab-pane{display:block !important}
       .card{break-inside:avoid;box-shadow:none;border:1px solid #e5e7eb}
     }
-  </style>
+  
+    /* ===== LOGIN OVERLAY ===== */
+    #loginOverlay{position:fixed;inset:0;z-index:9999;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#0f172a 0%,#1e3a5f 50%,#0f172a 100%)}
+    #loginOverlay.hidden{display:none}
+    .login-card{background:#fff;border-radius:1.5rem;box-shadow:0 25px 80px rgba(0,0,0,.3);padding:2.5rem;max-width:420px;width:90%;text-align:center}
+    .login-logo{font-size:3rem;margin-bottom:.5rem}
+    .login-card h2{font-size:1.4rem;font-weight:700;color:#0f172a;margin-bottom:.25rem}
+    .login-card .subtitle{color:#64748b;font-size:.85rem;margin-bottom:1.5rem}
+    .login-input{width:100%;padding:.85rem 1rem;border:2px solid #e2e8f0;border-radius:.75rem;font-size:1rem;outline:none;transition:border .15s;font-family:'Prompt',sans-serif}
+    .login-input:focus{border-color:#2563eb;box-shadow:0 0 0 3px rgba(37,99,235,.12)}
+    .login-btn{width:100%;padding:.85rem;border:none;border-radius:.75rem;font-size:1rem;font-weight:600;cursor:pointer;background:linear-gradient(135deg,#1d4ed8,#2563eb);color:#fff;margin-top:1rem;transition:transform .1s,box-shadow .1s;font-family:'Prompt',sans-serif}
+    .login-btn:hover{transform:translateY(-1px);box-shadow:0 6px 20px rgba(37,99,235,.3)}
+    .login-error{color:#ef4444;font-size:.8rem;margin-top:.5rem;min-height:1.25em}
+    .login-footer{margin-top:1.25rem;font-size:.75rem;color:#94a3b8}
+    .login-hint{font-size:.7rem;color:#94a3b8;margin-top:.5rem}
+    .content-blur{filter:blur(12px)!important;pointer-events:none!important;user-select:none!important}
+    .header-btn{padding:.35rem .75rem;border-radius:.5rem;font-size:.75rem;font-weight:500;cursor:pointer;border:1px solid rgba(255,255,255,.3);background:rgba(255,255,255,.1);color:#fff;transition:background .15s;font-family:'Prompt',sans-serif}
+    .header-btn:hover{background:rgba(255,255,255,.2)}
+    #userInfo{display:flex;align-items:center;gap:.5rem;font-size:.8rem;color:#bfdbfe}
+    #userInfo .avatar{width:28px;height:28px;border-radius:50%;background:rgba(255,255,255,.2);display:flex;align-items:center;justify-content:center;font-size:.75rem}
+</style>
   <script>
     tailwind.config={theme:{extend:{colors:{pp7:{50:'#eff6ff',100:'#dbeafe',200:'#bfdbfe',500:'#3b82f6',600:'#2563ec',700:'#1d4ed8',800:'#1e40af',900:'#172554'}}}}}
   </script>
 </head>
 <body>
+
+<!-- ===== LOGIN OVERLAY ===== -->
+<div id="loginOverlay">
+  <div class="login-card">
+    <div class="login-logo">🔐</div>
+    <h2>Pakorn HRMS</h2>
+    <p class="subtitle">ระบบบริหารบุคลากร PP7</p>
+    <form id="loginForm" onsubmit="return handleLogin(event)">
+      <div style="margin-bottom:.75rem">
+        <input type="text" id="loginUser" class="login-input" placeholder="ชื่อผู้ใช้งาน" autocomplete="username" />
+      </div>
+      <div>
+        <input type="password" id="loginPass" class="login-input" placeholder="รหัสผ่าน" autocomplete="current-password" />
+      </div>
+      <div class="login-error" id="loginError"></div>
+      <button type="submit" class="login-btn">เข้าสู่ระบบ</button>
+    </form>
+    <p class="login-hint">ทดลอง: admin / admin</p>
+    <p class="login-footer">© 2026 Pakorn HRMS</p>
+  </div>
+</div>
 
 <!-- ALERT BANNER -->
 <div id="alertBanner" class="hidden alert-banner">
@@ -121,6 +162,13 @@
     <div class="flex items-center gap-4">
       <!-- Language Switch -->
       <button id="langToggle" class="text-xs px-2 py-1 rounded border border-pp7-200 hover:bg-pp7-700 transition" onclick="toggleLang()">TH</button>
+      <!-- User Info (hidden until login) -->
+      <div id="userInfo" style="display:none">
+        <span class="avatar">👤</span>
+        <span id="userName"></span>
+      </div>
+      <!-- Logout Button -->
+      <button id="logoutBtn" class="header-btn" onclick="handleLogout()" style="display:none" title="ออกจากระบบ">🚪 ออกจากระบบ</button>
       <!-- Notifications -->
       <div class="relative">
         <button class="notif-btn" onclick="toggleNotif()" aria-label="Notifications">
@@ -180,8 +228,8 @@
   </div>
 </div>
 
-<!-- MAIN -->
-<main id="main-content" class="max-w-7xl mx-auto px-3 md:px-4 py-6">
+<!-- MAIN (blurred until login) -->
+<div id="app-wrapper"><main id="main-content" class="max-w-7xl mx-auto px-3 md:px-4 py-6">
 
 <!-- ==================== TAB: EXECUTIVE ==================== -->
 <section id="tab-executive" class="tab-pane fade-in space-y-6">
@@ -909,7 +957,7 @@
   </div>
 </section>
 
-</main>
+</main></div><!-- /.app-wrapper -->
 
 <!-- DRILL-DOWN MODAL -->
 <div class="modal-overlay" id="drillModal" onclick="if(event.target===this)closeDrill()">
@@ -1248,8 +1296,70 @@ function initCharts(tab){
   }
 }
 
-// Init
-document.addEventListener('DOMContentLoaded',()=>{showTab('executive');checkAlerts()});
+// ========== LOGIN SYSTEM ==========
+const USERS = {
+  admin:  { password: 'admin',      role: 'admin',  name: 'ผู้ดูแลระบบ' },
+  bally:  { password: 'bally2026',  role: 'admin',  name: 'Suppasit' },
+  pakorn: { password: 'pakorn2026', role: 'viewer', name: 'ปกรณ์(หนึ่ง)' },
+  nan:    { password: 'nan2026',    role: 'viewer', name: 'รัฐพร(แนน)' },
+};
+
+function handleLogin(e){
+  e.preventDefault();
+  const user = document.getElementById('loginUser').value.trim();
+  const pass = document.getElementById('loginPass').value;
+  const errEl = document.getElementById('loginError');
+  if(!user||!pass){ errEl.textContent='กรุณากรอกชื่อผู้ใช้งานและรหัสผ่าน'; return false; }
+  if(USERS[user] && USERS[user].password === pass){
+    const session = { user: user, role: USERS[user].role, name: USERS[user].name, at: Date.now() };
+    localStorage.setItem('pakorn_session', JSON.stringify(session));
+    applyLogin(session);
+    errEl.textContent = '';
+    return false;
+  }
+  errEl.textContent = 'ชื่อผู้ใช้งานหรือรหัสผ่านไม่ถูกต้อง';
+  document.getElementById('loginPass').value = '';
+  return false;
+}
+
+function handleLogout(){
+  localStorage.removeItem('pakorn_session');
+  document.getElementById('loginOverlay').classList.remove('hidden');
+  document.getElementById('app-wrapper') && document.getElementById('app-wrapper').classList.add('content-blur');
+  document.getElementById('logoutBtn').style.display = 'none';
+  document.getElementById('userInfo').style.display = 'none';
+  document.getElementById('loginUser').value = '';
+  document.getElementById('loginPass').value = '';
+  document.getElementById('loginError').textContent = '';
+  document.getElementById('loginUser').focus();
+}
+
+function applyLogin(session){
+  document.getElementById('loginOverlay').classList.add('hidden');
+  document.getElementById('app-wrapper') && document.getElementById('app-wrapper').classList.remove('content-blur');
+  var ub = document.getElementById('userName');
+  if(ub) ub.textContent = session.name || session.user;
+  document.getElementById('userInfo').style.display = 'flex';
+  document.getElementById('logoutBtn').style.display = 'inline-block';
+}
+
+// Check session on page load
+(function(){
+  try {
+    var saved = JSON.parse(localStorage.getItem('pakorn_session'));
+    if(saved && saved.user && USERS[saved.user]){
+      applyLogin(saved);
+    } else {
+      /* Lock content behind login */
+      document.getElementById('app-wrapper') && document.getElementById('app-wrapper').classList.add('content-blur');
+      document.getElementById('loginUser').focus();
+    }
+  } catch(e){
+    document.getElementById('app-wrapper') && document.getElementById('app-wrapper').classList.add('content-blur');
+  }
+  showTab('executive');
+  checkAlerts();
+})();
 </script>
 </body>
 </html>
