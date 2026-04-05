@@ -189,25 +189,25 @@
   <div class="grid grid-cols-2 lg:grid-cols-4 gap-4">
     <div class="card border-l-4 border-l-blue-500 hover:shadow-lg transition-shadow cursor-pointer" onclick="openDrill('headcount')">
       <div class="text-sm text-slate-400" data-i18n="kpi1Label">บุคลากรทั้งหมด</div>
-      <div class="kpi-num text-blue-600">1,247</div>
+      <div class="kpi-num text-blue-600">100</div>
       <div class="text-xs text-emerald-600 mt-1">▲ +12 <span data-i18n="thisMonth">เดือนนี้</span></div>
       <div class="sparkline"><span style="height:60%"></span><span style="height:65%"></span><span style="height:70%"></span><span style="height:75%"></span><span style="height:80%"></span><span style="height:90%;background:#10b981"></span></div>
     </div>
     <div class="card border-l-4 border-l-emerald-500 hover:shadow-lg transition-shadow cursor-pointer" onclick="openDrill('match')">
       <div class="text-sm text-slate-400" data-i18n="kpi2Label">Match Rate</div>
-      <div class="kpi-num text-emerald-600">87%</div>
+      <div class="kpi-num text-emerald-600">66%</div>
       <div class="text-xs text-emerald-600 mt-1">▲ +3.2% <span data-i18n="vsPrevMonth">จากเดือนก่อน</span></div>
       <div class="sparkline"><span style="height:50%"></span><span style="height:55%"></span><span style="height:65%"></span><span style="height:72%"></span><span style="height:82%"></span><span style="height:87%;background:#10b981"></span></div>
     </div>
     <div class="card border-l-4 border-l-violet-500 hover:shadow-lg transition-shadow cursor-pointer" onclick="openDrill('performance')">
       <div class="text-sm text-slate-400" data-i18n="kpi3Label">Avg Performance Score</div>
-      <div class="kpi-num text-violet-600">3.72</div>
+      <div class="kpi-num text-violet-600">3.5</div>
       <div class="text-xs text-emerald-600 mt-1">▲ +0.08 <span data-i18n="vsQ3">จาก Q3</span></div>
       <div class="sparkline"><span style="height:65%"></span><span style="height:67%"></span><span style="height:72%"></span><span style="height:74%"></span><span style="height:76%"></span><span style="height:79%;background:#8b5cf6"></span></div>
     </div>
     <div class="card border-l-4 border-l-amber-500 hover:shadow-lg transition-shadow cursor-pointer" onclick="openDrill('welfare')">
       <div class="text-sm text-slate-400" data-i18n="kpi4Label">Welfare Payout / Month</div>
-      <div class="kpi-num text-amber-600">฿2.4M</div>
+      <div class="kpi-num text-amber-600">฿8.2M</div>
       <div class="text-xs text-slate-400 mt-1"><span data-i18n="inBudget">อยู่ในงบ</span> ฿2.8M</div>
       <div class="sparkline"><span style="height:80%"></span><span style="height:82%"></span><span style="height:85%"></span><span style="height:83%"></span><span style="height:87%"></span><span style="height:86%;background:#f59e0b"></span></div>
     </div>
@@ -252,14 +252,13 @@
     <div class="overflow-x-auto">
       <table id="dept-table">
         <thead><tr><th data-i18n="dept">ฝ่าย</th><th data-i18n="count">จำนวน</th><th>Avg Score</th><th>Turnover</th><th data-i18n="status">สถานะ</th></tr></thead>
-        <tbody>
-          <tr><td>Tech / Engineering</td><td>312</td><td>3.84</td><td>3.2%</td><td><span class="badge badge-green" data-i18n="normal">ปกติ</span></td></tr>
-          <tr><td>Sales & Marketing</td><td>285</td><td>3.61</td><td>7.1%</td><td><span class="badge badge-red" data-i18n="watch">เฝ้าระวัง</span></td></tr>
-          <tr><td>Operations</td><td>241</td><td>3.76</td><td>4.5%</td><td><span class="badge badge-green" data-i18n="normal">ปกติ</span></td></tr>
-          <tr><td>Finance & Admin</td><td>178</td><td>3.69</td><td>2.8%</td><td><span class="badge badge-green" data-i18n="normal">ปกติ</span></td></tr>
-          <tr><td>HR & Legal</td><td>131</td><td>3.81</td><td>1.9%</td><td><span class="badge badge-green" data-i18n="normal">ปกติ</span></td></tr>
-          <tr><td>R&D</td><td>100</td><td>3.92</td><td>3.6%</td><td><span class="badge badge-amber" data-i18n="monitor">ติดตาม</span></td></tr>
-        </tbody>
+        <tbody><tr><td>Tech / Engineering</td><td>28</td><td>3.58</td><td>7.4%</td><td><span class="badge badge-red">เฝ้าระวัง</span></td></tr>
+<tr><td>Sales & Marketing</td><td>22</td><td>3.55</td><td>7.1%</td><td><span class="badge badge-red">เฝ้าระวัง</span></td></tr>
+<tr><td>Operations</td><td>20</td><td>3.53</td><td>7.5%</td><td><span class="badge badge-red">เฝ้าระวัง</span></td></tr>
+<tr><td>Finance & Admin</td><td>14</td><td>3.36</td><td>6.8%</td><td><span class="badge badge-red">เฝ้าระวัง</span></td></tr>
+<tr><td>HR & Legal</td><td>8</td><td>3.33</td><td>7.9%</td><td><span class="badge badge-red">เฝ้าระวัง</span></td></tr>
+<tr><td>R&D</td><td>8</td><td>3.42</td><td>6.2%</td><td><span class="badge badge-red">เฝ้าระวัง</span></td></tr>
+</tbody>
       </table>
     </div>
   </div>
@@ -324,14 +323,107 @@
     <div class="overflow-x-auto">
       <table id="assess-table" data-sortable="true">
         <thead><tr><th data-i18n="id">ID</th><th data-i18n="name">ชื่อ-สกุล</th><th data-i18n="dept">ฝ่าย</th><th data-i18n="totalScore">คะแนนรวม</th><th>Leadership</th><th>Comm.</th><th>Technical</th><th>Teamwork</th><th data-i18n="level">ระดับ</th></tr></thead>
-        <tbody>
-          <tr><td>E-001</td><td>อนุชา รัตนมาลี</td><td>Tech</td><td>4.2</td><td>4.0</td><td>4.3</td><td>4.5</td><td>4.0</td><td><span class="badge badge-green">Top</span></td></tr>
-          <tr><td>E-002</td><td>สุภาพร ดอกแก้ว</td><td>Sales</td><td>3.4</td><td>3.5</td><td>3.8</td><td>3.2</td><td>3.1</td><td><span class="badge badge-blue">Solid</span></td></tr>
-          <tr><td>E-003</td><td>ธนวัฒน์ สุขสมบูรณ์</td><td>Operations</td><td>3.8</td><td>3.9</td><td>3.7</td><td>4.0</td><td>3.6</td><td><span class="badge badge-green">Top</span></td></tr>
-          <tr><td>E-004</td><td>ปิยะนุช แสงจันทร์</td><td>Finance</td><td>2.9</td><td>2.5</td><td>3.1</td><td>3.0</td><td>2.8</td><td><span class="badge badge-amber">Develop</span></td></tr>
-          <tr><td>E-005</td><td>กิตติพงศ์ มั่นคง</td><td>R&D</td><td>4.0</td><td>3.8</td><td>4.1</td><td>4.3</td><td>3.8</td><td><span class="badge badge-green">Top</span></td></tr>
-          <tr><td>E-006</td><td>ณัฐกานต์ จันทร์สว่าง</td><td>HR</td><td>3.6</td><td>3.7</td><td>3.9</td><td>3.5</td><td>3.3</td><td><span class="badge badge-blue">Solid</span></td></tr>
-        </tbody>
+        <tbody><tr><td>EMP-0001</td><td>ธนพล สุขสมบูรณ์</td><td>Tech</td><td>2.7</td><td>2.3</td><td>3.4</td><td>2.1</td><td>3.0</td><td><span class="badge badge-amber">Develop</span></td></tr>
+<tr><td>EMP-0002</td><td>ประทุม สุขสมบูรณ์</td><td>Tech</td><td>3.25</td><td>4.9</td><td>3.1</td><td>2.3</td><td>2.7</td><td><span class="badge badge-amber">Develop</span></td></tr>
+<tr><td>EMP-0003</td><td>ปิยะนุช แก้วมณี</td><td>Tech</td><td>2.62</td><td>2.1</td><td>2.8</td><td>2.9</td><td>2.7</td><td><span class="badge badge-amber">Develop</span></td></tr>
+<tr><td>EMP-0004</td><td>นภัสสร แก้วประเสริฐ</td><td>Tech</td><td>3.28</td><td>3.6</td><td>2.9</td><td>3.4</td><td>3.2</td><td><span class="badge badge-amber">Develop</span></td></tr>
+<tr><td>EMP-0005</td><td>กัลยา มั่นคง</td><td>Tech</td><td>3.65</td><td>3.2</td><td>4.8</td><td>3.4</td><td>3.2</td><td><span class="badge badge-blue">Solid</span></td></tr>
+<tr><td>EMP-0006</td><td>ปิยาภรณ์ วงศ์สุวรรณ</td><td>Tech</td><td>3.58</td><td>3.9</td><td>4.4</td><td>3.3</td><td>2.7</td><td><span class="badge badge-blue">Solid</span></td></tr>
+<tr><td>EMP-0007</td><td>นภาพร แก้วประเสริฐ</td><td>Tech</td><td>3.3</td><td>2.5</td><td>2.2</td><td>4.2</td><td>4.3</td><td><span class="badge badge-blue">Solid</span></td></tr>
+<tr><td>EMP-0008</td><td>กิตติชัย ศรีจันทร์</td><td>Tech</td><td>3.75</td><td>4.8</td><td>3.9</td><td>3.5</td><td>2.8</td><td><span class="badge badge-blue">Solid</span></td></tr>
+<tr><td>EMP-0009</td><td>สุรชัย แก้วมณี</td><td>Tech</td><td>3.77</td><td>4.8</td><td>2.7</td><td>3.6</td><td>4.0</td><td><span class="badge badge-blue">Solid</span></td></tr>
+<tr><td>EMP-0010</td><td>นิตยา ทองดี</td><td>Tech</td><td>3.0</td><td>3.8</td><td>2.8</td><td>2.7</td><td>2.7</td><td><span class="badge badge-amber">Develop</span></td></tr>
+<tr><td>EMP-0011</td><td>นฤมล รัตนมาลี</td><td>Tech</td><td>3.25</td><td>4.4</td><td>2.7</td><td>2.3</td><td>3.6</td><td><span class="badge badge-amber">Develop</span></td></tr>
+<tr><td>EMP-0012</td><td>วลัยพร มั่นคง</td><td>Tech</td><td>3.52</td><td>2.8</td><td>2.9</td><td>4.8</td><td>3.6</td><td><span class="badge badge-blue">Solid</span></td></tr>
+<tr><td>EMP-0013</td><td>ปิยะ พุ่มน้อย</td><td>Tech</td><td>3.85</td><td>3.1</td><td>5.0</td><td>2.8</td><td>4.5</td><td><span class="badge badge-blue">Solid</span></td></tr>
+<tr><td>EMP-0014</td><td>อนุวัฒน์ รัตนมาลี</td><td>Tech</td><td>3.58</td><td>2.2</td><td>3.5</td><td>4.8</td><td>3.8</td><td><span class="badge badge-blue">Solid</span></td></tr>
+<tr><td>EMP-0015</td><td>อนุพงศ์ รุ่งเรือง</td><td>Tech</td><td>3.47</td><td>4.0</td><td>3.8</td><td>2.9</td><td>3.2</td><td><span class="badge badge-blue">Solid</span></td></tr>
+<tr><td>EMP-0016</td><td>พิชัย จันทร์เพ็ญ</td><td>Tech</td><td>2.95</td><td>3.5</td><td>2.6</td><td>3.0</td><td>2.7</td><td><span class="badge badge-amber">Develop</span></td></tr>
+<tr><td>EMP-0017</td><td>สิทธิชัย ธรรมรักษ์</td><td>Tech</td><td>3.12</td><td>4.8</td><td>2.6</td><td>2.3</td><td>2.8</td><td><span class="badge badge-amber">Develop</span></td></tr>
+<tr><td>EMP-0018</td><td>วิชัย ธรรมรักษ์</td><td>Tech</td><td>3.15</td><td>4.5</td><td>2.3</td><td>3.0</td><td>2.8</td><td><span class="badge badge-amber">Develop</span></td></tr>
+<tr><td>EMP-0019</td><td>วรรณี สมบูรณ์</td><td>Tech</td><td>4.17</td><td>2.9</td><td>4.7</td><td>4.4</td><td>4.7</td><td><span class="badge badge-green">Top</span></td></tr>
+<tr><td>EMP-0020</td><td>วิสุทธิ์ ศรีจันทร์</td><td>Tech</td><td>3.6</td><td>4.6</td><td>2.3</td><td>4.2</td><td>3.3</td><td><span class="badge badge-blue">Solid</span></td></tr>
+<tr><td>EMP-0021</td><td>สมชาย พรหมมา</td><td>Tech</td><td>3.28</td><td>2.7</td><td>4.0</td><td>3.2</td><td>3.2</td><td><span class="badge badge-amber">Develop</span></td></tr>
+<tr><td>EMP-0022</td><td>ธนากร จันทร์เพ็ญ</td><td>Tech</td><td>3.6</td><td>3.3</td><td>4.2</td><td>2.9</td><td>4.0</td><td><span class="badge badge-blue">Solid</span></td></tr>
+<tr><td>EMP-0023</td><td>วิไลวรรณ แก้วประเสริฐ</td><td>Tech</td><td>4.42</td><td>4.8</td><td>4.8</td><td>3.9</td><td>4.2</td><td><span class="badge badge-green">Top</span></td></tr>
+<tr><td>EMP-0024</td><td>วิชัย วงศ์สุวรรณ</td><td>Tech</td><td>3.23</td><td>3.8</td><td>3.0</td><td>3.6</td><td>2.5</td><td><span class="badge badge-amber">Develop</span></td></tr>
+<tr><td>EMP-0025</td><td>กิตติ ธรรมรักษ์</td><td>Tech</td><td>4.0</td><td>3.0</td><td>4.5</td><td>4.3</td><td>4.2</td><td><span class="badge badge-green">Top</span></td></tr>
+<tr><td>EMP-0026</td><td>พิชัย ทองดี</td><td>Tech</td><td>3.97</td><td>2.4</td><td>4.1</td><td>4.7</td><td>4.7</td><td><span class="badge badge-blue">Solid</span></td></tr>
+<tr><td>EMP-0027</td><td>วิชัย ดอกแก้ว</td><td>Tech</td><td>4.35</td><td>3.8</td><td>4.9</td><td>4.7</td><td>4.0</td><td><span class="badge badge-green">Top</span></td></tr>
+<tr><td>EMP-0028</td><td>สมหมาย ทองดี</td><td>Tech</td><td>3.5</td><td>3.5</td><td>2.9</td><td>3.3</td><td>4.3</td><td><span class="badge badge-blue">Solid</span></td></tr>
+<tr><td>EMP-0029</td><td>วรรณี รุ่งโรจน์</td><td>Sales</td><td>3.58</td><td>2.2</td><td>4.5</td><td>3.2</td><td>4.4</td><td><span class="badge badge-blue">Solid</span></td></tr>
+<tr><td>EMP-0030</td><td>ประเสริฐ พรหมมา</td><td>Sales</td><td>3.2</td><td>3.3</td><td>2.3</td><td>3.0</td><td>4.2</td><td><span class="badge badge-amber">Develop</span></td></tr>
+<tr><td>EMP-0031</td><td>วลัยพร วงศ์วิโรจน์</td><td>Sales</td><td>3.0</td><td>2.5</td><td>2.9</td><td>3.0</td><td>3.6</td><td><span class="badge badge-amber">Develop</span></td></tr>
+<tr><td>EMP-0032</td><td>สมหมาย จันทร์เพ็ญ</td><td>Sales</td><td>4.38</td><td>4.3</td><td>4.0</td><td>4.3</td><td>4.9</td><td><span class="badge badge-green">Top</span></td></tr>
+<tr><td>EMP-0033</td><td>กิตติ ทองดี</td><td>Sales</td><td>3.45</td><td>4.3</td><td>2.7</td><td>2.9</td><td>3.9</td><td><span class="badge badge-blue">Solid</span></td></tr>
+<tr><td>EMP-0034</td><td>ประทุม รุ่งโรจน์</td><td>Sales</td><td>3.77</td><td>4.4</td><td>4.4</td><td>3.7</td><td>2.6</td><td><span class="badge badge-blue">Solid</span></td></tr>
+<tr><td>EMP-0035</td><td>ธนวัฒน์ รุ่งเรือง</td><td>Sales</td><td>3.55</td><td>2.5</td><td>3.7</td><td>4.0</td><td>4.0</td><td><span class="badge badge-blue">Solid</span></td></tr>
+<tr><td>EMP-0036</td><td>วิไล แก้วมณี</td><td>Sales</td><td>3.33</td><td>3.0</td><td>3.6</td><td>3.0</td><td>3.7</td><td><span class="badge badge-blue">Solid</span></td></tr>
+<tr><td>EMP-0037</td><td>ณัฐกานต์ รัตนมาลี</td><td>Sales</td><td>4.03</td><td>4.1</td><td>4.0</td><td>3.5</td><td>4.5</td><td><span class="badge badge-green">Top</span></td></tr>
+<tr><td>EMP-0038</td><td>ณัฐกานต์ จันทร์สว่าง</td><td>Sales</td><td>3.55</td><td>2.7</td><td>4.2</td><td>2.9</td><td>4.4</td><td><span class="badge badge-blue">Solid</span></td></tr>
+<tr><td>EMP-0039</td><td>ณัฐกานต์ ศรีจันทร์</td><td>Sales</td><td>3.02</td><td>2.9</td><td>4.2</td><td>2.4</td><td>2.6</td><td><span class="badge badge-amber">Develop</span></td></tr>
+<tr><td>EMP-0040</td><td>สุภาพร วงศ์วิโรจน์</td><td>Sales</td><td>3.1</td><td>2.8</td><td>4.6</td><td>2.3</td><td>2.7</td><td><span class="badge badge-amber">Develop</span></td></tr>
+<tr><td>EMP-0041</td><td>สุรชัย ดอกแก้ว</td><td>Sales</td><td>4.1</td><td>3.4</td><td>3.4</td><td>4.6</td><td>5.0</td><td><span class="badge badge-green">Top</span></td></tr>
+<tr><td>EMP-0042</td><td>นภัสสร สุขสมบูรณ์</td><td>Sales</td><td>3.12</td><td>2.0</td><td>3.5</td><td>3.8</td><td>3.2</td><td><span class="badge badge-amber">Develop</span></td></tr>
+<tr><td>EMP-0043</td><td>ธนพล วงศ์วิโรจน์</td><td>Sales</td><td>3.17</td><td>4.5</td><td>2.4</td><td>2.5</td><td>3.3</td><td><span class="badge badge-amber">Develop</span></td></tr>
+<tr><td>EMP-0044</td><td>สุรศักดิ์ ธรรมรักษ์</td><td>Sales</td><td>3.25</td><td>3.8</td><td>2.3</td><td>2.7</td><td>4.2</td><td><span class="badge badge-amber">Develop</span></td></tr>
+<tr><td>EMP-0045</td><td>สุรกิจ ใจดี</td><td>Sales</td><td>4.1</td><td>3.3</td><td>4.5</td><td>4.9</td><td>3.7</td><td><span class="badge badge-green">Top</span></td></tr>
+<tr><td>EMP-0046</td><td>วีระ พรหมมา</td><td>Sales</td><td>4.17</td><td>4.9</td><td>3.3</td><td>3.5</td><td>5.0</td><td><span class="badge badge-green">Top</span></td></tr>
+<tr><td>EMP-0047</td><td>ธนพล ทองดี</td><td>Sales</td><td>3.6</td><td>4.6</td><td>3.6</td><td>2.1</td><td>4.1</td><td><span class="badge badge-blue">Solid</span></td></tr>
+<tr><td>EMP-0048</td><td>นภาพร ทองดี</td><td>Sales</td><td>4.0</td><td>3.5</td><td>3.0</td><td>4.5</td><td>5.0</td><td><span class="badge badge-green">Top</span></td></tr>
+<tr><td>EMP-0049</td><td>พิชัย สุขสมบูรณ์</td><td>Sales</td><td>4.12</td><td>4.2</td><td>4.5</td><td>3.7</td><td>4.1</td><td><span class="badge badge-green">Top</span></td></tr>
+<tr><td>EMP-0050</td><td>วราภรณ์ รัตนมาลี</td><td>Sales</td><td>3.75</td><td>2.1</td><td>4.3</td><td>4.1</td><td>4.5</td><td><span class="badge badge-blue">Solid</span></td></tr>
+<tr><td>EMP-0051</td><td>กฤติยา วงศ์วิโรจน์</td><td>Operations</td><td>3.52</td><td>2.0</td><td>2.6</td><td>4.6</td><td>4.9</td><td><span class="badge badge-blue">Solid</span></td></tr>
+<tr><td>EMP-0052</td><td>ธนพร แก้วประเสริฐ</td><td>Operations</td><td>3.52</td><td>3.9</td><td>2.9</td><td>4.1</td><td>3.2</td><td><span class="badge badge-blue">Solid</span></td></tr>
+<tr><td>EMP-0053</td><td>อรุณี รุ่งโรจน์</td><td>Operations</td><td>3.4</td><td>3.3</td><td>2.9</td><td>3.2</td><td>4.2</td><td><span class="badge badge-blue">Solid</span></td></tr>
+<tr><td>EMP-0054</td><td>ชัยวัฒน์ วงศ์สุวรรณ</td><td>Operations</td><td>3.75</td><td>4.7</td><td>3.5</td><td>2.9</td><td>3.9</td><td><span class="badge badge-blue">Solid</span></td></tr>
+<tr><td>EMP-0055</td><td>ประจวบ แสงจันทร์</td><td>Operations</td><td>3.2</td><td>3.1</td><td>3.0</td><td>4.1</td><td>2.6</td><td><span class="badge badge-amber">Develop</span></td></tr>
+<tr><td>EMP-0056</td><td>ประมวล ใจดี</td><td>Operations</td><td>4.07</td><td>3.9</td><td>4.1</td><td>4.2</td><td>4.1</td><td><span class="badge badge-green">Top</span></td></tr>
+<tr><td>EMP-0057</td><td>ชัยวัฒน์ จันทร์สว่าง</td><td>Operations</td><td>3.75</td><td>2.6</td><td>4.4</td><td>4.6</td><td>3.4</td><td><span class="badge badge-blue">Solid</span></td></tr>
+<tr><td>EMP-0058</td><td>ชัยยศ มั่นคง</td><td>Operations</td><td>4.65</td><td>4.6</td><td>4.2</td><td>4.9</td><td>4.9</td><td><span class="badge badge-green">Top</span></td></tr>
+<tr><td>EMP-0059</td><td>พิชัย แก้วประเสริฐ</td><td>Operations</td><td>3.85</td><td>3.4</td><td>3.9</td><td>4.8</td><td>3.3</td><td><span class="badge badge-blue">Solid</span></td></tr>
+<tr><td>EMP-0060</td><td>วิทยา วงศ์สุวรรณ</td><td>Operations</td><td>3.73</td><td>4.7</td><td>2.6</td><td>3.4</td><td>4.2</td><td><span class="badge badge-blue">Solid</span></td></tr>
+<tr><td>EMP-0061</td><td>รัตนา ใจดี</td><td>Operations</td><td>3.05</td><td>2.7</td><td>3.4</td><td>2.7</td><td>3.4</td><td><span class="badge badge-amber">Develop</span></td></tr>
+<tr><td>EMP-0062</td><td>นภาพร ทองดี</td><td>Operations</td><td>2.92</td><td>2.7</td><td>2.6</td><td>3.7</td><td>2.7</td><td><span class="badge badge-amber">Develop</span></td></tr>
+<tr><td>EMP-0063</td><td>วรรณ์วิภา จันทร์เพ็ญ</td><td>Operations</td><td>3.2</td><td>4.0</td><td>2.3</td><td>2.0</td><td>4.5</td><td><span class="badge badge-amber">Develop</span></td></tr>
+<tr><td>EMP-0064</td><td>พิชัย ใจดี</td><td>Operations</td><td>4.02</td><td>4.8</td><td>2.3</td><td>4.3</td><td>4.7</td><td><span class="badge badge-green">Top</span></td></tr>
+<tr><td>EMP-0065</td><td>รัตนา ใจดี</td><td>Operations</td><td>3.6</td><td>2.4</td><td>3.9</td><td>3.8</td><td>4.3</td><td><span class="badge badge-blue">Solid</span></td></tr>
+<tr><td>EMP-0066</td><td>วิทยา ทองประเสริฐ</td><td>Operations</td><td>3.8</td><td>3.2</td><td>4.5</td><td>3.2</td><td>4.3</td><td><span class="badge badge-blue">Solid</span></td></tr>
+<tr><td>EMP-0067</td><td>สุรชัย แก้วมณี</td><td>Operations</td><td>3.75</td><td>2.2</td><td>4.9</td><td>3.7</td><td>4.2</td><td><span class="badge badge-blue">Solid</span></td></tr>
+<tr><td>EMP-0068</td><td>ประภัสสร ศรีจันทร์</td><td>Operations</td><td>3.27</td><td>2.7</td><td>2.5</td><td>4.5</td><td>3.4</td><td><span class="badge badge-amber">Develop</span></td></tr>
+<tr><td>EMP-0069</td><td>อนุชา แก้วประเสริฐ</td><td>Operations</td><td>3.17</td><td>4.1</td><td>3.1</td><td>3.0</td><td>2.5</td><td><span class="badge badge-amber">Develop</span></td></tr>
+<tr><td>EMP-0070</td><td>พรชิตา รัตนมาลี</td><td>Operations</td><td>3.25</td><td>4.3</td><td>3.8</td><td>2.3</td><td>2.6</td><td><span class="badge badge-amber">Develop</span></td></tr>
+<tr><td>EMP-0071</td><td>ชัยณรงค์ ศิริชัย</td><td>Finance</td><td>3.65</td><td>2.8</td><td>4.1</td><td>3.5</td><td>4.2</td><td><span class="badge badge-blue">Solid</span></td></tr>
+<tr><td>EMP-0072</td><td>สุรัติยา สุขสมบูรณ์</td><td>Finance</td><td>3.18</td><td>2.4</td><td>3.7</td><td>2.7</td><td>3.9</td><td><span class="badge badge-amber">Develop</span></td></tr>
+<tr><td>EMP-0073</td><td>พิชัย มั่นคง</td><td>Finance</td><td>3.4</td><td>2.1</td><td>3.1</td><td>4.4</td><td>4.0</td><td><span class="badge badge-blue">Solid</span></td></tr>
+<tr><td>EMP-0074</td><td>ณัฐกานต์ แก้วมณี</td><td>Finance</td><td>3.2</td><td>2.2</td><td>4.0</td><td>3.6</td><td>3.0</td><td><span class="badge badge-amber">Develop</span></td></tr>
+<tr><td>EMP-0075</td><td>สุภาวดี รัตนมาลี</td><td>Finance</td><td>3.77</td><td>3.4</td><td>3.8</td><td>3.7</td><td>4.2</td><td><span class="badge badge-blue">Solid</span></td></tr>
+<tr><td>EMP-0076</td><td>ภาวิณี แก้วมณี</td><td>Finance</td><td>3.15</td><td>3.5</td><td>3.1</td><td>3.4</td><td>2.6</td><td><span class="badge badge-amber">Develop</span></td></tr>
+<tr><td>EMP-0077</td><td>ประจวบ วงศ์วิโรจน์</td><td>Finance</td><td>3.35</td><td>4.0</td><td>3.1</td><td>3.4</td><td>2.9</td><td><span class="badge badge-blue">Solid</span></td></tr>
+<tr><td>EMP-0078</td><td>สุรกิจ ศรีสุข</td><td>Finance</td><td>3.0</td><td>2.5</td><td>3.2</td><td>2.8</td><td>3.5</td><td><span class="badge badge-amber">Develop</span></td></tr>
+<tr><td>EMP-0079</td><td>ปรียา แสงจันทร์</td><td>Finance</td><td>3.95</td><td>4.0</td><td>4.8</td><td>2.9</td><td>4.1</td><td><span class="badge badge-blue">Solid</span></td></tr>
+<tr><td>EMP-0080</td><td>ธนากร วงศ์สุวรรณ</td><td>Finance</td><td>3.33</td><td>3.1</td><td>2.7</td><td>2.6</td><td>4.9</td><td><span class="badge badge-blue">Solid</span></td></tr>
+<tr><td>EMP-0081</td><td>วิไลวรรณ ธรรมรักษ์</td><td>Finance</td><td>3.95</td><td>2.5</td><td>4.5</td><td>4.3</td><td>4.5</td><td><span class="badge badge-blue">Solid</span></td></tr>
+<tr><td>EMP-0082</td><td>ชัยยศ ทองดี</td><td>Finance</td><td>4.17</td><td>3.1</td><td>4.9</td><td>5.0</td><td>3.7</td><td><span class="badge badge-green">Top</span></td></tr>
+<tr><td>EMP-0083</td><td>ชัยวัฒน์ สุขสมบูรณ์</td><td>Finance</td><td>3.2</td><td>4.1</td><td>3.6</td><td>2.4</td><td>2.7</td><td><span class="badge badge-amber">Develop</span></td></tr>
+<tr><td>EMP-0084</td><td>ชัยณรงค์ จันทร์สว่าง</td><td>Finance</td><td>3.7</td><td>3.1</td><td>2.3</td><td>4.8</td><td>4.6</td><td><span class="badge badge-blue">Solid</span></td></tr>
+<tr><td>EMP-0085</td><td>ชัยวัฒน์ รุ่งโรจน์</td><td>HR</td><td>4.05</td><td>4.5</td><td>3.7</td><td>4.2</td><td>3.8</td><td><span class="badge badge-green">Top</span></td></tr>
+<tr><td>EMP-0086</td><td>ประจวบ แก้วมณี</td><td>HR</td><td>3.15</td><td>2.7</td><td>2.6</td><td>3.3</td><td>4.0</td><td><span class="badge badge-amber">Develop</span></td></tr>
+<tr><td>EMP-0087</td><td>พรชิตา สมบูรณ์</td><td>HR</td><td>3.53</td><td>3.9</td><td>4.9</td><td>2.8</td><td>2.5</td><td><span class="badge badge-blue">Solid</span></td></tr>
+<tr><td>EMP-0088</td><td>ธนากร วงศ์สุวรรณ</td><td>HR</td><td>3.42</td><td>4.9</td><td>3.5</td><td>2.5</td><td>2.8</td><td><span class="badge badge-blue">Solid</span></td></tr>
+<tr><td>EMP-0089</td><td>สมศักดิ์ แสงจันทร์</td><td>HR</td><td>3.42</td><td>2.9</td><td>4.6</td><td>2.1</td><td>4.1</td><td><span class="badge badge-blue">Solid</span></td></tr>
+<tr><td>EMP-0090</td><td>ธนากร พุ่มน้อย</td><td>HR</td><td>3.62</td><td>2.2</td><td>3.9</td><td>4.5</td><td>3.9</td><td><span class="badge badge-blue">Solid</span></td></tr>
+<tr><td>EMP-0091</td><td>ชัยณรงค์ จันทร์สว่าง</td><td>HR</td><td>3.8</td><td>2.8</td><td>4.9</td><td>4.8</td><td>2.7</td><td><span class="badge badge-blue">Solid</span></td></tr>
+<tr><td>EMP-0092</td><td>วรรณ์วิภา แก้วประเสริฐ</td><td>HR</td><td>3.25</td><td>3.1</td><td>4.9</td><td>2.1</td><td>2.9</td><td><span class="badge badge-amber">Develop</span></td></tr>
+<tr><td>EMP-0093</td><td>วราภรณ์ ทองประเสริฐ</td><td>R&D</td><td>3.8</td><td>3.6</td><td>4.8</td><td>2.4</td><td>4.4</td><td><span class="badge badge-blue">Solid</span></td></tr>
+<tr><td>EMP-0094</td><td>สุรัติยา แก้วมณี</td><td>R&D</td><td>3.75</td><td>4.0</td><td>4.2</td><td>3.6</td><td>3.2</td><td><span class="badge badge-blue">Solid</span></td></tr>
+<tr><td>EMP-0095</td><td>ปิยาภรณ์ รุ่งเรือง</td><td>R&D</td><td>3.73</td><td>3.7</td><td>3.5</td><td>4.9</td><td>2.8</td><td><span class="badge badge-blue">Solid</span></td></tr>
+<tr><td>EMP-0096</td><td>สุพิชชา วงศ์วิโรจน์</td><td>R&D</td><td>4.03</td><td>3.0</td><td>4.7</td><td>4.3</td><td>4.1</td><td><span class="badge badge-green">Top</span></td></tr>
+<tr><td>EMP-0097</td><td>วรรณี แสงจันทร์</td><td>R&D</td><td>4.05</td><td>4.7</td><td>4.6</td><td>2.8</td><td>4.1</td><td><span class="badge badge-green">Top</span></td></tr>
+<tr><td>EMP-0098</td><td>ประทุม วงศ์สุวรรณ</td><td>R&D</td><td>3.45</td><td>2.1</td><td>4.6</td><td>2.2</td><td>4.9</td><td><span class="badge badge-blue">Solid</span></td></tr>
+<tr><td>EMP-0099</td><td>วาสนา สมบูรณ์</td><td>R&D</td><td>2.77</td><td>2.9</td><td>2.4</td><td>2.2</td><td>3.6</td><td><span class="badge badge-amber">Develop</span></td></tr>
+<tr><td>EMP-0100</td><td>กิตติพงศ์ พรหมมา</td><td>R&D</td><td>2.73</td><td>2.4</td><td>3.5</td><td>2.4</td><td>2.6</td><td><span class="badge badge-amber">Develop</span></td></tr>
+</tbody>
       </table>
     </div>
   </div>
@@ -347,7 +439,7 @@
     </div>
   </div>
   <div class="grid grid-cols-2 lg:grid-cols-4 gap-4">
-    <div class="card text-center"><div class="text-sm text-slate-400">Match Rate</div><div class="kpi-num text-emerald-600">87%</div></div>
+    <div class="card text-center"><div class="text-sm text-slate-400">Match Rate</div><div class="kpi-num text-emerald-600">66%</div></div>
     <div class="card text-center"><div class="text-sm text-slate-400" data-i18n="matchedQ1">จับคู่สำเร็จ Q1</div><div class="kpi-num text-pp7-600">94</div></div>
     <div class="card text-center"><div class="text-sm text-slate-400">Conversion Rate</div><div class="kpi-num text-violet-600">73%</div></div>
     <div class="card text-center"><div class="text-sm text-slate-400" data-i18n="avgMatchScore">Avg Match Score</div><div class="kpi-num text-blue-600">0.82</div></div>
@@ -394,13 +486,107 @@
     <div class="overflow-x-auto">
       <table id="perf-table" data-sortable="true">
         <thead><tr><th data-i18n="id">ID</th><th data-i18n="name">ชื่อ-สกุล</th><th data-i18n="dept">ฝ่าย</th><th>KPI Score</th><th>Behavior</th><th>Total</th><th data-i18n="level">ระดับ</th><th>Trend</th></tr></thead>
-        <tbody>
-          <tr><td>P-001</td><td>อนุชา รัตนมาลี</td><td>Tech</td><td>4.3</td><td>4.1</td><td>4.2</td><td><span class="badge badge-green">Exceeds</span></td><td>▲ 3.9→4.2</td></tr>
-          <tr><td>P-002</td><td>สุภาพร ดอกแก้ว</td><td>Sales</td><td>3.5</td><td>3.3</td><td>3.4</td><td><span class="badge badge-blue">Meets</span></td><td>▼ 3.6→3.4</td></tr>
-          <tr><td>P-003</td><td>ธนวัฒน์ สุขสมบูรณ์</td><td>Operations</td><td>3.9</td><td>3.7</td><td>3.8</td><td><span class="badge badge-green">Exceeds</span></td><td>▲ 3.5→3.8</td></tr>
-          <tr><td>P-004</td><td>ปิยะนุช แสงจันทร์</td><td>Finance</td><td>2.8</td><td>3.0</td><td>2.9</td><td><span class="badge badge-amber">Develop</span></td><td>→ 2.9</td></tr>
-          <tr><td>P-005</td><td>กิตติพงศ์ มั่นคง</td><td>R&D</td><td>4.1</td><td>3.9</td><td>4.0</td><td><span class="badge badge-green">Exceeds</span></td><td>▲ 3.7→4.0</td></tr>
-        </tbody>
+        <tbody><tr><td>EMP-0001</td><td>ธนพล สุขสมบูรณ์</td><td>Tech</td><td>3.5</td><td>2.1</td><td>2.8</td><td><span class="badge badge-amber">Develop</span></td><td>▲ 2.3→2.8</td></tr>
+<tr><td>EMP-0002</td><td>ประทุม สุขสมบูรณ์</td><td>Tech</td><td>4.5</td><td>3.8</td><td>4.2</td><td><span class="badge badge-green">Exceeds</span></td><td>▲ 4.0→4.2</td></tr>
+<tr><td>EMP-0003</td><td>ปิยะนุช แก้วมณี</td><td>Tech</td><td>2.7</td><td>2.3</td><td>2.5</td><td><span class="badge badge-amber">Develop</span></td><td>▲ 2.3→2.5</td></tr>
+<tr><td>EMP-0004</td><td>นภัสสร แก้วประเสริฐ</td><td>Tech</td><td>4.8</td><td>4.1</td><td>4.4</td><td><span class="badge badge-green">Exceeds</span></td><td>▲ 4.2→4.4</td></tr>
+<tr><td>EMP-0005</td><td>กัลยา มั่นคง</td><td>Tech</td><td>2.7</td><td>3.7</td><td>3.2</td><td><span class="badge badge-amber">Develop</span></td><td>▲ 3.0→3.2</td></tr>
+<tr><td>EMP-0006</td><td>ปิยาภรณ์ วงศ์สุวรรณ</td><td>Tech</td><td>3.1</td><td>5.0</td><td>4.0</td><td><span class="badge badge-green">Exceeds</span></td><td>▲ 3.6→4.0</td></tr>
+<tr><td>EMP-0007</td><td>นภาพร แก้วประเสริฐ</td><td>Tech</td><td>4.9</td><td>4.3</td><td>4.6</td><td><span class="badge badge-green">Exceeds</span></td><td>▲ 4.3→4.6</td></tr>
+<tr><td>EMP-0008</td><td>กิตติชัย ศรีจันทร์</td><td>Tech</td><td>3.1</td><td>5.0</td><td>4.0</td><td><span class="badge badge-green">Exceeds</span></td><td>▲ 3.5→4.0</td></tr>
+<tr><td>EMP-0009</td><td>สุรชัย แก้วมณี</td><td>Tech</td><td>4.9</td><td>4.8</td><td>4.8</td><td><span class="badge badge-green">Exceeds</span></td><td>▲ 4.6→4.8</td></tr>
+<tr><td>EMP-0010</td><td>นิตยา ทองดี</td><td>Tech</td><td>3.9</td><td>2.7</td><td>3.3</td><td><span class="badge badge-blue">Meets</span></td><td>▲ 2.9→3.3</td></tr>
+<tr><td>EMP-0011</td><td>นฤมล รัตนมาลี</td><td>Tech</td><td>3.3</td><td>3.4</td><td>3.3</td><td><span class="badge badge-blue">Meets</span></td><td>▲ 2.9→3.3</td></tr>
+<tr><td>EMP-0012</td><td>วลัยพร มั่นคง</td><td>Tech</td><td>4.6</td><td>3.7</td><td>4.2</td><td><span class="badge badge-green">Exceeds</span></td><td>▲ 3.8→4.2</td></tr>
+<tr><td>EMP-0013</td><td>ปิยะ พุ่มน้อย</td><td>Tech</td><td>3.4</td><td>3.3</td><td>3.3</td><td><span class="badge badge-blue">Meets</span></td><td>▲ 3.1→3.3</td></tr>
+<tr><td>EMP-0014</td><td>อนุวัฒน์ รัตนมาลี</td><td>Tech</td><td>2.2</td><td>3.5</td><td>2.9</td><td><span class="badge badge-amber">Develop</span></td><td>▲ 2.6→2.9</td></tr>
+<tr><td>EMP-0015</td><td>อนุพงศ์ รุ่งเรือง</td><td>Tech</td><td>4.0</td><td>2.9</td><td>3.5</td><td><span class="badge badge-blue">Meets</span></td><td>▲ 3.2→3.5</td></tr>
+<tr><td>EMP-0016</td><td>พิชัย จันทร์เพ็ญ</td><td>Tech</td><td>2.7</td><td>2.9</td><td>2.8</td><td><span class="badge badge-amber">Develop</span></td><td>▲ 2.4→2.8</td></tr>
+<tr><td>EMP-0017</td><td>สิทธิชัย ธรรมรักษ์</td><td>Tech</td><td>3.7</td><td>2.8</td><td>3.2</td><td><span class="badge badge-amber">Develop</span></td><td>▲ 3.0→3.2</td></tr>
+<tr><td>EMP-0018</td><td>วิชัย ธรรมรักษ์</td><td>Tech</td><td>4.9</td><td>2.5</td><td>3.7</td><td><span class="badge badge-blue">Meets</span></td><td>▲ 3.3→3.7</td></tr>
+<tr><td>EMP-0019</td><td>วรรณี สมบูรณ์</td><td>Tech</td><td>4.7</td><td>2.6</td><td>3.7</td><td><span class="badge badge-blue">Meets</span></td><td>▲ 3.5→3.7</td></tr>
+<tr><td>EMP-0020</td><td>วิสุทธิ์ ศรีจันทร์</td><td>Tech</td><td>4.8</td><td>4.4</td><td>4.6</td><td><span class="badge badge-green">Exceeds</span></td><td>▲ 4.4→4.6</td></tr>
+<tr><td>EMP-0021</td><td>สมชาย พรหมมา</td><td>Tech</td><td>2.2</td><td>4.3</td><td>3.2</td><td><span class="badge badge-amber">Develop</span></td><td>▲ 2.8→3.2</td></tr>
+<tr><td>EMP-0022</td><td>ธนากร จันทร์เพ็ญ</td><td>Tech</td><td>3.5</td><td>3.2</td><td>3.4</td><td><span class="badge badge-blue">Meets</span></td><td>▲ 3.1→3.4</td></tr>
+<tr><td>EMP-0023</td><td>วิไลวรรณ แก้วประเสริฐ</td><td>Tech</td><td>2.4</td><td>4.7</td><td>3.5</td><td><span class="badge badge-blue">Meets</span></td><td>▲ 3.0→3.5</td></tr>
+<tr><td>EMP-0024</td><td>วิชัย วงศ์สุวรรณ</td><td>Tech</td><td>2.9</td><td>3.3</td><td>3.1</td><td><span class="badge badge-amber">Develop</span></td><td>▲ 2.9→3.1</td></tr>
+<tr><td>EMP-0025</td><td>กิตติ ธรรมรักษ์</td><td>Tech</td><td>2.7</td><td>2.6</td><td>2.7</td><td><span class="badge badge-amber">Develop</span></td><td>▲ 2.3→2.7</td></tr>
+<tr><td>EMP-0026</td><td>พิชัย ทองดี</td><td>Tech</td><td>4.7</td><td>4.3</td><td>4.5</td><td><span class="badge badge-green">Exceeds</span></td><td>▲ 4.3→4.5</td></tr>
+<tr><td>EMP-0027</td><td>วิชัย ดอกแก้ว</td><td>Tech</td><td>4.2</td><td>3.5</td><td>3.9</td><td><span class="badge badge-blue">Meets</span></td><td>▲ 3.7→3.9</td></tr>
+<tr><td>EMP-0028</td><td>สมหมาย ทองดี</td><td>Tech</td><td>2.7</td><td>3.0</td><td>2.9</td><td><span class="badge badge-amber">Develop</span></td><td>▲ 2.7→2.9</td></tr>
+<tr><td>EMP-0029</td><td>วรรณี รุ่งโรจน์</td><td>Sales</td><td>4.8</td><td>2.1</td><td>3.5</td><td><span class="badge badge-blue">Meets</span></td><td>▲ 3.3→3.5</td></tr>
+<tr><td>EMP-0030</td><td>ประเสริฐ พรหมมา</td><td>Sales</td><td>3.2</td><td>2.5</td><td>2.9</td><td><span class="badge badge-amber">Develop</span></td><td>▲ 2.6→2.9</td></tr>
+<tr><td>EMP-0031</td><td>วลัยพร วงศ์วิโรจน์</td><td>Sales</td><td>3.0</td><td>4.6</td><td>3.8</td><td><span class="badge badge-blue">Meets</span></td><td>▲ 3.3→3.8</td></tr>
+<tr><td>EMP-0032</td><td>สมหมาย จันทร์เพ็ญ</td><td>Sales</td><td>2.6</td><td>2.1</td><td>2.4</td><td><span class="badge badge-amber">Develop</span></td><td>▲ 2.0→2.4</td></tr>
+<tr><td>EMP-0033</td><td>กิตติ ทองดี</td><td>Sales</td><td>4.8</td><td>3.7</td><td>4.2</td><td><span class="badge badge-green">Exceeds</span></td><td>▲ 3.9→4.2</td></tr>
+<tr><td>EMP-0034</td><td>ประทุม รุ่งโรจน์</td><td>Sales</td><td>3.6</td><td>4.0</td><td>3.8</td><td><span class="badge badge-blue">Meets</span></td><td>▲ 3.4→3.8</td></tr>
+<tr><td>EMP-0035</td><td>ธนวัฒน์ รุ่งเรือง</td><td>Sales</td><td>4.8</td><td>4.3</td><td>4.5</td><td><span class="badge badge-green">Exceeds</span></td><td>▲ 4.1→4.5</td></tr>
+<tr><td>EMP-0036</td><td>วิไล แก้วมณี</td><td>Sales</td><td>3.1</td><td>2.8</td><td>3.0</td><td><span class="badge badge-amber">Develop</span></td><td>▲ 2.6→3.0</td></tr>
+<tr><td>EMP-0037</td><td>ณัฐกานต์ รัตนมาลี</td><td>Sales</td><td>2.3</td><td>2.7</td><td>2.5</td><td><span class="badge badge-amber">Develop</span></td><td>▲ 2.3→2.5</td></tr>
+<tr><td>EMP-0038</td><td>ณัฐกานต์ จันทร์สว่าง</td><td>Sales</td><td>4.9</td><td>4.1</td><td>4.5</td><td><span class="badge badge-green">Exceeds</span></td><td>▲ 4.1→4.5</td></tr>
+<tr><td>EMP-0039</td><td>ณัฐกานต์ ศรีจันทร์</td><td>Sales</td><td>2.2</td><td>2.9</td><td>2.5</td><td><span class="badge badge-amber">Develop</span></td><td>▲ 2.4→2.5</td></tr>
+<tr><td>EMP-0040</td><td>สุภาพร วงศ์วิโรจน์</td><td>Sales</td><td>3.5</td><td>3.7</td><td>3.6</td><td><span class="badge badge-blue">Meets</span></td><td>▲ 3.3→3.6</td></tr>
+<tr><td>EMP-0041</td><td>สุรชัย ดอกแก้ว</td><td>Sales</td><td>2.9</td><td>3.9</td><td>3.4</td><td><span class="badge badge-blue">Meets</span></td><td>▲ 3.1→3.4</td></tr>
+<tr><td>EMP-0042</td><td>นภัสสร สุขสมบูรณ์</td><td>Sales</td><td>2.7</td><td>4.1</td><td>3.4</td><td><span class="badge badge-blue">Meets</span></td><td>▲ 3.0→3.4</td></tr>
+<tr><td>EMP-0043</td><td>ธนพล วงศ์วิโรจน์</td><td>Sales</td><td>4.2</td><td>3.7</td><td>4.0</td><td><span class="badge badge-green">Exceeds</span></td><td>▲ 3.8→4.0</td></tr>
+<tr><td>EMP-0044</td><td>สุรศักดิ์ ธรรมรักษ์</td><td>Sales</td><td>4.6</td><td>3.8</td><td>4.2</td><td><span class="badge badge-green">Exceeds</span></td><td>▲ 4.0→4.2</td></tr>
+<tr><td>EMP-0045</td><td>สุรกิจ ใจดี</td><td>Sales</td><td>3.2</td><td>3.0</td><td>3.1</td><td><span class="badge badge-amber">Develop</span></td><td>▲ 2.9→3.1</td></tr>
+<tr><td>EMP-0046</td><td>วีระ พรหมมา</td><td>Sales</td><td>4.0</td><td>3.6</td><td>3.8</td><td><span class="badge badge-blue">Meets</span></td><td>▲ 3.6→3.8</td></tr>
+<tr><td>EMP-0047</td><td>ธนพล ทองดี</td><td>Sales</td><td>4.4</td><td>4.1</td><td>4.2</td><td><span class="badge badge-green">Exceeds</span></td><td>▲ 4.0→4.2</td></tr>
+<tr><td>EMP-0048</td><td>นภาพร ทองดี</td><td>Sales</td><td>2.7</td><td>3.7</td><td>3.2</td><td><span class="badge badge-amber">Develop</span></td><td>▲ 2.7→3.2</td></tr>
+<tr><td>EMP-0049</td><td>พิชัย สุขสมบูรณ์</td><td>Sales</td><td>4.6</td><td>3.3</td><td>3.9</td><td><span class="badge badge-blue">Meets</span></td><td>▲ 3.6→3.9</td></tr>
+<tr><td>EMP-0050</td><td>วราภรณ์ รัตนมาลี</td><td>Sales</td><td>3.2</td><td>4.0</td><td>3.6</td><td><span class="badge badge-blue">Meets</span></td><td>▲ 3.5→3.6</td></tr>
+<tr><td>EMP-0051</td><td>กฤติยา วงศ์วิโรจน์</td><td>Operations</td><td>2.2</td><td>4.3</td><td>3.2</td><td><span class="badge badge-amber">Develop</span></td><td>▲ 2.8→3.2</td></tr>
+<tr><td>EMP-0052</td><td>ธนพร แก้วประเสริฐ</td><td>Operations</td><td>2.7</td><td>2.3</td><td>2.5</td><td><span class="badge badge-amber">Develop</span></td><td>▲ 2.4→2.5</td></tr>
+<tr><td>EMP-0053</td><td>อรุณี รุ่งโรจน์</td><td>Operations</td><td>2.5</td><td>2.5</td><td>2.5</td><td><span class="badge badge-amber">Develop</span></td><td>▲ 2.3→2.5</td></tr>
+<tr><td>EMP-0054</td><td>ชัยวัฒน์ วงศ์สุวรรณ</td><td>Operations</td><td>2.2</td><td>4.8</td><td>3.5</td><td><span class="badge badge-blue">Meets</span></td><td>▲ 3.3→3.5</td></tr>
+<tr><td>EMP-0055</td><td>ประจวบ แสงจันทร์</td><td>Operations</td><td>4.5</td><td>3.2</td><td>3.9</td><td><span class="badge badge-blue">Meets</span></td><td>▲ 3.5→3.9</td></tr>
+<tr><td>EMP-0056</td><td>ประมวล ใจดี</td><td>Operations</td><td>4.5</td><td>3.9</td><td>4.2</td><td><span class="badge badge-green">Exceeds</span></td><td>▲ 3.8→4.2</td></tr>
+<tr><td>EMP-0057</td><td>ชัยวัฒน์ จันทร์สว่าง</td><td>Operations</td><td>3.5</td><td>2.8</td><td>3.1</td><td><span class="badge badge-amber">Develop</span></td><td>▲ 2.7→3.1</td></tr>
+<tr><td>EMP-0058</td><td>ชัยยศ มั่นคง</td><td>Operations</td><td>4.4</td><td>3.1</td><td>3.8</td><td><span class="badge badge-blue">Meets</span></td><td>▲ 3.6→3.8</td></tr>
+<tr><td>EMP-0059</td><td>พิชัย แก้วประเสริฐ</td><td>Operations</td><td>3.8</td><td>3.9</td><td>3.8</td><td><span class="badge badge-blue">Meets</span></td><td>▲ 3.5→3.8</td></tr>
+<tr><td>EMP-0060</td><td>วิทยา วงศ์สุวรรณ</td><td>Operations</td><td>4.2</td><td>4.8</td><td>4.5</td><td><span class="badge badge-green">Exceeds</span></td><td>▲ 4.1→4.5</td></tr>
+<tr><td>EMP-0061</td><td>รัตนา ใจดี</td><td>Operations</td><td>4.9</td><td>3.1</td><td>4.0</td><td><span class="badge badge-green">Exceeds</span></td><td>▲ 3.5→4.0</td></tr>
+<tr><td>EMP-0062</td><td>นภาพร ทองดี</td><td>Operations</td><td>4.3</td><td>2.6</td><td>3.5</td><td><span class="badge badge-blue">Meets</span></td><td>▲ 3.3→3.5</td></tr>
+<tr><td>EMP-0063</td><td>วรรณ์วิภา จันทร์เพ็ญ</td><td>Operations</td><td>2.7</td><td>3.0</td><td>2.9</td><td><span class="badge badge-amber">Develop</span></td><td>▲ 2.4→2.9</td></tr>
+<tr><td>EMP-0064</td><td>พิชัย ใจดี</td><td>Operations</td><td>3.6</td><td>3.4</td><td>3.5</td><td><span class="badge badge-blue">Meets</span></td><td>▲ 3.2→3.5</td></tr>
+<tr><td>EMP-0065</td><td>รัตนา ใจดี</td><td>Operations</td><td>3.1</td><td>3.8</td><td>3.5</td><td><span class="badge badge-blue">Meets</span></td><td>▲ 3.4→3.5</td></tr>
+<tr><td>EMP-0066</td><td>วิทยา ทองประเสริฐ</td><td>Operations</td><td>2.9</td><td>2.9</td><td>2.9</td><td><span class="badge badge-amber">Develop</span></td><td>▲ 2.7→2.9</td></tr>
+<tr><td>EMP-0067</td><td>สุรชัย แก้วมณี</td><td>Operations</td><td>3.2</td><td>4.6</td><td>3.9</td><td><span class="badge badge-blue">Meets</span></td><td>▲ 3.6→3.9</td></tr>
+<tr><td>EMP-0068</td><td>ประภัสสร ศรีจันทร์</td><td>Operations</td><td>4.3</td><td>3.7</td><td>4.0</td><td><span class="badge badge-green">Exceeds</span></td><td>▲ 3.8→4.0</td></tr>
+<tr><td>EMP-0069</td><td>อนุชา แก้วประเสริฐ</td><td>Operations</td><td>4.6</td><td>3.7</td><td>4.2</td><td><span class="badge badge-green">Exceeds</span></td><td>▲ 3.9→4.2</td></tr>
+<tr><td>EMP-0070</td><td>พรชิตา รัตนมาลี</td><td>Operations</td><td>2.5</td><td>3.9</td><td>3.2</td><td><span class="badge badge-amber">Develop</span></td><td>▲ 3.0→3.2</td></tr>
+<tr><td>EMP-0071</td><td>ชัยณรงค์ ศิริชัย</td><td>Finance</td><td>2.1</td><td>3.2</td><td>2.7</td><td><span class="badge badge-amber">Develop</span></td><td>▲ 2.2→2.7</td></tr>
+<tr><td>EMP-0072</td><td>สุรัติยา สุขสมบูรณ์</td><td>Finance</td><td>4.0</td><td>3.1</td><td>3.5</td><td><span class="badge badge-blue">Meets</span></td><td>▲ 3.1→3.5</td></tr>
+<tr><td>EMP-0073</td><td>พิชัย มั่นคง</td><td>Finance</td><td>4.5</td><td>4.8</td><td>4.7</td><td><span class="badge badge-green">Exceeds</span></td><td>▲ 4.2→4.7</td></tr>
+<tr><td>EMP-0074</td><td>ณัฐกานต์ แก้วมณี</td><td>Finance</td><td>4.3</td><td>3.1</td><td>3.7</td><td><span class="badge badge-blue">Meets</span></td><td>▲ 3.5→3.7</td></tr>
+<tr><td>EMP-0075</td><td>สุภาวดี รัตนมาลี</td><td>Finance</td><td>4.6</td><td>3.9</td><td>4.2</td><td><span class="badge badge-green">Exceeds</span></td><td>▲ 3.9→4.2</td></tr>
+<tr><td>EMP-0076</td><td>ภาวิณี แก้วมณี</td><td>Finance</td><td>4.5</td><td>2.2</td><td>3.4</td><td><span class="badge badge-blue">Meets</span></td><td>▲ 3.2→3.4</td></tr>
+<tr><td>EMP-0077</td><td>ประจวบ วงศ์วิโรจน์</td><td>Finance</td><td>2.2</td><td>2.3</td><td>2.2</td><td><span class="badge badge-amber">Develop</span></td><td>▲ 1.9→2.2</td></tr>
+<tr><td>EMP-0078</td><td>สุรกิจ ศรีสุข</td><td>Finance</td><td>3.0</td><td>3.8</td><td>3.4</td><td><span class="badge badge-blue">Meets</span></td><td>▲ 3.2→3.4</td></tr>
+<tr><td>EMP-0079</td><td>ปรียา แสงจันทร์</td><td>Finance</td><td>4.0</td><td>2.4</td><td>3.2</td><td><span class="badge badge-amber">Develop</span></td><td>▲ 2.8→3.2</td></tr>
+<tr><td>EMP-0080</td><td>ธนากร วงศ์สุวรรณ</td><td>Finance</td><td>3.5</td><td>2.7</td><td>3.1</td><td><span class="badge badge-amber">Develop</span></td><td>▲ 2.9→3.1</td></tr>
+<tr><td>EMP-0081</td><td>วิไลวรรณ ธรรมรักษ์</td><td>Finance</td><td>2.5</td><td>3.3</td><td>2.9</td><td><span class="badge badge-amber">Develop</span></td><td>▲ 2.5→2.9</td></tr>
+<tr><td>EMP-0082</td><td>ชัยยศ ทองดี</td><td>Finance</td><td>2.8</td><td>3.1</td><td>3.0</td><td><span class="badge badge-amber">Develop</span></td><td>▲ 2.7→3.0</td></tr>
+<tr><td>EMP-0083</td><td>ชัยวัฒน์ สุขสมบูรณ์</td><td>Finance</td><td>2.5</td><td>3.3</td><td>2.9</td><td><span class="badge badge-amber">Develop</span></td><td>▲ 2.5→2.9</td></tr>
+<tr><td>EMP-0084</td><td>ชัยณรงค์ จันทร์สว่าง</td><td>Finance</td><td>3.9</td><td>4.4</td><td>4.2</td><td><span class="badge badge-green">Exceeds</span></td><td>▲ 3.8→4.2</td></tr>
+<tr><td>EMP-0085</td><td>ชัยวัฒน์ รุ่งโรจน์</td><td>HR</td><td>2.3</td><td>2.9</td><td>2.6</td><td><span class="badge badge-amber">Develop</span></td><td>▲ 2.1→2.6</td></tr>
+<tr><td>EMP-0086</td><td>ประจวบ แก้วมณี</td><td>HR</td><td>2.7</td><td>3.2</td><td>3.0</td><td><span class="badge badge-amber">Develop</span></td><td>▲ 2.7→3.0</td></tr>
+<tr><td>EMP-0087</td><td>พรชิตา สมบูรณ์</td><td>HR</td><td>4.4</td><td>3.0</td><td>3.7</td><td><span class="badge badge-blue">Meets</span></td><td>▲ 3.5→3.7</td></tr>
+<tr><td>EMP-0088</td><td>ธนากร วงศ์สุวรรณ</td><td>HR</td><td>4.1</td><td>4.8</td><td>4.4</td><td><span class="badge badge-green">Exceeds</span></td><td>▲ 4.0→4.4</td></tr>
+<tr><td>EMP-0089</td><td>สมศักดิ์ แสงจันทร์</td><td>HR</td><td>2.8</td><td>4.4</td><td>3.6</td><td><span class="badge badge-blue">Meets</span></td><td>▲ 3.3→3.6</td></tr>
+<tr><td>EMP-0090</td><td>ธนากร พุ่มน้อย</td><td>HR</td><td>3.0</td><td>2.2</td><td>2.6</td><td><span class="badge badge-amber">Develop</span></td><td>▲ 2.4→2.6</td></tr>
+<tr><td>EMP-0091</td><td>ชัยณรงค์ จันทร์สว่าง</td><td>HR</td><td>3.9</td><td>3.1</td><td>3.5</td><td><span class="badge badge-blue">Meets</span></td><td>▲ 3.1→3.5</td></tr>
+<tr><td>EMP-0092</td><td>วรรณ์วิภา แก้วประเสริฐ</td><td>HR</td><td>3.3</td><td>3.1</td><td>3.2</td><td><span class="badge badge-amber">Develop</span></td><td>▲ 3.0→3.2</td></tr>
+<tr><td>EMP-0093</td><td>วราภรณ์ ทองประเสริฐ</td><td>R&D</td><td>4.1</td><td>2.6</td><td>3.3</td><td><span class="badge badge-blue">Meets</span></td><td>▲ 2.8→3.3</td></tr>
+<tr><td>EMP-0094</td><td>สุรัติยา แก้วมณี</td><td>R&D</td><td>2.9</td><td>2.5</td><td>2.7</td><td><span class="badge badge-amber">Develop</span></td><td>▲ 2.4→2.7</td></tr>
+<tr><td>EMP-0095</td><td>ปิยาภรณ์ รุ่งเรือง</td><td>R&D</td><td>4.7</td><td>2.2</td><td>3.5</td><td><span class="badge badge-blue">Meets</span></td><td>▲ 3.2→3.5</td></tr>
+<tr><td>EMP-0096</td><td>สุพิชชา วงศ์วิโรจน์</td><td>R&D</td><td>2.5</td><td>4.9</td><td>3.7</td><td><span class="badge badge-blue">Meets</span></td><td>▲ 3.5→3.7</td></tr>
+<tr><td>EMP-0097</td><td>วรรณี แสงจันทร์</td><td>R&D</td><td>3.7</td><td>2.4</td><td>3.0</td><td><span class="badge badge-amber">Develop</span></td><td>▲ 2.7→3.0</td></tr>
+<tr><td>EMP-0098</td><td>ประทุม วงศ์สุวรรณ</td><td>R&D</td><td>4.3</td><td>2.8</td><td>3.5</td><td><span class="badge badge-blue">Meets</span></td><td>▲ 3.1→3.5</td></tr>
+<tr><td>EMP-0099</td><td>วาสนา สมบูรณ์</td><td>R&D</td><td>3.5</td><td>2.6</td><td>3.0</td><td><span class="badge badge-amber">Develop</span></td><td>▲ 2.7→3.0</td></tr>
+<tr><td>EMP-0100</td><td>กิตติพงศ์ พรหมมา</td><td>R&D</td><td>4.8</td><td>4.6</td><td>4.7</td><td><span class="badge badge-green">Exceeds</span></td><td>▲ 4.4→4.7</td></tr>
+</tbody>
       </table>
     </div>
   </div>
@@ -427,13 +613,37 @@
     <div class="overflow-x-auto">
       <table id="dev-table" data-sortable="true">
         <thead><tr><th data-i18n="id">ID</th><th data-i18n="name">ชื่อ-สกุล</th><th data-i18n="course">คอร์ส</th><th data-i18n="hours">ชั่วโมง</th><th data-i18n="score">คะแนน</th><th data-i18n="status">สถานะ</th><th data-i18n="completed">เสร็จสิ้น</th></tr></thead>
-        <tbody>
-          <tr><td>D-001</td><td>อนุชา รัตนมาลี</td><td>AWS Solutions Architect</td><td>40</td><td>4.5</td><td><span class="badge badge-green" data-i18n="done">เสร็จสิ้น</span></td><td>2026-03-15</td></tr>
-          <tr><td>D-002</td><td>สุภาพร ดอกแก้ว</td><td>Advanced Sales Strategy</td><td>24</td><td>4.0</td><td><span class="badge badge-green" data-i18n="done">เสร็จสิ้น</span></td><td>2026-03-22</td></tr>
-          <tr><td>D-003</td><td>ปิยะนุช แสงจันทร์</td><td>Finance Leadership Program</td><td>32</td><td>3.2</td><td><span class="badge badge-amber" data-i18n="inProgress">กำลังเรียน</span></td><td>—</td></tr>
-          <tr><td>D-004</td><td>กิตติพงศ์ มั่นคง</td><td>Machine Learning Spec.</td><td>48</td><td>4.7</td><td><span class="badge badge-green" data-i18n="done">เสร็จสิ้น</span></td><td>2026-04-01</td></tr>
-          <tr><td>D-005</td><td>ณัฐพล วงศ์สุวรรณ</td><td>Kubernetes Certification</td><td>36</td><td>3.8</td><td><span class="badge badge-amber" data-i18n="inProgress">กำลังเรียน</span></td><td>—</td></tr>
-        </tbody>
+        <tbody><tr><td>D-001</td><td>วรรณ์วิภา จันทร์เพ็ญ</td><td>AWS Solutions Architect</td><td>32</td><td>3.4</td><td><span class="badge badge-amber">กำลังเรียน</span></td><td>—</td></tr>
+<tr><td>D-002</td><td>กิตติชัย ศรีจันทร์</td><td>Advanced Sales Strategy</td><td>32</td><td>4.7</td><td><span class="badge badge-green">เสร็จสิ้น</span></td><td>2026-03-05</td></tr>
+<tr><td>D-003</td><td>วิไลวรรณ แก้วประเสริฐ</td><td>Finance Leadership Program</td><td>48</td><td>3.4</td><td><span class="badge badge-green">เสร็จสิ้น</span></td><td>2026-02-18</td></tr>
+<tr><td>D-004</td><td>กิตติ ทองดี</td><td>Machine Learning Specialization</td><td>20</td><td>3.8</td><td><span class="badge badge-amber">กำลังเรียน</span></td><td>—</td></tr>
+<tr><td>D-005</td><td>พิชัย ใจดี</td><td>Kubernetes Certification</td><td>28</td><td>4.7</td><td><span class="badge badge-green">เสร็จสิ้น</span></td><td>2026-03-04</td></tr>
+<tr><td>D-006</td><td>ธนพร แก้วประเสริฐ</td><td>Agile/Scrum Master</td><td>20</td><td>4.8</td><td><span class="badge badge-green">เสร็จสิ้น</span></td><td>2026-03-12</td></tr>
+<tr><td>D-007</td><td>ธนวัฒน์ รุ่งเรือง</td><td>Leadership Excellence</td><td>48</td><td>5.0</td><td><span class="badge badge-amber">กำลังเรียน</span></td><td>—</td></tr>
+<tr><td>D-008</td><td>วิทยา ทองประเสริฐ</td><td>Data Analytics with Python</td><td>24</td><td>4.4</td><td><span class="badge badge-green">เสร็จสิ้น</span></td><td>2026-01-06</td></tr>
+<tr><td>D-009</td><td>ชัยณรงค์ ศิริชัย</td><td>Digital Marketing Pro</td><td>32</td><td>3.1</td><td><span class="badge badge-green">เสร็จสิ้น</span></td><td>2026-03-21</td></tr>
+<tr><td>D-010</td><td>ชัยวัฒน์ จันทร์สว่าง</td><td>Project Management (PMP)</td><td>32</td><td>4.4</td><td><span class="badge badge-amber">กำลังเรียน</span></td><td>—</td></tr>
+<tr><td>D-011</td><td>ชัยวัฒน์ สุขสมบูรณ์</td><td>Negotiation Skills</td><td>24</td><td>5.0</td><td><span class="badge badge-green">เสร็จสิ้น</span></td><td>2026-03-13</td></tr>
+<tr><td>D-012</td><td>พิชัย มั่นคง</td><td>Financial Modeling</td><td>48</td><td>3.2</td><td><span class="badge badge-green">เสร็จสิ้น</span></td><td>2026-02-08</td></tr>
+<tr><td>D-013</td><td>วลัยพร มั่นคง</td><td>UI/UX Design Mastery</td><td>32</td><td>3.4</td><td><span class="badge badge-amber">กำลังเรียน</span></td><td>—</td></tr>
+<tr><td>D-014</td><td>ณัฐกานต์ ศรีจันทร์</td><td>Cybersecurity Fundamentals</td><td>20</td><td>4.5</td><td><span class="badge badge-green">เสร็จสิ้น</span></td><td>2026-02-14</td></tr>
+<tr><td>D-015</td><td>ปรียา แสงจันทร์</td><td>Six Sigma Green Belt</td><td>48</td><td>3.2</td><td><span class="badge badge-green">เสร็จสิ้น</span></td><td>2026-01-28</td></tr>
+<tr><td>D-016</td><td>ปิยาภรณ์ วงศ์สุวรรณ</td><td>Advanced Excel</td><td>28</td><td>4.7</td><td><span class="badge badge-amber">กำลังเรียน</span></td><td>—</td></tr>
+<tr><td>D-017</td><td>ณัฐกานต์ แก้วมณี</td><td>Public Speaking</td><td>28</td><td>3.7</td><td><span class="badge badge-green">เสร็จสิ้น</span></td><td>2026-01-26</td></tr>
+<tr><td>D-018</td><td>ธนากร จันทร์เพ็ญ</td><td>Cloud Architecture</td><td>28</td><td>4.3</td><td><span class="badge badge-green">เสร็จสิ้น</span></td><td>2026-02-03</td></tr>
+<tr><td>D-019</td><td>วิสุทธิ์ ศรีจันทร์</td><td>Data Science Bootcamp</td><td>20</td><td>4.2</td><td><span class="badge badge-amber">กำลังเรียน</span></td><td>—</td></tr>
+<tr><td>D-020</td><td>ณัฐกานต์ รัตนมาลี</td><td>Python for Business</td><td>28</td><td>3.9</td><td><span class="badge badge-green">เสร็จสิ้น</span></td><td>2026-03-02</td></tr>
+<tr><td>D-021</td><td>กัลยา มั่นคง</td><td>AWS Solutions Architect</td><td>20</td><td>4.3</td><td><span class="badge badge-green">เสร็จสิ้น</span></td><td>2026-01-12</td></tr>
+<tr><td>D-022</td><td>สุรศักดิ์ ธรรมรักษ์</td><td>Advanced Sales Strategy</td><td>48</td><td>3.4</td><td><span class="badge badge-amber">กำลังเรียน</span></td><td>—</td></tr>
+<tr><td>D-023</td><td>พิชัย จันทร์เพ็ญ</td><td>Finance Leadership Program</td><td>28</td><td>4.5</td><td><span class="badge badge-green">เสร็จสิ้น</span></td><td>2026-01-13</td></tr>
+<tr><td>D-024</td><td>ประมวล ใจดี</td><td>Machine Learning Specialization</td><td>36</td><td>3.0</td><td><span class="badge badge-green">เสร็จสิ้น</span></td><td>2026-02-27</td></tr>
+<tr><td>D-025</td><td>วิไลวรรณ ธรรมรักษ์</td><td>Kubernetes Certification</td><td>24</td><td>3.8</td><td><span class="badge badge-amber">กำลังเรียน</span></td><td>—</td></tr>
+<tr><td>D-026</td><td>วรรณี รุ่งโรจน์</td><td>Agile/Scrum Master</td><td>40</td><td>3.5</td><td><span class="badge badge-green">เสร็จสิ้น</span></td><td>2026-01-14</td></tr>
+<tr><td>D-027</td><td>วิชัย ธรรมรักษ์</td><td>Leadership Excellence</td><td>24</td><td>3.0</td><td><span class="badge badge-green">เสร็จสิ้น</span></td><td>2026-01-11</td></tr>
+<tr><td>D-028</td><td>สุรกิจ ใจดี</td><td>Data Analytics with Python</td><td>32</td><td>3.9</td><td><span class="badge badge-amber">กำลังเรียน</span></td><td>—</td></tr>
+<tr><td>D-029</td><td>ชัยยศ ทองดี</td><td>Digital Marketing Pro</td><td>36</td><td>4.3</td><td><span class="badge badge-green">เสร็จสิ้น</span></td><td>2026-02-15</td></tr>
+<tr><td>D-030</td><td>ณัฐกานต์ จันทร์สว่าง</td><td>Project Management (PMP)</td><td>48</td><td>3.8</td><td><span class="badge badge-green">เสร็จสิ้น</span></td><td>2026-01-18</td></tr>
+</tbody>
       </table>
     </div>
   </div>
@@ -450,7 +660,7 @@
   </div>
   <div class="grid grid-cols-2 lg:grid-cols-4 gap-4">
     <div class="card text-center"><div class="text-sm text-slate-400" data-i18n="monthlyBudget">Budget เดือน</div><div class="kpi-num text-pp7-600">฿2.8M</div></div>
-    <div class="card text-center"><div class="text-sm text-slate-400" data-i18n="used">ใช้ไป</div><div class="kpi-num text-amber-600">฿2.4M</div></div>
+    <div class="card text-center"><div class="text-sm text-slate-400" data-i18n="used">ใช้ไป</div><div class="kpi-num text-amber-600">฿8.2M</div></div>
     <div class="card text-center"><div class="text-sm text-slate-400" data-i18n="salaryGrowth">Avg Salary Growth</div><div class="kpi-num text-emerald-600">+5.2%</div></div>
     <div class="card text-center"><div class="text-sm text-slate-400">Claims Filed</div><div class="kpi-num text-blue-600">156</div></div>
   </div>
@@ -463,13 +673,107 @@
     <div class="overflow-x-auto">
       <table id="welfare-table" data-sortable="true">
         <thead><tr><th data-i18n="id">ID</th><th data-i18n="name">ชื่อ-สกุล</th><th data-i18n="baseSalary">ฐานเงินเดือน</th><th data-i18n="extraBenefit">สวัสดิการเสริม</th><th data-i18n="insurance">ประกัน</th><th data-i18n="bonus">โบนัสสะสม</th><th>Claims</th></tr></thead>
-        <tbody>
-          <tr><td>W-001</td><td>อนุชา รัตนมาลี</td><td>฿65,000</td><td>฿8,500</td><td data-i18n="vipHealth">ประกันสุขภาพ VIP</td><td>฿130,000</td><td><span class="badge badge-green" data-i18n="noOutstanding">ไม่มี outstanding</span></td></tr>
-          <tr><td>W-002</td><td>สุภาพร ดอกแก้ว</td><td>฿52,000</td><td>฿6,200</td><td data-i18n="healthIns">ประกันสุขภาพ</td><td>฿104,000</td><td><span class="badge badge-amber" data-i18n="pending1">1 รายการรอดำเนินการ</span></td></tr>
-          <tr><td>W-003</td><td>ธนวัฒน์ สุขสมบูรณ์</td><td>฿58,000</td><td>฿7,100</td><td data-i18n="healthIns">ประกันสุขภาพ</td><td>฿116,000</td><td><span class="badge badge-green" data-i18n="noOutstanding">ไม่มี outstanding</span></td></tr>
-          <tr><td>W-004</td><td>ปิยะนุช แสงจันทร์</td><td>฿45,000</td><td>฿5,800</td><td data-i18n="basicIns">ประกันพื้นฐาน</td><td>฿67,500</td><td><span class="badge badge-green" data-i18n="noOutstanding">ไม่มี outstanding</span></td></tr>
-          <tr><td>W-005</td><td>กิตติพงศ์ มั่นคง</td><td>฿62,000</td><td>฿9,000</td><td data-i18n="vipHealth">ประกันสุขภาพ VIP</td><td>฿124,000</td><td><span class="badge badge-red" data-i18n="pending2">2 รายการ — กำลังตรวจสอบ</span></td></tr>
-        </tbody>
+        <tbody><tr><td>EMP-0001</td><td>ธนพล สุขสมบูรณ์</td><td>฿53,000</td><td>฿4,674</td><td>ประกันสุขภาพ VIP</td><td>฿116,162</td><td><span class="badge badge-red">2 รายการ — กำลังตรวจสอบ</span></td></tr>
+<tr><td>EMP-0002</td><td>ประทุม สุขสมบูรณ์</td><td>฿45,000</td><td>฿11,377</td><td>ประกันพื้นฐาน</td><td>฿53,760</td><td><span class="badge badge-green">ไม่มี outstanding</span></td></tr>
+<tr><td>EMP-0003</td><td>ปิยะนุช แก้วมณี</td><td>฿62,000</td><td>฿12,952</td><td>ประกันพื้นฐาน</td><td>฿120,489</td><td><span class="badge badge-green">ไม่มี outstanding</span></td></tr>
+<tr><td>EMP-0004</td><td>นภัสสร แก้วประเสริฐ</td><td>฿114,000</td><td>฿14,239</td><td>ประกันสุขภาพ VIP</td><td>฿230,602</td><td><span class="badge badge-green">ไม่มี outstanding</span></td></tr>
+<tr><td>EMP-0005</td><td>กัลยา มั่นคง</td><td>฿59,000</td><td>฿3,794</td><td>ประกันพื้นฐาน</td><td>฿60,862</td><td><span class="badge badge-amber">1 รายการรอดำเนินการ</span></td></tr>
+<tr><td>EMP-0006</td><td>ปิยาภรณ์ วงศ์สุวรรณ</td><td>฿88,000</td><td>฿4,090</td><td>ประกันสุขภาพ VIP</td><td>฿233,442</td><td><span class="badge badge-green">ไม่มี outstanding</span></td></tr>
+<tr><td>EMP-0007</td><td>นภาพร แก้วประเสริฐ</td><td>฿59,000</td><td>฿12,223</td><td>ประกันพื้นฐาน</td><td>฿45,953</td><td><span class="badge badge-amber">1 รายการรอดำเนินการ</span></td></tr>
+<tr><td>EMP-0008</td><td>กิตติชัย ศรีจันทร์</td><td>฿44,000</td><td>฿7,486</td><td>ประกันสุขภาพ</td><td>฿81,331</td><td><span class="badge badge-red">2 รายการ — กำลังตรวจสอบ</span></td></tr>
+<tr><td>EMP-0009</td><td>สุรชัย แก้วมณี</td><td>฿87,000</td><td>฿12,792</td><td>ประกันสุขภาพ</td><td>฿71,425</td><td><span class="badge badge-amber">1 รายการรอดำเนินการ</span></td></tr>
+<tr><td>EMP-0010</td><td>นิตยา ทองดี</td><td>฿82,000</td><td>฿4,452</td><td>ประกันสุขภาพ</td><td>฿54,125</td><td><span class="badge badge-green">ไม่มี outstanding</span></td></tr>
+<tr><td>EMP-0011</td><td>นฤมล รัตนมาลี</td><td>฿41,000</td><td>฿11,680</td><td>ประกันกลุ่ม</td><td>฿45,407</td><td><span class="badge badge-amber">1 รายการรอดำเนินการ</span></td></tr>
+<tr><td>EMP-0012</td><td>วลัยพร มั่นคง</td><td>฿56,000</td><td>฿5,299</td><td>ประกันกลุ่ม</td><td>฿47,625</td><td><span class="badge badge-green">ไม่มี outstanding</span></td></tr>
+<tr><td>EMP-0013</td><td>ปิยะ พุ่มน้อย</td><td>฿87,000</td><td>฿8,776</td><td>ประกันกลุ่ม</td><td>฿239,781</td><td><span class="badge badge-green">ไม่มี outstanding</span></td></tr>
+<tr><td>EMP-0014</td><td>อนุวัฒน์ รัตนมาลี</td><td>฿52,000</td><td>฿14,624</td><td>ประกันสุขภาพ VIP</td><td>฿123,236</td><td><span class="badge badge-green">ไม่มี outstanding</span></td></tr>
+<tr><td>EMP-0015</td><td>อนุพงศ์ รุ่งเรือง</td><td>฿56,000</td><td>฿9,947</td><td>ประกันสุขภาพ VIP</td><td>฿114,713</td><td><span class="badge badge-amber">1 รายการรอดำเนินการ</span></td></tr>
+<tr><td>EMP-0016</td><td>พิชัย จันทร์เพ็ญ</td><td>฿104,000</td><td>฿14,981</td><td>ประกันสุขภาพ VIP</td><td>฿71,047</td><td><span class="badge badge-green">ไม่มี outstanding</span></td></tr>
+<tr><td>EMP-0017</td><td>สิทธิชัย ธรรมรักษ์</td><td>฿110,000</td><td>฿12,805</td><td>ประกันพื้นฐาน</td><td>฿311,232</td><td><span class="badge badge-green">ไม่มี outstanding</span></td></tr>
+<tr><td>EMP-0018</td><td>วิชัย ธรรมรักษ์</td><td>฿57,000</td><td>฿13,864</td><td>ประกันสุขภาพ VIP</td><td>฿41,652</td><td><span class="badge badge-amber">1 รายการรอดำเนินการ</span></td></tr>
+<tr><td>EMP-0019</td><td>วรรณี สมบูรณ์</td><td>฿72,000</td><td>฿9,990</td><td>ประกันสุขภาพ</td><td>฿113,361</td><td><span class="badge badge-green">ไม่มี outstanding</span></td></tr>
+<tr><td>EMP-0020</td><td>วิสุทธิ์ ศรีจันทร์</td><td>฿44,000</td><td>฿14,109</td><td>ประกันสุขภาพ</td><td>฿117,106</td><td><span class="badge badge-green">ไม่มี outstanding</span></td></tr>
+<tr><td>EMP-0021</td><td>สมชาย พรหมมา</td><td>฿85,000</td><td>฿5,669</td><td>ประกันกลุ่ม</td><td>฿116,802</td><td><span class="badge badge-green">ไม่มี outstanding</span></td></tr>
+<tr><td>EMP-0022</td><td>ธนากร จันทร์เพ็ญ</td><td>฿58,000</td><td>฿5,142</td><td>ประกันพื้นฐาน</td><td>฿34,547</td><td><span class="badge badge-red">2 รายการ — กำลังตรวจสอบ</span></td></tr>
+<tr><td>EMP-0023</td><td>วิไลวรรณ แก้วประเสริฐ</td><td>฿119,000</td><td>฿11,844</td><td>ประกันสุขภาพ</td><td>฿167,855</td><td><span class="badge badge-green">ไม่มี outstanding</span></td></tr>
+<tr><td>EMP-0024</td><td>วิชัย วงศ์สุวรรณ</td><td>฿78,000</td><td>฿10,979</td><td>ประกันกลุ่ม</td><td>฿171,076</td><td><span class="badge badge-green">ไม่มี outstanding</span></td></tr>
+<tr><td>EMP-0025</td><td>กิตติ ธรรมรักษ์</td><td>฿119,000</td><td>฿5,036</td><td>ประกันสุขภาพ VIP</td><td>฿143,926</td><td><span class="badge badge-red">2 รายการ — กำลังตรวจสอบ</span></td></tr>
+<tr><td>EMP-0026</td><td>พิชัย ทองดี</td><td>฿105,000</td><td>฿9,908</td><td>ประกันกลุ่ม</td><td>฿182,274</td><td><span class="badge badge-green">ไม่มี outstanding</span></td></tr>
+<tr><td>EMP-0027</td><td>วิชัย ดอกแก้ว</td><td>฿83,000</td><td>฿4,600</td><td>ประกันกลุ่ม</td><td>฿180,022</td><td><span class="badge badge-red">2 รายการ — กำลังตรวจสอบ</span></td></tr>
+<tr><td>EMP-0028</td><td>สมหมาย ทองดี</td><td>฿56,000</td><td>฿13,078</td><td>ประกันพื้นฐาน</td><td>฿135,213</td><td><span class="badge badge-red">2 รายการ — กำลังตรวจสอบ</span></td></tr>
+<tr><td>EMP-0029</td><td>วรรณี รุ่งโรจน์</td><td>฿33,000</td><td>฿7,978</td><td>ประกันพื้นฐาน</td><td>฿61,265</td><td><span class="badge badge-amber">1 รายการรอดำเนินการ</span></td></tr>
+<tr><td>EMP-0030</td><td>ประเสริฐ พรหมมา</td><td>฿93,000</td><td>฿11,970</td><td>ประกันสุขภาพ</td><td>฿160,013</td><td><span class="badge badge-amber">1 รายการรอดำเนินการ</span></td></tr>
+<tr><td>EMP-0031</td><td>วลัยพร วงศ์วิโรจน์</td><td>฿109,000</td><td>฿3,325</td><td>ประกันกลุ่ม</td><td>฿91,478</td><td><span class="badge badge-amber">1 รายการรอดำเนินการ</span></td></tr>
+<tr><td>EMP-0032</td><td>สมหมาย จันทร์เพ็ญ</td><td>฿94,000</td><td>฿3,625</td><td>ประกันพื้นฐาน</td><td>฿99,692</td><td><span class="badge badge-green">ไม่มี outstanding</span></td></tr>
+<tr><td>EMP-0033</td><td>กิตติ ทองดี</td><td>฿57,000</td><td>฿12,202</td><td>ประกันสุขภาพ</td><td>฿114,839</td><td><span class="badge badge-green">ไม่มี outstanding</span></td></tr>
+<tr><td>EMP-0034</td><td>ประทุม รุ่งโรจน์</td><td>฿56,000</td><td>฿4,222</td><td>ประกันพื้นฐาน</td><td>฿147,041</td><td><span class="badge badge-red">2 รายการ — กำลังตรวจสอบ</span></td></tr>
+<tr><td>EMP-0035</td><td>ธนวัฒน์ รุ่งเรือง</td><td>฿71,000</td><td>฿10,627</td><td>ประกันกลุ่ม</td><td>฿161,047</td><td><span class="badge badge-amber">1 รายการรอดำเนินการ</span></td></tr>
+<tr><td>EMP-0036</td><td>วิไล แก้วมณี</td><td>฿82,000</td><td>฿5,926</td><td>ประกันกลุ่ม</td><td>฿157,819</td><td><span class="badge badge-amber">1 รายการรอดำเนินการ</span></td></tr>
+<tr><td>EMP-0037</td><td>ณัฐกานต์ รัตนมาลี</td><td>฿55,000</td><td>฿11,640</td><td>ประกันกลุ่ม</td><td>฿103,836</td><td><span class="badge badge-green">ไม่มี outstanding</span></td></tr>
+<tr><td>EMP-0038</td><td>ณัฐกานต์ จันทร์สว่าง</td><td>฿95,000</td><td>฿6,969</td><td>ประกันกลุ่ม</td><td>฿111,842</td><td><span class="badge badge-amber">1 รายการรอดำเนินการ</span></td></tr>
+<tr><td>EMP-0039</td><td>ณัฐกานต์ ศรีจันทร์</td><td>฿37,000</td><td>฿12,991</td><td>ประกันพื้นฐาน</td><td>฿39,542</td><td><span class="badge badge-green">ไม่มี outstanding</span></td></tr>
+<tr><td>EMP-0040</td><td>สุภาพร วงศ์วิโรจน์</td><td>฿85,000</td><td>฿8,744</td><td>ประกันพื้นฐาน</td><td>฿81,677</td><td><span class="badge badge-green">ไม่มี outstanding</span></td></tr>
+<tr><td>EMP-0041</td><td>สุรชัย ดอกแก้ว</td><td>฿96,000</td><td>฿12,173</td><td>ประกันสุขภาพ</td><td>฿234,166</td><td><span class="badge badge-amber">1 รายการรอดำเนินการ</span></td></tr>
+<tr><td>EMP-0042</td><td>นภัสสร สุขสมบูรณ์</td><td>฿35,000</td><td>฿4,884</td><td>ประกันสุขภาพ</td><td>฿65,799</td><td><span class="badge badge-green">ไม่มี outstanding</span></td></tr>
+<tr><td>EMP-0043</td><td>ธนพล วงศ์วิโรจน์</td><td>฿50,000</td><td>฿8,101</td><td>ประกันสุขภาพ</td><td>฿105,954</td><td><span class="badge badge-amber">1 รายการรอดำเนินการ</span></td></tr>
+<tr><td>EMP-0044</td><td>สุรศักดิ์ ธรรมรักษ์</td><td>฿88,000</td><td>฿8,253</td><td>ประกันสุขภาพ VIP</td><td>฿239,673</td><td><span class="badge badge-amber">1 รายการรอดำเนินการ</span></td></tr>
+<tr><td>EMP-0045</td><td>สุรกิจ ใจดี</td><td>฿108,000</td><td>฿8,306</td><td>ประกันพื้นฐาน</td><td>฿103,002</td><td><span class="badge badge-red">2 รายการ — กำลังตรวจสอบ</span></td></tr>
+<tr><td>EMP-0046</td><td>วีระ พรหมมา</td><td>฿29,000</td><td>฿8,457</td><td>ประกันพื้นฐาน</td><td>฿32,798</td><td><span class="badge badge-green">ไม่มี outstanding</span></td></tr>
+<tr><td>EMP-0047</td><td>ธนพล ทองดี</td><td>฿51,000</td><td>฿6,204</td><td>ประกันสุขภาพ</td><td>฿143,778</td><td><span class="badge badge-amber">1 รายการรอดำเนินการ</span></td></tr>
+<tr><td>EMP-0048</td><td>นภาพร ทองดี</td><td>฿107,000</td><td>฿12,985</td><td>ประกันกลุ่ม</td><td>฿302,984</td><td><span class="badge badge-amber">1 รายการรอดำเนินการ</span></td></tr>
+<tr><td>EMP-0049</td><td>พิชัย สุขสมบูรณ์</td><td>฿68,000</td><td>฿14,210</td><td>ประกันพื้นฐาน</td><td>฿173,493</td><td><span class="badge badge-amber">1 รายการรอดำเนินการ</span></td></tr>
+<tr><td>EMP-0050</td><td>วราภรณ์ รัตนมาลี</td><td>฿55,000</td><td>฿9,861</td><td>ประกันสุขภาพ</td><td>฿145,201</td><td><span class="badge badge-amber">1 รายการรอดำเนินการ</span></td></tr>
+<tr><td>EMP-0051</td><td>กฤติยา วงศ์วิโรจน์</td><td>฿37,000</td><td>฿13,490</td><td>ประกันกลุ่ม</td><td>฿27,723</td><td><span class="badge badge-amber">1 รายการรอดำเนินการ</span></td></tr>
+<tr><td>EMP-0052</td><td>ธนพร แก้วประเสริฐ</td><td>฿73,000</td><td>฿14,449</td><td>ประกันกลุ่ม</td><td>฿195,709</td><td><span class="badge badge-green">ไม่มี outstanding</span></td></tr>
+<tr><td>EMP-0053</td><td>อรุณี รุ่งโรจน์</td><td>฿28,000</td><td>฿3,551</td><td>ประกันสุขภาพ VIP</td><td>฿34,535</td><td><span class="badge badge-amber">1 รายการรอดำเนินการ</span></td></tr>
+<tr><td>EMP-0054</td><td>ชัยวัฒน์ วงศ์สุวรรณ</td><td>฿84,000</td><td>฿10,654</td><td>ประกันกลุ่ม</td><td>฿95,618</td><td><span class="badge badge-green">ไม่มี outstanding</span></td></tr>
+<tr><td>EMP-0055</td><td>ประจวบ แสงจันทร์</td><td>฿74,000</td><td>฿13,240</td><td>ประกันสุขภาพ VIP</td><td>฿80,883</td><td><span class="badge badge-red">2 รายการ — กำลังตรวจสอบ</span></td></tr>
+<tr><td>EMP-0056</td><td>ประมวล ใจดี</td><td>฿54,000</td><td>฿10,284</td><td>ประกันพื้นฐาน</td><td>฿56,565</td><td><span class="badge badge-green">ไม่มี outstanding</span></td></tr>
+<tr><td>EMP-0057</td><td>ชัยวัฒน์ จันทร์สว่าง</td><td>฿36,000</td><td>฿13,915</td><td>ประกันพื้นฐาน</td><td>฿85,273</td><td><span class="badge badge-green">ไม่มี outstanding</span></td></tr>
+<tr><td>EMP-0058</td><td>ชัยยศ มั่นคง</td><td>฿84,000</td><td>฿14,554</td><td>ประกันสุขภาพ</td><td>฿200,371</td><td><span class="badge badge-green">ไม่มี outstanding</span></td></tr>
+<tr><td>EMP-0059</td><td>พิชัย แก้วประเสริฐ</td><td>฿99,000</td><td>฿7,572</td><td>ประกันพื้นฐาน</td><td>฿76,315</td><td><span class="badge badge-green">ไม่มี outstanding</span></td></tr>
+<tr><td>EMP-0060</td><td>วิทยา วงศ์สุวรรณ</td><td>฿29,000</td><td>฿6,652</td><td>ประกันกลุ่ม</td><td>฿22,918</td><td><span class="badge badge-green">ไม่มี outstanding</span></td></tr>
+<tr><td>EMP-0061</td><td>รัตนา ใจดี</td><td>฿77,000</td><td>฿14,268</td><td>ประกันพื้นฐาน</td><td>฿44,797</td><td><span class="badge badge-amber">1 รายการรอดำเนินการ</span></td></tr>
+<tr><td>EMP-0062</td><td>นภาพร ทองดี</td><td>฿109,000</td><td>฿5,545</td><td>ประกันสุขภาพ VIP</td><td>฿68,282</td><td><span class="badge badge-amber">1 รายการรอดำเนินการ</span></td></tr>
+<tr><td>EMP-0063</td><td>วรรณ์วิภา จันทร์เพ็ญ</td><td>฿43,000</td><td>฿14,850</td><td>ประกันพื้นฐาน</td><td>฿107,340</td><td><span class="badge badge-green">ไม่มี outstanding</span></td></tr>
+<tr><td>EMP-0064</td><td>พิชัย ใจดี</td><td>฿71,000</td><td>฿9,158</td><td>ประกันสุขภาพ VIP</td><td>฿115,730</td><td><span class="badge badge-green">ไม่มี outstanding</span></td></tr>
+<tr><td>EMP-0065</td><td>รัตนา ใจดี</td><td>฿34,000</td><td>฿13,791</td><td>ประกันพื้นฐาน</td><td>฿68,705</td><td><span class="badge badge-green">ไม่มี outstanding</span></td></tr>
+<tr><td>EMP-0066</td><td>วิทยา ทองประเสริฐ</td><td>฿117,000</td><td>฿13,385</td><td>ประกันกลุ่ม</td><td>฿190,579</td><td><span class="badge badge-green">ไม่มี outstanding</span></td></tr>
+<tr><td>EMP-0067</td><td>สุรชัย แก้วมณี</td><td>฿80,000</td><td>฿4,158</td><td>ประกันพื้นฐาน</td><td>฿202,353</td><td><span class="badge badge-red">2 รายการ — กำลังตรวจสอบ</span></td></tr>
+<tr><td>EMP-0068</td><td>ประภัสสร ศรีจันทร์</td><td>฿70,000</td><td>฿4,243</td><td>ประกันสุขภาพ</td><td>฿62,077</td><td><span class="badge badge-amber">1 รายการรอดำเนินการ</span></td></tr>
+<tr><td>EMP-0069</td><td>อนุชา แก้วประเสริฐ</td><td>฿28,000</td><td>฿10,307</td><td>ประกันพื้นฐาน</td><td>฿16,026</td><td><span class="badge badge-amber">1 รายการรอดำเนินการ</span></td></tr>
+<tr><td>EMP-0070</td><td>พรชิตา รัตนมาลี</td><td>฿78,000</td><td>฿8,443</td><td>ประกันสุขภาพ</td><td>฿111,160</td><td><span class="badge badge-amber">1 รายการรอดำเนินการ</span></td></tr>
+<tr><td>EMP-0071</td><td>ชัยณรงค์ ศิริชัย</td><td>฿52,000</td><td>฿12,059</td><td>ประกันสุขภาพ VIP</td><td>฿70,872</td><td><span class="badge badge-green">ไม่มี outstanding</span></td></tr>
+<tr><td>EMP-0072</td><td>สุรัติยา สุขสมบูรณ์</td><td>฿66,000</td><td>฿4,439</td><td>ประกันกลุ่ม</td><td>฿156,257</td><td><span class="badge badge-green">ไม่มี outstanding</span></td></tr>
+<tr><td>EMP-0073</td><td>พิชัย มั่นคง</td><td>฿79,000</td><td>฿9,880</td><td>ประกันกลุ่ม</td><td>฿96,679</td><td><span class="badge badge-amber">1 รายการรอดำเนินการ</span></td></tr>
+<tr><td>EMP-0074</td><td>ณัฐกานต์ แก้วมณี</td><td>฿64,000</td><td>฿11,949</td><td>ประกันสุขภาพ</td><td>฿85,290</td><td><span class="badge badge-green">ไม่มี outstanding</span></td></tr>
+<tr><td>EMP-0075</td><td>สุภาวดี รัตนมาลี</td><td>฿102,000</td><td>฿4,834</td><td>ประกันสุขภาพ VIP</td><td>฿96,172</td><td><span class="badge badge-amber">1 รายการรอดำเนินการ</span></td></tr>
+<tr><td>EMP-0076</td><td>ภาวิณี แก้วมณี</td><td>฿81,000</td><td>฿10,576</td><td>ประกันพื้นฐาน</td><td>฿160,262</td><td><span class="badge badge-amber">1 รายการรอดำเนินการ</span></td></tr>
+<tr><td>EMP-0077</td><td>ประจวบ วงศ์วิโรจน์</td><td>฿119,000</td><td>฿13,750</td><td>ประกันกลุ่ม</td><td>฿329,942</td><td><span class="badge badge-red">2 รายการ — กำลังตรวจสอบ</span></td></tr>
+<tr><td>EMP-0078</td><td>สุรกิจ ศรีสุข</td><td>฿115,000</td><td>฿8,253</td><td>ประกันกลุ่ม</td><td>฿208,169</td><td><span class="badge badge-red">2 รายการ — กำลังตรวจสอบ</span></td></tr>
+<tr><td>EMP-0079</td><td>ปรียา แสงจันทร์</td><td>฿117,000</td><td>฿13,218</td><td>ประกันสุขภาพ</td><td>฿156,008</td><td><span class="badge badge-red">2 รายการ — กำลังตรวจสอบ</span></td></tr>
+<tr><td>EMP-0080</td><td>ธนากร วงศ์สุวรรณ</td><td>฿36,000</td><td>฿10,752</td><td>ประกันกลุ่ม</td><td>฿63,763</td><td><span class="badge badge-green">ไม่มี outstanding</span></td></tr>
+<tr><td>EMP-0081</td><td>วิไลวรรณ ธรรมรักษ์</td><td>฿109,000</td><td>฿7,041</td><td>ประกันสุขภาพ</td><td>฿217,249</td><td><span class="badge badge-green">ไม่มี outstanding</span></td></tr>
+<tr><td>EMP-0082</td><td>ชัยยศ ทองดี</td><td>฿93,000</td><td>฿5,870</td><td>ประกันกลุ่ม</td><td>฿256,674</td><td><span class="badge badge-green">ไม่มี outstanding</span></td></tr>
+<tr><td>EMP-0083</td><td>ชัยวัฒน์ สุขสมบูรณ์</td><td>฿107,000</td><td>฿8,767</td><td>ประกันพื้นฐาน</td><td>฿201,839</td><td><span class="badge badge-green">ไม่มี outstanding</span></td></tr>
+<tr><td>EMP-0084</td><td>ชัยณรงค์ จันทร์สว่าง</td><td>฿78,000</td><td>฿3,639</td><td>ประกันพื้นฐาน</td><td>฿84,976</td><td><span class="badge badge-green">ไม่มี outstanding</span></td></tr>
+<tr><td>EMP-0085</td><td>ชัยวัฒน์ รุ่งโรจน์</td><td>฿82,000</td><td>฿10,384</td><td>ประกันสุขภาพ VIP</td><td>฿44,895</td><td><span class="badge badge-green">ไม่มี outstanding</span></td></tr>
+<tr><td>EMP-0086</td><td>ประจวบ แก้วมณี</td><td>฿88,000</td><td>฿10,160</td><td>ประกันสุขภาพ VIP</td><td>฿183,030</td><td><span class="badge badge-red">2 รายการ — กำลังตรวจสอบ</span></td></tr>
+<tr><td>EMP-0087</td><td>พรชิตา สมบูรณ์</td><td>฿89,000</td><td>฿9,649</td><td>ประกันกลุ่ม</td><td>฿238,816</td><td><span class="badge badge-green">ไม่มี outstanding</span></td></tr>
+<tr><td>EMP-0088</td><td>ธนากร วงศ์สุวรรณ</td><td>฿70,000</td><td>฿9,552</td><td>ประกันสุขภาพ</td><td>฿180,317</td><td><span class="badge badge-amber">1 รายการรอดำเนินการ</span></td></tr>
+<tr><td>EMP-0089</td><td>สมศักดิ์ แสงจันทร์</td><td>฿75,000</td><td>฿14,869</td><td>ประกันกลุ่ม</td><td>฿84,996</td><td><span class="badge badge-green">ไม่มี outstanding</span></td></tr>
+<tr><td>EMP-0090</td><td>ธนากร พุ่มน้อย</td><td>฿113,000</td><td>฿8,970</td><td>ประกันพื้นฐาน</td><td>฿282,824</td><td><span class="badge badge-amber">1 รายการรอดำเนินการ</span></td></tr>
+<tr><td>EMP-0091</td><td>ชัยณรงค์ จันทร์สว่าง</td><td>฿30,000</td><td>฿11,721</td><td>ประกันพื้นฐาน</td><td>฿61,113</td><td><span class="badge badge-amber">1 รายการรอดำเนินการ</span></td></tr>
+<tr><td>EMP-0092</td><td>วรรณ์วิภา แก้วประเสริฐ</td><td>฿29,000</td><td>฿4,514</td><td>ประกันสุขภาพ</td><td>฿70,942</td><td><span class="badge badge-amber">1 รายการรอดำเนินการ</span></td></tr>
+<tr><td>EMP-0093</td><td>วราภรณ์ ทองประเสริฐ</td><td>฿56,000</td><td>฿14,526</td><td>ประกันสุขภาพ VIP</td><td>฿130,994</td><td><span class="badge badge-amber">1 รายการรอดำเนินการ</span></td></tr>
+<tr><td>EMP-0094</td><td>สุรัติยา แก้วมณี</td><td>฿47,000</td><td>฿13,784</td><td>ประกันกลุ่ม</td><td>฿140,678</td><td><span class="badge badge-amber">1 รายการรอดำเนินการ</span></td></tr>
+<tr><td>EMP-0095</td><td>ปิยาภรณ์ รุ่งเรือง</td><td>฿42,000</td><td>฿5,840</td><td>ประกันกลุ่ม</td><td>฿23,759</td><td><span class="badge badge-red">2 รายการ — กำลังตรวจสอบ</span></td></tr>
+<tr><td>EMP-0096</td><td>สุพิชชา วงศ์วิโรจน์</td><td>฿41,000</td><td>฿14,668</td><td>ประกันสุขภาพ VIP</td><td>฿66,622</td><td><span class="badge badge-red">2 รายการ — กำลังตรวจสอบ</span></td></tr>
+<tr><td>EMP-0097</td><td>วรรณี แสงจันทร์</td><td>฿45,000</td><td>฿6,871</td><td>ประกันสุขภาพ</td><td>฿61,427</td><td><span class="badge badge-red">2 รายการ — กำลังตรวจสอบ</span></td></tr>
+<tr><td>EMP-0098</td><td>ประทุม วงศ์สุวรรณ</td><td>฿109,000</td><td>฿10,493</td><td>ประกันพื้นฐาน</td><td>฿284,089</td><td><span class="badge badge-red">2 รายการ — กำลังตรวจสอบ</span></td></tr>
+<tr><td>EMP-0099</td><td>วาสนา สมบูรณ์</td><td>฿107,000</td><td>฿14,479</td><td>ประกันกลุ่ม</td><td>฿119,004</td><td><span class="badge badge-amber">1 รายการรอดำเนินการ</span></td></tr>
+<tr><td>EMP-0100</td><td>กิตติพงศ์ พรหมมา</td><td>฿72,000</td><td>฿9,179</td><td>ประกันสุขภาพ VIP</td><td>฿93,440</td><td><span class="badge badge-amber">1 รายการรอดำเนินการ</span></td></tr>
+</tbody>
       </table>
     </div>
   </div>
@@ -499,13 +803,107 @@
     <div class="overflow-x-auto">
       <table id="quality-table" data-sortable="true">
         <thead><tr><th data-i18n="id">ID</th><th data-i18n="name">ชื่อ-สกุล</th><th data-i18n="dept">ฝ่าย</th><th>Engagement</th><th>WLB</th><th>Stress</th><th>Wellbeing</th><th data-i18n="status">สถานะ</th></tr></thead>
-        <tbody>
-          <tr><td>Q-001</td><td>อนุชา รัตนมาลี</td><td>Tech</td><td>4.5</td><td>4.2</td><td>2.3 (<span data-i18n="low">ต่ำ</span>)</td><td>88</td><td><span class="badge badge-green" data-i18n="excellent">ดีเยี่ยม</span></td></tr>
-          <tr><td>Q-002</td><td>สุภาพร ดอกแก้ว</td><td>Sales</td><td>3.2</td><td>2.8</td><td>3.8 (<span data-i18n="high">สูง</span>)</td><td>65</td><td><span class="badge badge-red" data-i18n="followUp">ต้องติดตาม</span></td></tr>
-          <tr><td>Q-003</td><td>ธนวัฒน์ สุขสมบูรณ์</td><td>Operations</td><td>4.0</td><td>3.9</td><td>2.5 (<span data-i18n="low">ต่ำ</span>)</td><td>84</td><td><span class="badge badge-green" data-i18n="good">ดี</span></td></tr>
-          <tr><td>Q-004</td><td>ปิยะนุช แสงจันทร์</td><td>Finance</td><td>3.0</td><td>3.1</td><td>3.2 (<span data-i18n="medium">ปานกลาง</span>)</td><td>72</td><td><span class="badge badge-amber" data-i18n="careNeeded">ควรดูแล</span></td></tr>
-          <tr><td>Q-005</td><td>กิตติพงศ์ มั่นคง</td><td>R&D</td><td>4.3</td><td>4.1</td><td>2.1 (<span data-i18n="low">ต่ำ</span>)</td><td>89</td><td><span class="badge badge-green" data-i18n="excellent">ดีเยี่ยม</span></td></tr>
-        </tbody>
+        <tbody><tr><td>EMP-0001</td><td>ธนพล สุขสมบูรณ์</td><td>Tech</td><td>2.6</td><td>3.9</td><td>2.9 (ปานกลาง)</td><td>57</td><td><span class="badge badge-red">ต้องติดตาม</span></td></tr>
+<tr><td>EMP-0002</td><td>ประทุม สุขสมบูรณ์</td><td>Tech</td><td>4.4</td><td>4.2</td><td>2.9 (ปานกลาง)</td><td>71</td><td><span class="badge badge-amber">ควรดูแล</span></td></tr>
+<tr><td>EMP-0003</td><td>ปิยะนุช แก้วมณี</td><td>Tech</td><td>2.8</td><td>3.9</td><td>2.3 (ต่ำ)</td><td>63</td><td><span class="badge badge-red">ต้องติดตาม</span></td></tr>
+<tr><td>EMP-0004</td><td>นภัสสร แก้วประเสริฐ</td><td>Tech</td><td>2.7</td><td>3.0</td><td>3.7 (สูง)</td><td>47</td><td><span class="badge badge-red">ต้องติดตาม</span></td></tr>
+<tr><td>EMP-0005</td><td>กัลยา มั่นคง</td><td>Tech</td><td>2.8</td><td>3.8</td><td>4.1 (สูง)</td><td>50</td><td><span class="badge badge-red">ต้องติดตาม</span></td></tr>
+<tr><td>EMP-0006</td><td>ปิยาภรณ์ วงศ์สุวรรณ</td><td>Tech</td><td>3.6</td><td>4.9</td><td>4.0 (สูง)</td><td>63</td><td><span class="badge badge-red">ต้องติดตาม</span></td></tr>
+<tr><td>EMP-0007</td><td>นภาพร แก้วประเสริฐ</td><td>Tech</td><td>3.5</td><td>2.3</td><td>3.2 (ปานกลาง)</td><td>51</td><td><span class="badge badge-red">ต้องติดตาม</span></td></tr>
+<tr><td>EMP-0008</td><td>กิตติชัย ศรีจันทร์</td><td>Tech</td><td>4.4</td><td>2.7</td><td>1.8 (ต่ำ)</td><td>69</td><td><span class="badge badge-amber">ควรดูแล</span></td></tr>
+<tr><td>EMP-0009</td><td>สุรชัย แก้วมณี</td><td>Tech</td><td>4.3</td><td>4.1</td><td>3.5 (ปานกลาง)</td><td>66</td><td><span class="badge badge-amber">ควรดูแล</span></td></tr>
+<tr><td>EMP-0010</td><td>นิตยา ทองดี</td><td>Tech</td><td>4.7</td><td>4.6</td><td>1.2 (ต่ำ)</td><td>87</td><td><span class="badge badge-green">ดีเยี่ยม</span></td></tr>
+<tr><td>EMP-0011</td><td>นฤมล รัตนมาลี</td><td>Tech</td><td>4.2</td><td>4.0</td><td>4.4 (สูง)</td><td>59</td><td><span class="badge badge-red">ต้องติดตาม</span></td></tr>
+<tr><td>EMP-0012</td><td>วลัยพร มั่นคง</td><td>Tech</td><td>2.2</td><td>5.0</td><td>3.9 (สูง)</td><td>55</td><td><span class="badge badge-red">ต้องติดตาม</span></td></tr>
+<tr><td>EMP-0013</td><td>ปิยะ พุ่มน้อย</td><td>Tech</td><td>4.9</td><td>5.0</td><td>2.9 (ปานกลาง)</td><td>80</td><td><span class="badge badge-green">ดี</span></td></tr>
+<tr><td>EMP-0014</td><td>อนุวัฒน์ รัตนมาลี</td><td>Tech</td><td>4.6</td><td>2.2</td><td>1.2 (ต่ำ)</td><td>71</td><td><span class="badge badge-amber">ควรดูแล</span></td></tr>
+<tr><td>EMP-0015</td><td>อนุพงศ์ รุ่งเรือง</td><td>Tech</td><td>2.8</td><td>2.4</td><td>3.3 (ปานกลาง)</td><td>46</td><td><span class="badge badge-red">ต้องติดตาม</span></td></tr>
+<tr><td>EMP-0016</td><td>พิชัย จันทร์เพ็ญ</td><td>Tech</td><td>3.3</td><td>3.6</td><td>2.1 (ต่ำ)</td><td>65</td><td><span class="badge badge-amber">ควรดูแล</span></td></tr>
+<tr><td>EMP-0017</td><td>สิทธิชัย ธรรมรักษ์</td><td>Tech</td><td>3.8</td><td>4.2</td><td>1.7 (ต่ำ)</td><td>75</td><td><span class="badge badge-green">ดี</span></td></tr>
+<tr><td>EMP-0018</td><td>วิชัย ธรรมรักษ์</td><td>Tech</td><td>3.3</td><td>4.1</td><td>3.0 (ปานกลาง)</td><td>63</td><td><span class="badge badge-red">ต้องติดตาม</span></td></tr>
+<tr><td>EMP-0019</td><td>วรรณี สมบูรณ์</td><td>Tech</td><td>2.7</td><td>2.3</td><td>3.7 (สูง)</td><td>42</td><td><span class="badge badge-red">ต้องติดตาม</span></td></tr>
+<tr><td>EMP-0020</td><td>วิสุทธิ์ ศรีจันทร์</td><td>Tech</td><td>4.6</td><td>4.4</td><td>1.9 (ต่ำ)</td><td>81</td><td><span class="badge badge-green">ดี</span></td></tr>
+<tr><td>EMP-0021</td><td>สมชาย พรหมมา</td><td>Tech</td><td>3.1</td><td>3.5</td><td>3.4 (ปานกลาง)</td><td>55</td><td><span class="badge badge-red">ต้องติดตาม</span></td></tr>
+<tr><td>EMP-0022</td><td>ธนากร จันทร์เพ็ญ</td><td>Tech</td><td>3.7</td><td>2.8</td><td>3.5 (ปานกลาง)</td><td>53</td><td><span class="badge badge-red">ต้องติดตาม</span></td></tr>
+<tr><td>EMP-0023</td><td>วิไลวรรณ แก้วประเสริฐ</td><td>Tech</td><td>3.5</td><td>4.0</td><td>2.1 (ต่ำ)</td><td>69</td><td><span class="badge badge-amber">ควรดูแล</span></td></tr>
+<tr><td>EMP-0024</td><td>วิชัย วงศ์สุวรรณ</td><td>Tech</td><td>3.7</td><td>4.0</td><td>2.6 (ปานกลาง)</td><td>67</td><td><span class="badge badge-amber">ควรดูแล</span></td></tr>
+<tr><td>EMP-0025</td><td>กิตติ ธรรมรักษ์</td><td>Tech</td><td>2.1</td><td>2.7</td><td>2.7 (ปานกลาง)</td><td>47</td><td><span class="badge badge-red">ต้องติดตาม</span></td></tr>
+<tr><td>EMP-0026</td><td>พิชัย ทองดี</td><td>Tech</td><td>2.7</td><td>4.4</td><td>3.4 (ปานกลาง)</td><td>58</td><td><span class="badge badge-red">ต้องติดตาม</span></td></tr>
+<tr><td>EMP-0027</td><td>วิชัย ดอกแก้ว</td><td>Tech</td><td>4.5</td><td>3.6</td><td>4.1 (สูง)</td><td>60</td><td><span class="badge badge-red">ต้องติดตาม</span></td></tr>
+<tr><td>EMP-0028</td><td>สมหมาย ทองดี</td><td>Tech</td><td>4.7</td><td>2.2</td><td>1.5 (ต่ำ)</td><td>69</td><td><span class="badge badge-amber">ควรดูแล</span></td></tr>
+<tr><td>EMP-0029</td><td>วรรณี รุ่งโรจน์</td><td>Sales</td><td>4.6</td><td>3.7</td><td>2.7 (ปานกลาง)</td><td>71</td><td><span class="badge badge-amber">ควรดูแล</span></td></tr>
+<tr><td>EMP-0030</td><td>ประเสริฐ พรหมมา</td><td>Sales</td><td>3.4</td><td>2.4</td><td>3.2 (ปานกลาง)</td><td>51</td><td><span class="badge badge-red">ต้องติดตาม</span></td></tr>
+<tr><td>EMP-0031</td><td>วลัยพร วงศ์วิโรจน์</td><td>Sales</td><td>2.8</td><td>4.9</td><td>2.5 (ต่ำ)</td><td>68</td><td><span class="badge badge-amber">ควรดูแล</span></td></tr>
+<tr><td>EMP-0032</td><td>สมหมาย จันทร์เพ็ญ</td><td>Sales</td><td>2.5</td><td>2.4</td><td>3.3 (ปานกลาง)</td><td>44</td><td><span class="badge badge-red">ต้องติดตาม</span></td></tr>
+<tr><td>EMP-0033</td><td>กิตติ ทองดี</td><td>Sales</td><td>4.7</td><td>3.1</td><td>4.3 (สูง)</td><td>57</td><td><span class="badge badge-red">ต้องติดตาม</span></td></tr>
+<tr><td>EMP-0034</td><td>ประทุม รุ่งโรจน์</td><td>Sales</td><td>2.2</td><td>3.9</td><td>1.0 (ต่ำ)</td><td>67</td><td><span class="badge badge-amber">ควรดูแล</span></td></tr>
+<tr><td>EMP-0035</td><td>ธนวัฒน์ รุ่งเรือง</td><td>Sales</td><td>3.4</td><td>4.5</td><td>3.1 (ปานกลาง)</td><td>65</td><td><span class="badge badge-amber">ควรดูแล</span></td></tr>
+<tr><td>EMP-0036</td><td>วิไล แก้วมณี</td><td>Sales</td><td>2.8</td><td>3.8</td><td>4.1 (สูง)</td><td>50</td><td><span class="badge badge-red">ต้องติดตาม</span></td></tr>
+<tr><td>EMP-0037</td><td>ณัฐกานต์ รัตนมาลี</td><td>Sales</td><td>4.1</td><td>2.9</td><td>3.0 (ปานกลาง)</td><td>60</td><td><span class="badge badge-red">ต้องติดตาม</span></td></tr>
+<tr><td>EMP-0038</td><td>ณัฐกานต์ จันทร์สว่าง</td><td>Sales</td><td>2.6</td><td>4.2</td><td>2.0 (ต่ำ)</td><td>65</td><td><span class="badge badge-amber">ควรดูแล</span></td></tr>
+<tr><td>EMP-0039</td><td>ณัฐกานต์ ศรีจันทร์</td><td>Sales</td><td>4.8</td><td>3.9</td><td>3.6 (สูง)</td><td>67</td><td><span class="badge badge-amber">ควรดูแล</span></td></tr>
+<tr><td>EMP-0040</td><td>สุภาพร วงศ์วิโรจน์</td><td>Sales</td><td>4.1</td><td>2.5</td><td>3.8 (สูง)</td><td>52</td><td><span class="badge badge-red">ต้องติดตาม</span></td></tr>
+<tr><td>EMP-0041</td><td>สุรชัย ดอกแก้ว</td><td>Sales</td><td>3.8</td><td>4.2</td><td>4.3 (สูง)</td><td>58</td><td><span class="badge badge-red">ต้องติดตาม</span></td></tr>
+<tr><td>EMP-0042</td><td>นภัสสร สุขสมบูรณ์</td><td>Sales</td><td>4.1</td><td>3.4</td><td>3.4 (ปานกลาง)</td><td>61</td><td><span class="badge badge-red">ต้องติดตาม</span></td></tr>
+<tr><td>EMP-0043</td><td>ธนพล วงศ์วิโรจน์</td><td>Sales</td><td>2.9</td><td>2.4</td><td>3.4 (ปานกลาง)</td><td>46</td><td><span class="badge badge-red">ต้องติดตาม</span></td></tr>
+<tr><td>EMP-0044</td><td>สุรศักดิ์ ธรรมรักษ์</td><td>Sales</td><td>2.1</td><td>4.3</td><td>3.9 (สูง)</td><td>50</td><td><span class="badge badge-red">ต้องติดตาม</span></td></tr>
+<tr><td>EMP-0045</td><td>สุรกิจ ใจดี</td><td>Sales</td><td>2.3</td><td>2.5</td><td>2.4 (ต่ำ)</td><td>49</td><td><span class="badge badge-red">ต้องติดตาม</span></td></tr>
+<tr><td>EMP-0046</td><td>วีระ พรหมมา</td><td>Sales</td><td>3.2</td><td>2.6</td><td>2.3 (ต่ำ)</td><td>57</td><td><span class="badge badge-red">ต้องติดตาม</span></td></tr>
+<tr><td>EMP-0047</td><td>ธนพล ทองดี</td><td>Sales</td><td>2.9</td><td>2.0</td><td>2.4 (ต่ำ)</td><td>50</td><td><span class="badge badge-red">ต้องติดตาม</span></td></tr>
+<tr><td>EMP-0048</td><td>นภาพร ทองดี</td><td>Sales</td><td>3.2</td><td>4.8</td><td>2.8 (ปานกลาง)</td><td>68</td><td><span class="badge badge-amber">ควรดูแล</span></td></tr>
+<tr><td>EMP-0049</td><td>พิชัย สุขสมบูรณ์</td><td>Sales</td><td>3.5</td><td>3.0</td><td>3.7 (สูง)</td><td>52</td><td><span class="badge badge-red">ต้องติดตาม</span></td></tr>
+<tr><td>EMP-0050</td><td>วราภรณ์ รัตนมาลี</td><td>Sales</td><td>4.5</td><td>4.9</td><td>2.7 (ปานกลาง)</td><td>78</td><td><span class="badge badge-green">ดี</span></td></tr>
+<tr><td>EMP-0051</td><td>กฤติยา วงศ์วิโรจน์</td><td>Operations</td><td>2.8</td><td>3.9</td><td>2.4 (ต่ำ)</td><td>62</td><td><span class="badge badge-red">ต้องติดตาม</span></td></tr>
+<tr><td>EMP-0052</td><td>ธนพร แก้วประเสริฐ</td><td>Operations</td><td>4.9</td><td>4.3</td><td>3.5 (ปานกลาง)</td><td>71</td><td><span class="badge badge-amber">ควรดูแล</span></td></tr>
+<tr><td>EMP-0053</td><td>อรุณี รุ่งโรจน์</td><td>Operations</td><td>3.8</td><td>3.1</td><td>3.4 (ปานกลาง)</td><td>57</td><td><span class="badge badge-red">ต้องติดตาม</span></td></tr>
+<tr><td>EMP-0054</td><td>ชัยวัฒน์ วงศ์สุวรรณ</td><td>Operations</td><td>5.0</td><td>2.9</td><td>4.4 (สูง)</td><td>57</td><td><span class="badge badge-red">ต้องติดตาม</span></td></tr>
+<tr><td>EMP-0055</td><td>ประจวบ แสงจันทร์</td><td>Operations</td><td>2.0</td><td>4.6</td><td>3.7 (สูง)</td><td>53</td><td><span class="badge badge-red">ต้องติดตาม</span></td></tr>
+<tr><td>EMP-0056</td><td>ประมวล ใจดี</td><td>Operations</td><td>4.7</td><td>3.9</td><td>2.1 (ต่ำ)</td><td>77</td><td><span class="badge badge-green">ดี</span></td></tr>
+<tr><td>EMP-0057</td><td>ชัยวัฒน์ จันทร์สว่าง</td><td>Operations</td><td>2.5</td><td>4.7</td><td>4.3 (สูง)</td><td>53</td><td><span class="badge badge-red">ต้องติดตาม</span></td></tr>
+<tr><td>EMP-0058</td><td>ชัยยศ มั่นคง</td><td>Operations</td><td>4.4</td><td>2.0</td><td>2.9 (ปานกลาง)</td><td>57</td><td><span class="badge badge-red">ต้องติดตาม</span></td></tr>
+<tr><td>EMP-0059</td><td>พิชัย แก้วประเสริฐ</td><td>Operations</td><td>3.9</td><td>3.4</td><td>3.5 (ปานกลาง)</td><td>59</td><td><span class="badge badge-red">ต้องติดตาม</span></td></tr>
+<tr><td>EMP-0060</td><td>วิทยา วงศ์สุวรรณ</td><td>Operations</td><td>3.3</td><td>4.2</td><td>1.5 (ต่ำ)</td><td>73</td><td><span class="badge badge-amber">ควรดูแล</span></td></tr>
+<tr><td>EMP-0061</td><td>รัตนา ใจดี</td><td>Operations</td><td>4.7</td><td>3.9</td><td>1.2 (ต่ำ)</td><td>83</td><td><span class="badge badge-green">ดี</span></td></tr>
+<tr><td>EMP-0062</td><td>นภาพร ทองดี</td><td>Operations</td><td>2.6</td><td>4.6</td><td>2.1 (ต่ำ)</td><td>67</td><td><span class="badge badge-amber">ควรดูแล</span></td></tr>
+<tr><td>EMP-0063</td><td>วรรณ์วิภา จันทร์เพ็ญ</td><td>Operations</td><td>2.5</td><td>2.2</td><td>3.6 (สูง)</td><td>41</td><td><span class="badge badge-red">ต้องติดตาม</span></td></tr>
+<tr><td>EMP-0064</td><td>พิชัย ใจดี</td><td>Operations</td><td>4.9</td><td>2.2</td><td>2.7 (ปานกลาง)</td><td>63</td><td><span class="badge badge-red">ต้องติดตาม</span></td></tr>
+<tr><td>EMP-0065</td><td>รัตนา ใจดี</td><td>Operations</td><td>2.9</td><td>3.5</td><td>2.5 (ต่ำ)</td><td>59</td><td><span class="badge badge-red">ต้องติดตาม</span></td></tr>
+<tr><td>EMP-0066</td><td>วิทยา ทองประเสริฐ</td><td>Operations</td><td>2.8</td><td>4.9</td><td>3.4 (ปานกลาง)</td><td>62</td><td><span class="badge badge-red">ต้องติดตาม</span></td></tr>
+<tr><td>EMP-0067</td><td>สุรชัย แก้วมณี</td><td>Operations</td><td>4.8</td><td>3.3</td><td>4.2 (สูง)</td><td>59</td><td><span class="badge badge-red">ต้องติดตาม</span></td></tr>
+<tr><td>EMP-0068</td><td>ประภัสสร ศรีจันทร์</td><td>Operations</td><td>4.4</td><td>4.5</td><td>4.4 (สูง)</td><td>63</td><td><span class="badge badge-red">ต้องติดตาม</span></td></tr>
+<tr><td>EMP-0069</td><td>อนุชา แก้วประเสริฐ</td><td>Operations</td><td>3.2</td><td>2.4</td><td>3.2 (ปานกลาง)</td><td>49</td><td><span class="badge badge-red">ต้องติดตาม</span></td></tr>
+<tr><td>EMP-0070</td><td>พรชิตา รัตนมาลี</td><td>Operations</td><td>4.0</td><td>2.8</td><td>3.3 (ปานกลาง)</td><td>57</td><td><span class="badge badge-red">ต้องติดตาม</span></td></tr>
+<tr><td>EMP-0071</td><td>ชัยณรงค์ ศิริชัย</td><td>Finance</td><td>3.8</td><td>2.0</td><td>2.1 (ต่ำ)</td><td>58</td><td><span class="badge badge-red">ต้องติดตาม</span></td></tr>
+<tr><td>EMP-0072</td><td>สุรัติยา สุขสมบูรณ์</td><td>Finance</td><td>3.2</td><td>4.2</td><td>2.5 (ต่ำ)</td><td>66</td><td><span class="badge badge-amber">ควรดูแล</span></td></tr>
+<tr><td>EMP-0073</td><td>พิชัย มั่นคง</td><td>Finance</td><td>2.3</td><td>4.5</td><td>1.9 (ต่ำ)</td><td>66</td><td><span class="badge badge-amber">ควรดูแล</span></td></tr>
+<tr><td>EMP-0074</td><td>ณัฐกานต์ แก้วมณี</td><td>Finance</td><td>4.9</td><td>3.9</td><td>1.5 (ต่ำ)</td><td>82</td><td><span class="badge badge-green">ดี</span></td></tr>
+<tr><td>EMP-0075</td><td>สุภาวดี รัตนมาลี</td><td>Finance</td><td>5.0</td><td>3.0</td><td>4.4 (สูง)</td><td>57</td><td><span class="badge badge-red">ต้องติดตาม</span></td></tr>
+<tr><td>EMP-0076</td><td>ภาวิณี แก้วมณี</td><td>Finance</td><td>4.6</td><td>4.6</td><td>3.2 (ปานกลาง)</td><td>73</td><td><span class="badge badge-amber">ควรดูแล</span></td></tr>
+<tr><td>EMP-0077</td><td>ประจวบ วงศ์วิโรจน์</td><td>Finance</td><td>4.7</td><td>3.0</td><td>3.5 (ปานกลาง)</td><td>61</td><td><span class="badge badge-red">ต้องติดตาม</span></td></tr>
+<tr><td>EMP-0078</td><td>สุรกิจ ศรีสุข</td><td>Finance</td><td>4.4</td><td>3.9</td><td>1.2 (ต่ำ)</td><td>81</td><td><span class="badge badge-green">ดี</span></td></tr>
+<tr><td>EMP-0079</td><td>ปรียา แสงจันทร์</td><td>Finance</td><td>4.1</td><td>2.3</td><td>3.0 (ปานกลาง)</td><td>56</td><td><span class="badge badge-red">ต้องติดตาม</span></td></tr>
+<tr><td>EMP-0080</td><td>ธนากร วงศ์สุวรรณ</td><td>Finance</td><td>2.4</td><td>2.2</td><td>4.0 (สูง)</td><td>37</td><td><span class="badge badge-red">ต้องติดตาม</span></td></tr>
+<tr><td>EMP-0081</td><td>วิไลวรรณ ธรรมรักษ์</td><td>Finance</td><td>3.2</td><td>4.0</td><td>1.8 (ต่ำ)</td><td>69</td><td><span class="badge badge-amber">ควรดูแล</span></td></tr>
+<tr><td>EMP-0082</td><td>ชัยยศ ทองดี</td><td>Finance</td><td>3.6</td><td>4.9</td><td>3.9 (สูง)</td><td>64</td><td><span class="badge badge-red">ต้องติดตาม</span></td></tr>
+<tr><td>EMP-0083</td><td>ชัยวัฒน์ สุขสมบูรณ์</td><td>Finance</td><td>3.5</td><td>4.5</td><td>1.3 (ต่ำ)</td><td>78</td><td><span class="badge badge-green">ดี</span></td></tr>
+<tr><td>EMP-0084</td><td>ชัยณรงค์ จันทร์สว่าง</td><td>Finance</td><td>2.4</td><td>2.9</td><td>3.9 (สูง)</td><td>43</td><td><span class="badge badge-red">ต้องติดตาม</span></td></tr>
+<tr><td>EMP-0085</td><td>ชัยวัฒน์ รุ่งโรจน์</td><td>HR</td><td>2.9</td><td>2.1</td><td>2.5 (ต่ำ)</td><td>50</td><td><span class="badge badge-red">ต้องติดตาม</span></td></tr>
+<tr><td>EMP-0086</td><td>ประจวบ แก้วมณี</td><td>HR</td><td>4.0</td><td>2.3</td><td>4.4 (สูง)</td><td>46</td><td><span class="badge badge-red">ต้องติดตาม</span></td></tr>
+<tr><td>EMP-0087</td><td>พรชิตา สมบูรณ์</td><td>HR</td><td>4.2</td><td>3.9</td><td>3.7 (สูง)</td><td>63</td><td><span class="badge badge-red">ต้องติดตาม</span></td></tr>
+<tr><td>EMP-0088</td><td>ธนากร วงศ์สุวรรณ</td><td>HR</td><td>2.1</td><td>2.6</td><td>3.8 (สูง)</td><td>39</td><td><span class="badge badge-red">ต้องติดตาม</span></td></tr>
+<tr><td>EMP-0089</td><td>สมศักดิ์ แสงจันทร์</td><td>HR</td><td>3.3</td><td>3.2</td><td>2.5 (ต่ำ)</td><td>60</td><td><span class="badge badge-red">ต้องติดตาม</span></td></tr>
+<tr><td>EMP-0090</td><td>ธนากร พุ่มน้อย</td><td>HR</td><td>4.0</td><td>2.9</td><td>3.1 (ปานกลาง)</td><td>59</td><td><span class="badge badge-red">ต้องติดตาม</span></td></tr>
+<tr><td>EMP-0091</td><td>ชัยณรงค์ จันทร์สว่าง</td><td>HR</td><td>4.4</td><td>4.0</td><td>4.3 (สูง)</td><td>61</td><td><span class="badge badge-red">ต้องติดตาม</span></td></tr>
+<tr><td>EMP-0092</td><td>วรรณ์วิภา แก้วประเสริฐ</td><td>HR</td><td>3.3</td><td>2.2</td><td>1.5 (ต่ำ)</td><td>60</td><td><span class="badge badge-red">ต้องติดตาม</span></td></tr>
+<tr><td>EMP-0093</td><td>วราภรณ์ ทองประเสริฐ</td><td>R&D</td><td>3.8</td><td>4.1</td><td>4.5 (สูง)</td><td>56</td><td><span class="badge badge-red">ต้องติดตาม</span></td></tr>
+<tr><td>EMP-0094</td><td>สุรัติยา แก้วมณี</td><td>R&D</td><td>4.1</td><td>4.1</td><td>1.6 (ต่ำ)</td><td>77</td><td><span class="badge badge-green">ดี</span></td></tr>
+<tr><td>EMP-0095</td><td>ปิยาภรณ์ รุ่งเรือง</td><td>R&D</td><td>3.2</td><td>4.2</td><td>2.7 (ปานกลาง)</td><td>65</td><td><span class="badge badge-amber">ควรดูแล</span></td></tr>
+<tr><td>EMP-0096</td><td>สุพิชชา วงศ์วิโรจน์</td><td>R&D</td><td>3.3</td><td>4.7</td><td>1.2 (ต่ำ)</td><td>79</td><td><span class="badge badge-green">ดี</span></td></tr>
+<tr><td>EMP-0097</td><td>วรรณี แสงจันทร์</td><td>R&D</td><td>2.9</td><td>3.6</td><td>2.8 (ปานกลาง)</td><td>58</td><td><span class="badge badge-red">ต้องติดตาม</span></td></tr>
+<tr><td>EMP-0098</td><td>ประทุม วงศ์สุวรรณ</td><td>R&D</td><td>2.6</td><td>3.7</td><td>3.2 (ปานกลาง)</td><td>54</td><td><span class="badge badge-red">ต้องติดตาม</span></td></tr>
+<tr><td>EMP-0099</td><td>วาสนา สมบูรณ์</td><td>R&D</td><td>3.8</td><td>2.9</td><td>3.5 (ปานกลาง)</td><td>55</td><td><span class="badge badge-red">ต้องติดตาม</span></td></tr>
+<tr><td>EMP-0100</td><td>กิตติพงศ์ พรหมมา</td><td>R&D</td><td>3.3</td><td>4.9</td><td>4.2 (สูง)</td><td>60</td><td><span class="badge badge-red">ต้องติดตาม</span></td></tr>
+</tbody>
       </table>
     </div>
   </div>
