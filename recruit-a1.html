@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ระบบแสวงหา - PP7</title>
+  <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Prompt', sans-serif; background: #f5f7fa; }
+    .header { background: linear-gradient(135deg, #1a237e 0%, #283593 100%); color: white; padding: 20px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+    .header h1 { font-size: 24px; font-weight: 600; }
+    .header .subtitle { opacity: 0.8; font-size: 14px; margin-top: 5px; }
+    .nav-tabs { display: flex; background: white; padding: 0 20px; border-bottom: 2px solid #e0e0e0; overflow-x: auto; }
+    .nav-tab { padding: 15px 20px; cursor: pointer; border-bottom: 3px solid transparent; color: #666; font-weight: 500; white-space: nowrap; }
+    .nav-tab:hover { color: #1a237e; }
+    .nav-tab.active { border-bottom-color: #1a237e; color: #1a237e; }
+    .content { padding: 20px; }
+    .card { background: white; border-radius: 10px; padding: 20px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); margin-bottom: 20px; }
+    .kpi-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin-bottom: 20px; }
+    .kpi-card { background: white; padding: 20px; border-radius: 10px; text-align: center; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
+    .kpi-card .number { font-size: 32px; font-weight: 700; color: #1a237e; }
+    .kpi-card .label { color: #666; font-size: 14px; margin-top: 5px; }
+    .kpi-card.daily .number { color: #ff9800; }
+    .kpi-card.contract .number { color: #2196f3; }
+    .kpi-card.permanent .number { color: #4caf50; }
+    .kpi-card.closed .number { color: #f44336; }
+    table { width: 100%; border-collapse: collapse; }
+    th, td { padding: 12px; text-align: left; border-bottom: 1px solid #eee; }
+    th { background: #f8f9fa; font-weight: 600; color: #333; }
+    tr:hover { background: #f5f5f5; }
+    .status-badge { padding: 5px 10px; border-radius: 20px; font-size: 12px; font-weight: 500; }
+    .status-hired { background: #e8f5e9; color: #2e7d32; }
+    .status-closed { background: #ffebee; color: #c62828; }
+    .status-duplicate { background: #fff3e0; color: #ef6c00; }
+    .status-pending { background: #e3f2fd; color: #1565c0; }
+    .search-box { padding: 10px; border: 1px solid #ddd; border-radius: 5px; width: 300px; margin-bottom: 15px; }
+    .filter-group { display: flex; gap: 10px; margin-bottom: 15px; flex-wrap: wrap; }
+    select { padding: 8px 15px; border: 1px solid #ddd; border-radius: 5px; }
+    .pagination { display: flex; justify-content: center; gap: 5px; margin-top: 20px; }
+    .pagination button { padding: 8px 12px; border: 1px solid #ddd; background: white; cursor: pointer; border-radius: 5px; }
+    .pagination button.active { background: #1a237e; color: white; }
+    .alert { background: #fff3e0; border-left: 4px solid #ff9800; padding: 15px; margin-bottom: 15px; border-radius: 5px; }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <h1>📋 ระบบแสวงหา - PP7</h1>
+    <div class="subtitle">ข้อมูลผู้สมัครงานทั้งหมด | A1: ข้อมูลผู้สมัครทั้งหมด</div>
+  </div>
+  
+  <div class="nav-tabs">
+    <div class="nav-tab active">A1 ข้อมูลผู้สมัครทั้งหมด</div>
+    <div class="nav-tab">A2 Flow การแสวงหา</div>
+    <div class="nav-tab">B1 อัตรากำลังคน</div>
+    <div class="nav-tab">B2 คัดกรองผู้สมัคร</div>
+    <div class="nav-tab">B3 นัดสัมภาษณ์</div>
+    <div class="nav-tab">B4 ตารางสัมภาษณ์</div>
+    <div class="nav-tab">B6 เริ่มงานรายวัน</div>
+    <div class="nav-tab">B7 ประเมินผลรายวัน</div>
+    <div class="nav-tab">B8 รอเริ่มงาน</div>
+    <div class="nav-tab">B9 ตั้งรหัส</div>
+    <div class="nav-tab">C1 รายชื่อผู้ถูกจ้าง</div>
+  </div>
+
+  <div class="content">
+    <div class="alert">
+      ⚠️ กำลังดึงข้อมูลจาก Google Sheets... (ข้อมูลตัวอย่าง)
+    </div>
+    
+    <div class="kpi-grid">
+      <div class="kpi-card">
+        <div class="number">7,800+</div>
+        <div class="label">ผู้สมัครทั้งหมด</div>
+      </div>
+      <div class="kpi-card daily">
+        <div class="number">2,400+</div>
+        <div class="label">จ้างงานรายวัน</div>
+      </div>
+      <div class="kpi-card contract">
+        <div class="number">850+</div>
+        <div class="label">สัญญาจ้าง</div>
+      </div>
+      <div class="kpi-card permanent">
+        <div class="number">1,200+</div>
+        <div class="label">สมาชิกประจำ</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>📊 สถานะการรับสมัคร</h3>
+      <div style="height: 300px; margin-top: 20px;">
+        <canvas id="statusChart"></canvas>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>📋 รายชื่อผู้สมัครล่าสุด</h3>
+      <div class="filter-group">
+        <input type="text" class="search-box" placeholder="ค้นหาชื่อ, ตำแหน่ง..." id="searchInput">
+        <select id="statusFilter">
+          <option value="">ทุกสถานะ</option>
+          <option value="จ้างงาน">จ้างงาน</option>
+          <option value="ปิดใบสมัคร">ปิดใบสมัคร</option>
+          <option value="ใบสมัครซ้ำ">ใบสมัครซ้ำ</option>
+        </select>
+        <select id="positionFilter">
+          <option value="">ทุกตำแหน่ง</option>
+          <option value="สมาชิกบริการลูกค้าสินเชื่อ">สมาชิกบริการลูกค้าสินเชื่อ</option>
+          <option value="สมาชิกช่างกรุ๊ปรถเล็ก">สมาชิกช่างกรุ๊ปรถเล็ก</option>
+          <option value="สมาชิกที่ปรึกษางานบริการ">สมาชิกที่ปรึกษางานบริการ</option>
+        </select>
+      </div>
+      <table>
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>ชื่อ-นามสกุล</th>
+            <th>ตำแหน่ง</th>
+            <th>เงินเดือนที่คาดหวัง</th>
+            <th>การศึกษา</th>
+            <th>สถานะ</th>
+            <th>วันที่สมัคร</th>
+          </tr>
+        </thead>
+        <tbody id="applicantTable">
+          <tr>
+            <td>1</td>
+            <td>นาย อรุณ เค้าทอง</td>
+            <td>สมาชิกที่ปรึกษางานบริการ(ช่างยนต์)</td>
+            <td>8,001-10,000 บาท</td>
+            <td>ปวส. เทคนิคเครื่องกล</td>
+            <td><span class="status-badge status-hired">จ้างงาน</span></td>
+            <td>26/04/2017</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>นาย อนุวัฒน์ แก้วรอด</td>
+            <td>สมาชิกช่างกรุ๊ปรถเล็ก-สาขาสอยดาว</td>
+            <td>10,001-12,000 บาท</td>
+            <td>ปวส. เครื่องกล</td>
+            <td><span class="status-badge status-hired">จ้างงาน</span></td>
+            <td>07/02/2018</td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>นาย ทรงยุทธ เมฆมี</td>
+            <td>สมาชิกทีมสานสันพันธ์</td>
+            <td>12,001-15,000 บาท</td>
+            <td>ปวส. ช่างยนต์-เทคนิคเครื่องกล</td>
+            <td><span class="status-badge status-hired">จ้างงาน</span></td>
+            <td>17/10/2020</td>
+          </tr>
+          <tr>
+            <td>4</td>
+            <td>น.ส. รัชดาภรณ์ ขอจัดกลาง</td>
+            <td>สมาชิกประเมินราคาและบริการลูกค้า</td>
+            <td>15,000 บาทขึ้นไป</td>
+            <td>ปริญญาตรี คอมพิวเตอร์ธุรการ</td>
+            <td><span class="status-badge status-duplicate">ใบสมัครซ้ำ</span></td>
+            <td>04/01/2021</td>
+          </tr>
+          <tr>
+            <td>5</td>
+            <td>น.ส. จารุวรรณ เปยะสา</td>
+            <td>สมาชิกประเมินราคาและบริการลูกค้า</td>
+            <td>12,001-15,000 บาท</td>
+            <td>ปริญญาตรี การจัดการคุณภาพ</td>
+            <td><span class="status-badge status-closed">ปิดใบสมัคร</span></td>
+            <td>11/01/2021</td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="pagination">
+        <button>ก่อน</button>
+        <button class="active">1</button>
+        <button>2</button>
+        <button>3</button>
+        <button>...</button>
+        <button>156</button>
+        <button>ถัดไป</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Chart
+    const ctx = document.getElementById('statusChart').getContext('2d');
+    new Chart(ctx, {
+      type: 'doughnut',
+      data: {
+        labels: ['จ้างงาน', 'ปิดใบสมัคร', 'ใบสมัครซ้ำ', 'รอดำเนินการ'],
+        datasets: [{
+          data: [35, 45, 12, 8],
+          backgroundColor: ['#4caf50', '#f44336', '#ff9800', '#2196f3']
+        }]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+          legend: { position: 'right' }
+        }
+      }
+    });
+
+    // Search functionality
+    document.getElementById('searchInput').addEventListener('input', function(e) {
+      console.log('Search:', e.target.value);
+    });
+  </script>
+</body>
+</html>
