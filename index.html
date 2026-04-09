@@ -205,6 +205,8 @@
     <button class="tab-btn" data-tab="develop" onclick="showTab('develop')">🎓 <span data-i18n="tabDev">พัฒนา</span></button>
     <button class="tab-btn" data-tab="welfare" onclick="showTab('welfare')">💰 <span data-i18n="tabWelfare">สวัสดิการ</span></button>
     <button class="tab-btn" data-tab="quality" onclick="showTab('quality')">🌿 <span data-i18n="tabQuality">คุณภาพชีวิต</span></button>
+    <button class="tab-btn" data-tab="labor-law" onclick="showTab('labor-law')">⚖️ กฎหมายแรงงาน</button>
+    <button class="tab-btn" data-tab="pkg-rules" onclick="showTab('pkg-rules')">📘 ระเบียบ PKG</button>
   </div>
 </nav>
 
@@ -307,6 +309,86 @@
   </div>
 </section>
 
+<!-- ==================== TAB: LABOR LAW ==================== -->
+<section id="tab-labor-law" class="tab-pane fade-in hidden space-y-6">
+  <div class="flex flex-wrap items-center gap-4">
+    <h2 class="text-xl font-bold text-pp7-800 flex-1">⚖️ กฎหมายสวัสดิการคุ้มครองแรงงาน</h2>
+    <div class="text-sm text-slate-500">อัปเดตโครงหน้าเบื้องต้น, รอเติมเนื้อหากฎหมายปัจจุบันที่มีผลใช้บังคับ</div>
+  </div>
+  <div class="grid md:grid-cols-4 gap-4">
+    <div class="card text-center"><div class="text-sm text-slate-400">ช่วงเวลาทบทวน</div><div class="kpi-num text-blue-600">5 ปี</div></div>
+    <div class="card text-center"><div class="text-sm text-slate-400">หมวดหลัก</div><div class="kpi-num text-emerald-600">5</div></div>
+    <div class="card text-center"><div class="text-sm text-slate-400">สถานะ</div><div class="kpi-num text-amber-600">กำลังจัดทำ</div></div>
+    <div class="card text-center"><div class="text-sm text-slate-400">ใช้บังคับ</div><div class="kpi-num text-violet-600">Current</div></div>
+  </div>
+  <div class="grid lg:grid-cols-2 gap-6">
+    <div class="card">
+      <h3 class="font-semibold text-pp7-800 mb-3">หมวดที่ต้องมีในระบบ</h3>
+      <ul class="list-disc pl-5 space-y-2 text-sm text-slate-700">
+        <li>สิทธิแรงงานและหน้าที่นายจ้าง</li>
+        <li>เวลาทำงาน, วันหยุด, วันลา</li>
+        <li>ค่าจ้าง, ค่าล่วงเวลา, ค่าชดเชย</li>
+        <li>สวัสดิการ, ความปลอดภัย, สุขภาพในการทำงาน</li>
+        <li>การเปลี่ยนแปลงสำคัญใน 5 ปีที่ผ่านมา ที่ยังใช้บังคับปัจจุบัน</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3 class="font-semibold text-pp7-800 mb-3">โครงข้อมูลที่จะแสดง</h3>
+      <div class="space-y-3 text-sm text-slate-700">
+        <div class="p-3 rounded-xl bg-slate-50 border border-slate-200">หัวข้อกฎหมาย</div>
+        <div class="p-3 rounded-xl bg-slate-50 border border-slate-200">สาระสำคัญที่เกี่ยวกับการบริหารคน</div>
+        <div class="p-3 rounded-xl bg-slate-50 border border-slate-200">วันที่มีผลใช้บังคับ</div>
+        <div class="p-3 rounded-xl bg-slate-50 border border-slate-200">ผลกระทบต่อการสรรหา/จ้างงาน/สวัสดิการ</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== TAB: PKG RULES ==================== -->
+<section id="tab-pkg-rules" class="tab-pane fade-in hidden space-y-6">
+  <div class="flex flex-wrap items-center gap-4">
+    <h2 class="text-xl font-bold text-pp7-800 flex-1">📘 ระเบียบข้อบังคับภายในกลุ่มบริษัท PKG</h2>
+    <div class="text-sm text-slate-500">โครงหน้าแยก 3 ประเทศ พร้อมรอเติมข้อมูลจากเอกสารต้นฉบับ</div>
+  </div>
+  <div class="grid md:grid-cols-3 gap-4">
+    <div class="card">
+      <h3 class="font-semibold text-pp7-800 mb-3">THAI</h3>
+      <div class="space-y-2 text-sm text-slate-700">
+        <div><strong>ประเทศ:</strong> ประเทศไทย</div>
+        <div><strong>Code:</strong> THAI</div>
+        <div><strong>Sections:</strong> หมวดระเบียบ, ข้อกำหนดสำคัญ, วันที่มีผล, เวอร์ชัน, อ้างอิง</div>
+      </div>
+    </div>
+    <div class="card">
+      <h3 class="font-semibold text-pp7-800 mb-3">RPLC</h3>
+      <div class="space-y-2 text-sm text-slate-700">
+        <div><strong>ประเทศ:</strong> สปป.ลาว</div>
+        <div><strong>Code:</strong> RPLC</div>
+        <div><strong>Sections:</strong> หมวดระเบียบ, ข้อกำหนดสำคัญ, วันที่มีผล, เวอร์ชัน, อ้างอิง</div>
+      </div>
+    </div>
+    <div class="card">
+      <h3 class="font-semibold text-pp7-800 mb-3">RAFCO</h3>
+      <div class="space-y-2 text-sm text-slate-700">
+        <div><strong>ประเทศ:</strong> กัมพูชา</div>
+        <div><strong>Code:</strong> RAFCO</div>
+        <div><strong>Sections:</strong> หมวดระเบียบ, ข้อกำหนดสำคัญ, วันที่มีผล, เวอร์ชัน, อ้างอิง</div>
+      </div>
+    </div>
+  </div>
+  <div class="card">
+    <h3 class="font-semibold text-pp7-800 mb-3">สถานะข้อมูล</h3>
+    <table data-sortable="true">
+      <thead><tr><th>ประเทศ</th><th>Code</th><th>สถานะ</th><th>หมายเหตุ</th></tr></thead>
+      <tbody>
+        <tr><td>ประเทศไทย</td><td>THAI</td><td><span class="badge badge-blue">พร้อมลงโครง</span></td><td>มีไฟล์อ้างอิงแล้ว, รอ extract/จัดเนื้อหา</td></tr>
+        <tr><td>สปป.ลาว</td><td>RPLC</td><td><span class="badge badge-amber">รอเติมข้อมูล</span></td><td>ใช้โครงเดียวกัน, รอเอกสารและรายละเอียด</td></tr>
+        <tr><td>กัมพูชา</td><td>RAFCO</td><td><span class="badge badge-amber">รอเติมข้อมูล</span></td><td>ใช้โครงเดียวกัน, รอเอกสารและรายละเอียด</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
 <!-- ==================== TAB: RECRUIT ==================== -->
 <section id="tab-recruit" class="tab-pane fade-in hidden space-y-6">
   <div class="flex flex-wrap items-center gap-4">
@@ -321,6 +403,10 @@
     <div class="card text-center" onclick="openDrill('pipeline')"><div class="text-sm text-slate-400" data-i18n="inPipeline">ใน Pipeline</div><div class="kpi-num text-blue-600">186</div></div>
     <div class="card text-center"><div class="text-sm text-slate-400" data-i18n="interviewed">ผ่านการสัมภาษณ์</div><div class="kpi-num text-emerald-600">34</div></div>
     <div class="card text-center"><div class="text-sm text-slate-400">Offer Sent</div><div class="kpi-num text-violet-600">12</div></div>
+  </div>
+  <div class="card">
+    <h3 class="font-semibold text-pp7-800 mb-3">สรุปข้อมูลจริงจาก A1 (รอบทำงานปัจจุบัน)</h3>
+    <div id="recruit-summary" class="detail-grid"></div>
   </div>
   <div class="grid lg:grid-cols-2 gap-5">
     <div class="card"><h3 class="font-semibold text-pp7-800 mb-3">⏱️ Time-to-Fill (Avg)</h3><div class="chart-box"><canvas id="chart-ttf"></canvas></div></div>
@@ -1182,7 +1268,7 @@ function exportPDF(){
   document.querySelectorAll('.sticky-nav,.toolbar,.search-box,.notif-btn').forEach(e=>{e.style.display='none'});
   
   // Show all tabs and init their charts so html2canvas captures them
-  ['executive','recruit','assess','match','performance','develop','welfare','quality'].forEach(function(tab){
+  ['executive','recruit','assess','match','performance','develop','welfare','quality','labor-law','pkg-rules'].forEach(function(tab){
     document.getElementById('tab-'+tab).classList.remove('hidden');
     document.getElementById('tab-'+tab).style.display='block';
     initCharts(tab);
@@ -1370,10 +1456,85 @@ function initCharts(tab){
 }
 
 // ========== DATA INITIALIZATION ==========
+function getRecruitStatusBadge(status){
+  const s = String(status || '').trim();
+  if (s === 'จ้างงาน') return 'badge-green';
+  if (s === 'มาสัมภาษณ์') return 'badge-amber';
+  if (s === 'รอสัมภาษณ์' || s === 'รอคัดเลือกใบสมัคร') return 'badge-blue';
+  if (s === 'ปิดใบสมัคร' || s === 'ใบสมัครซ้ำ') return 'badge-red';
+  return 'badge-blue';
+}
+
+function renderRecruitTable(){
+  const tbody = document.getElementById('recruit-tbody');
+  if(!tbody || typeof RECRUIT_CLEAN_DATA === 'undefined') return;
+  const rows = (RECRUIT_CLEAN_DATA.rows || []).slice(0, 200);
+  let html = '';
+  for(const r of rows){
+    const id = r.running || '-';
+    const name = r.fullNameNoPrefix || r.fullName || '-';
+    const position = r.jobPosition1 || r.jobPosition2 || '-';
+    const source = r.schoolName || '-';
+    const status = r.status_register || '-';
+    const applyDate = r.applicationDate || '-';
+    const employment = r.employmentStatus || 'ยังไม่พบใน employee';
+    html += `<tr>
+      <td>${id}</td>
+      <td><div class="font-medium">${name}</div><div class="text-xs text-slate-500">${employment}</div></td>
+      <td>${position}</td>
+      <td>${source}</td>
+      <td><span class="badge ${getRecruitStatusBadge(status)}">${status}</span></td>
+      <td>${applyDate}</td>
+    </tr>`;
+  }
+  tbody.innerHTML = html;
+}
+
+function collectRecruitMetrics(){
+  if(typeof RECRUIT_CLEAN_DATA === 'undefined') return null;
+  const rows = RECRUIT_CLEAN_DATA.rows || [];
+  const stageCounts = {
+    applied: rows.length,
+    screening: rows.filter(r => ['รอคัดเลือกใบสมัคร','รอสัมภาษณ์'].includes(r.status_register)).length,
+    interviewed: rows.filter(r => r.status_register === 'มาสัมภาษณ์').length,
+    hired: rows.filter(r => r.status_register === 'จ้างงาน').length,
+    duplicated: rows.filter(r => r.status_register === 'ใบสมัครซ้ำ').length,
+    closed: rows.filter(r => r.status_register === 'ปิดใบสมัคร' || r.status_register === 'ปิดสมัคร').length,
+    matchedEmployment: rows.filter(r => r.employmentStatus).length,
+  };
+  return stageCounts;
+}
+
+function renderRecruitInsights(){
+  const metrics = collectRecruitMetrics();
+  if(!metrics) return;
+  const summaryEl = document.getElementById('recruit-summary');
+  if(summaryEl){
+    summaryEl.innerHTML = `
+      <div class="detail-item"><div class="label">สมัครทั้งหมด</div><div class="value">${metrics.applied}</div></div>
+      <div class="detail-item"><div class="label">รอคัดเลือก/รอสัมภาษณ์</div><div class="value" style="color:#3b82f6">${metrics.screening}</div></div>
+      <div class="detail-item"><div class="label">มาสัมภาษณ์</div><div class="value" style="color:#f59e0b">${metrics.interviewed}</div></div>
+      <div class="detail-item"><div class="label">จ้างงาน</div><div class="value" style="color:#10b981">${metrics.hired}</div></div>
+      <div class="detail-item"><div class="label">ปิด/ซ้ำ</div><div class="value" style="color:#ef4444">${metrics.closed + metrics.duplicated}</div></div>
+      <div class="detail-item"><div class="label">พบใน employee</div><div class="value" style="color:#8b5cf6">${metrics.matchedEmployment}</div></div>
+    `;
+  }
+}
+
 function initDashboardData(){
   if(typeof EMP_STATS !== 'undefined'){
     var totalEl = document.getElementById('kpi-total');
     if(totalEl) totalEl.textContent = EMP_STATS.total;
+  }
+  renderRecruitTable();
+  renderRecruitInsights();
+  if(typeof RECRUIT_CLEAN_DATA !== 'undefined'){
+    const summary = RECRUIT_CLEAN_DATA.summary || {};
+    const cards = document.querySelectorAll('#tab-recruit .kpi-num');
+    if(cards[0]) cards[0].textContent = summary.total || 0;
+    if(cards[1]) cards[1].textContent = (RECRUIT_CLEAN_DATA.rows || []).filter(r => ['รอคัดเลือกใบสมัคร','รอสัมภาษณ์','มาสัมภาษณ์'].includes(r.status_register)).length;
+    if(cards[2]) cards[2].textContent = (RECRUIT_CLEAN_DATA.rows || []).filter(r => r.status_register === 'จ้างงาน').length;
+    if(cards[3]) cards[3].textContent = summary.matchedEmployment || 0;
   }
   if(typeof WG_DATA !== 'undefined'){
     var tbodyEl = document.getElementById('dept-tbody');
@@ -1464,6 +1625,7 @@ function applyLogin(session){
   showTab('executive');
   initDashboardData();
   checkAlerts();
+  initDashboardData();
 })();
 </script>
 </body>
