@@ -318,8 +318,8 @@
   <div class="grid md:grid-cols-4 gap-4">
     <div class="card text-center"><div class="text-sm text-slate-400">ช่วงเวลาทบทวน</div><div class="kpi-num text-blue-600">5 ปี</div></div>
     <div class="card text-center"><div class="text-sm text-slate-400">หมวดหลัก</div><div class="kpi-num text-emerald-600">5</div></div>
-    <div class="card text-center"><div class="text-sm text-slate-400">สถานะ</div><div class="kpi-num text-amber-600">กำลังจัดทำ</div></div>
-    <div class="card text-center"><div class="text-sm text-slate-400">ใช้บังคับ</div><div class="kpi-num text-violet-600">Current</div></div>
+    <div class="card text-center"><div class="text-sm text-slate-400">สถานะ</div><div class="kpi-num text-amber-600">อัปเดตแล้วบางส่วน</div></div>
+    <div class="card text-center"><div class="text-sm text-slate-400">แหล่งอ้างอิง</div><div class="kpi-num text-violet-600">ภาครัฐ</div></div>
   </div>
   <div class="grid lg:grid-cols-2 gap-6">
     <div class="card">
@@ -333,13 +333,27 @@
       </ul>
     </div>
     <div class="card">
-      <h3 class="font-semibold text-pp7-800 mb-3">โครงข้อมูลที่จะแสดง</h3>
+      <h3 class="font-semibold text-pp7-800 mb-3">แหล่งอ้างอิงที่ใช้</h3>
       <div class="space-y-3 text-sm text-slate-700">
-        <div class="p-3 rounded-xl bg-slate-50 border border-slate-200">หัวข้อกฎหมาย</div>
-        <div class="p-3 rounded-xl bg-slate-50 border border-slate-200">สาระสำคัญที่เกี่ยวกับการบริหารคน</div>
-        <div class="p-3 rounded-xl bg-slate-50 border border-slate-200">วันที่มีผลใช้บังคับ</div>
-        <div class="p-3 rounded-xl bg-slate-50 border border-slate-200">ผลกระทบต่อการสรรหา/จ้างงาน/สวัสดิการ</div>
+        <div class="p-3 rounded-xl bg-slate-50 border border-slate-200">กรมสวัสดิการและคุ้มครองแรงงาน (labour.go.th)</div>
+        <div class="p-3 rounded-xl bg-slate-50 border border-slate-200">กองนิติการ กรมสวัสดิการและคุ้มครองแรงงาน (legal.labour.go.th)</div>
+        <div class="p-3 rounded-xl bg-slate-50 border border-slate-200">ข้อมูลตอบข้อหารือ/FAQ จากสำนักงานสวัสดิการและคุ้มครองแรงงาน</div>
       </div>
+    </div>
+  </div>
+  <div class="card">
+    <h3 class="font-semibold text-pp7-800 mb-3">หัวข้อกฎหมายแรงงานที่ใส่รอบแรก</h3>
+    <div class="overflow-x-auto">
+      <table data-sortable="true">
+        <thead><tr><th>หัวข้อ</th><th>สาระสำคัญ</th><th>ผลต่อการบริหารคน</th><th>แหล่งอ้างอิง</th></tr></thead>
+        <tbody>
+          <tr><td>เวลาทำงานปกติและเวลาพัก</td><td>ต้องกำหนดเวลาทำงานปกติ, เวลาพัก และสื่อสารให้ลูกจ้างทราบชัดเจน</td><td>ใช้กำหนดกติกาเวลาทำงาน, การลงเวลา, และการจัดตารางงาน</td><td>กรมสวัสดิการและคุ้มครองแรงงาน</td></tr>
+          <tr><td>สิทธิลากิจธุระอันจำเป็น</td><td>กฎหมายกำหนดสิทธิลากิจธุระอันจำเป็น และแนวปฏิบัติเรื่องค่าจ้างตามเกณฑ์ที่กฎหมายกำหนด</td><td>ต้องกำหนดระเบียบลาและสื่อสาร HR policy ให้ตรงกฎหมาย</td><td>สำนักงานสวัสดิการและคุ้มครองแรงงาน</td></tr>
+          <tr><td>ค่าจ้าง, ค่าล่วงเวลา, ค่าทำงานวันหยุด</td><td>ต้องจ่ายตามหลักเกณฑ์กฎหมายแรงงานและไม่ต่ำกว่าสิทธิขั้นต่ำ</td><td>เกี่ยวกับ payroll, incentive, และการคุมต้นทุนแรงงาน</td><td>สำนักงานสวัสดิการและคุ้มครองแรงงานพื้นที่ 3</td></tr>
+          <tr><td>สวัสดิการแรงงานตามกฎหมาย</td><td>นายจ้างต้องจัดสวัสดิการขั้นต่ำที่กฎหมายกำหนดตามลักษณะกิจการ</td><td>เชื่อมกับ tab ค่าตอบแทน/คุณภาพชีวิต และ compliance ภายใน</td><td>labour.go.th</td></tr>
+          <tr><td>การอัปเดตกฎหมาย/กฎกระทรวงใหม่</td><td>ต้องติดตามประกาศใหม่และคัดเฉพาะที่ยังใช้บังคับปัจจุบัน เช่น กฎกระทรวงและข้อหารือใหม่</td><td>ใช้เป็นระบบเตือน HR/ผู้บริหารเมื่อมีกฎหมายกระทบการจ้างงาน</td><td>legal.labour.go.th</td></tr>
+        </tbody>
+      </table>
     </div>
   </div>
 </section>
