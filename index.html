@@ -207,6 +207,7 @@
     <button class="tab-btn" data-tab="quality" onclick="showTab('quality')">🌿 <span data-i18n="tabQuality">คุณภาพชีวิต</span></button>
     <button class="tab-btn" data-tab="labor-law" onclick="showTab('labor-law')">⚖️ กฎหมายแรงงาน</button>
     <button class="tab-btn" data-tab="pkg-rules" onclick="showTab('pkg-rules')">📘 ระเบียบ PKG</button>
+    <button class="tab-btn" data-tab="data-exchange" onclick="showTab('data-exchange')">🔄 Import / Export</button>
   </div>
 </nav>
 
@@ -306,6 +307,99 @@
         <tbody id="dept-tbody"></tbody>
       </table>
     </div>
+  </div>
+</section>
+
+<!-- ==================== TAB: DATA EXCHANGE ==================== -->
+<section id="tab-data-exchange" class="tab-pane fade-in hidden space-y-6">
+  <div class="flex flex-wrap items-center gap-4">
+    <h2 class="text-xl font-bold text-pp7-800 flex-1">🔄 Data Exchange Center</h2>
+    <div class="text-sm text-slate-500">ศูนย์กลางการนำเข้าและส่งออกข้อมูลสำหรับ HR, Operation และผู้บริหาร</div>
+  </div>
+
+  <div class="grid md:grid-cols-4 gap-4">
+    <div class="card text-center"><div class="text-sm text-slate-400">Import Modules</div><div class="kpi-num text-blue-600">5</div></div>
+    <div class="card text-center"><div class="text-sm text-slate-400">Export Formats</div><div class="kpi-num text-emerald-600">3</div></div>
+    <div class="card text-center"><div class="text-sm text-slate-400">Validation</div><div class="kpi-num text-amber-600">Preview</div></div>
+    <div class="card text-center"><div class="text-sm text-slate-400">Audit Log</div><div class="kpi-num text-violet-600">Enabled</div></div>
+  </div>
+
+  <div class="grid lg:grid-cols-2 gap-6">
+    <div class="card">
+      <h3 class="font-semibold text-pp7-800 mb-3">Import Center</h3>
+      <table data-sortable="true">
+        <thead><tr><th>Module</th><th>ข้อมูลที่นำเข้า</th><th>Key Field</th><th>สถานะ</th></tr></thead>
+        <tbody>
+          <tr><td>Recruitment Update</td><td>สถานะผู้สมัคร, วันนัด, ผลสัมภาษณ์, เหตุผลไม่ผ่าน, วันที่เริ่มงาน</td><td>running / personalID</td><td><span class="badge badge-blue">Ready to design</span></td></tr>
+          <tr><td>Assessment Result</td><td>คะแนน Roleplay, Skill Test, Behavior, Comment ผู้ประเมิน</td><td>candidate_id</td><td><span class="badge badge-blue">Ready to design</span></td></tr>
+          <tr><td>Placement Update</td><td>ตำแหน่งแนะนำ, match score, หมายเหตุ HR/AI</td><td>candidate_id + job_code</td><td><span class="badge badge-blue">Ready to design</span></td></tr>
+          <tr><td>Operation Feed</td><td>KPI รายวัน, output, attendance, activity summary</td><td>employee_id + date</td><td><span class="badge badge-amber">Need source mapping</span></td></tr>
+          <tr><td>Master Data</td><td>JD/LIA, team structure, code reference</td><td>job_code / team_code</td><td><span class="badge badge-blue">Ready to design</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="card">
+      <h3 class="font-semibold text-pp7-800 mb-3">Export Center</h3>
+      <table data-sortable="true">
+        <thead><tr><th>ประเภท</th><th>สิ่งที่ส่งออก</th><th>Format</th><th>ผู้ใช้งานหลัก</th></tr></thead>
+        <tbody>
+          <tr><td>Executive Report</td><td>PP7 Summary, KPI, Traffic-light status</td><td>PDF / Excel</td><td>ผู้บริหาร</td></tr>
+          <tr><td>Operation Report</td><td>Applicant list, pipeline, daily action list</td><td>Excel / CSV</td><td>Operation / HR</td></tr>
+          <tr><td>Assessment Export</td><td>คะแนนประเมิน, roleplay, skill, behavior</td><td>Excel / CSV</td><td>HR / Assessor</td></tr>
+          <tr><td>Placement Export</td><td>Match result, recommended role, gap analysis</td><td>Excel / PDF</td><td>HR / Line manager</td></tr>
+          <tr><td>Compensation Summary</td><td>productivity, incentive base, cost per performance</td><td>Excel</td><td>HR / Finance</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="grid lg:grid-cols-3 gap-6">
+    <div class="card">
+      <h3 class="font-semibold text-pp7-800 mb-3">Workflow มาตรฐาน Import</h3>
+      <ol class="list-decimal pl-5 space-y-2 text-sm text-slate-700">
+        <li>ดาวน์โหลด template</li>
+        <li>กรอกข้อมูลตาม format มาตรฐาน</li>
+        <li>อัปโหลดไฟล์เข้า Import Center</li>
+        <li>ระบบตรวจ validation + duplicate + required fields</li>
+        <li>Preview ก่อนบันทึก</li>
+        <li>Confirm import และเก็บ log</li>
+      </ol>
+    </div>
+    <div class="card">
+      <h3 class="font-semibold text-pp7-800 mb-3">Validation ที่ต้องมี</h3>
+      <ul class="list-disc pl-5 space-y-2 text-sm text-slate-700">
+        <li>ตรวจชื่อคอลัมน์</li>
+        <li>ตรวจชนิดข้อมูล</li>
+        <li>ตรวจ field บังคับ</li>
+        <li>ตรวจ key อ้างอิงและข้อมูลซ้ำ</li>
+        <li>แจ้ง error เป็นรายแถว</li>
+        <li>สรุปจำนวน success / warning / failed</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3 class="font-semibold text-pp7-800 mb-3">Template & Audit Log</h3>
+      <ul class="list-disc pl-5 space-y-2 text-sm text-slate-700">
+        <li>Recruitment update template</li>
+        <li>Assessment result template</li>
+        <li>Placement update template</li>
+        <li>Operation feed template</li>
+        <li>เก็บ log: ผู้นำเข้า, เวลา, ไฟล์, จำนวนแถว, ผลลัพธ์</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3 class="font-semibold text-pp7-800 mb-3">สิทธิ์การใช้งาน</h3>
+    <table data-sortable="true">
+      <thead><tr><th>Role</th><th>Import</th><th>Export</th><th>ขอบเขต</th></tr></thead>
+      <tbody>
+        <tr><td>Admin</td><td>ทุกชุดข้อมูล</td><td>ทุกชุดข้อมูล</td><td>จัดการ master data และ audit log</td></tr>
+        <tr><td>HR</td><td>Recruitment / Assessment / Placement</td><td>รายงาน HR และผู้สมัคร</td><td>งานสรรหาและประเมิน</td></tr>
+        <tr><td>Operation</td><td>Operation feed / daily update</td><td>รายงานหน้างาน</td><td>ข้อมูลปฏิบัติการประจำวัน</td></tr>
+        <tr><td>Executive</td><td>ไม่มี</td><td>รายงานสรุป</td><td>ดูภาพรวมเพื่อการตัดสินใจ</td></tr>
+      </tbody>
+    </table>
   </div>
 </section>
 
@@ -1282,7 +1376,7 @@ function exportPDF(){
   document.querySelectorAll('.sticky-nav,.toolbar,.search-box,.notif-btn').forEach(e=>{e.style.display='none'});
   
   // Show all tabs and init their charts so html2canvas captures them
-  ['executive','recruit','assess','match','performance','develop','welfare','quality','labor-law','pkg-rules'].forEach(function(tab){
+  ['executive','recruit','assess','match','performance','develop','welfare','quality','labor-law','pkg-rules','data-exchange'].forEach(function(tab){
     document.getElementById('tab-'+tab).classList.remove('hidden');
     document.getElementById('tab-'+tab).style.display='block';
     initCharts(tab);
