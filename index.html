@@ -456,7 +456,7 @@
 <section id="tab-pkg-rules" class="tab-pane fade-in hidden space-y-6">
   <div class="flex flex-wrap items-center gap-4">
     <h2 class="text-xl font-bold text-pp7-800 flex-1">📘 ระเบียบข้อบังคับภายในกลุ่มบริษัท PKG</h2>
-    <div class="text-sm text-slate-500">โครงหน้าแยก 3 ประเทศ พร้อมรอเติมข้อมูลจากเอกสารต้นฉบับ</div>
+    <div class="text-sm text-slate-500">เติมข้อมูลรอบแรกจากเอกสารที่มีแล้ว แยกตามประเทศและหมวดใช้งาน</div>
   </div>
   <div class="grid md:grid-cols-3 gap-4">
     <div class="card">
@@ -464,7 +464,7 @@
       <div class="space-y-2 text-sm text-slate-700">
         <div><strong>ประเทศ:</strong> ประเทศไทย</div>
         <div><strong>Code:</strong> THAI</div>
-        <div><strong>Sections:</strong> หมวดระเบียบ, ข้อกำหนดสำคัญ, วันที่มีผล, เวอร์ชัน, อ้างอิง</div>
+        <div><strong>Sections:</strong> เวลาทำงาน, การลงเวลา, มารยาทการทำงาน, วันลา/วันหยุด, ข้อกำกับสำคัญ</div>
       </div>
     </div>
     <div class="card">
@@ -472,7 +472,7 @@
       <div class="space-y-2 text-sm text-slate-700">
         <div><strong>ประเทศ:</strong> สปป.ลาว</div>
         <div><strong>Code:</strong> RPLC</div>
-        <div><strong>Sections:</strong> หมวดระเบียบ, ข้อกำหนดสำคัญ, วันที่มีผล, เวอร์ชัน, อ้างอิง</div>
+        <div><strong>Sections:</strong> โครงหมวดพร้อมเติมข้อกำหนดประเทศ, เวลา, วินัย, สิทธิพื้นฐาน, อ้างอิง</div>
       </div>
     </div>
     <div class="card">
@@ -480,18 +480,51 @@
       <div class="space-y-2 text-sm text-slate-700">
         <div><strong>ประเทศ:</strong> กัมพูชา</div>
         <div><strong>Code:</strong> RAFCO</div>
-        <div><strong>Sections:</strong> หมวดระเบียบ, ข้อกำหนดสำคัญ, วันที่มีผล, เวอร์ชัน, อ้างอิง</div>
+        <div><strong>Sections:</strong> โครงหมวดพร้อมเติมข้อกำหนดประเทศ, เวลา, วินัย, สิทธิพื้นฐาน, อ้างอิง</div>
       </div>
     </div>
   </div>
+  <div class="grid lg:grid-cols-3 gap-6">
+    <div class="card">
+      <h3 class="font-semibold text-pp7-800 mb-3">THAI - หมวดที่ใส่แล้วรอบแรก</h3>
+      <ul class="list-disc pl-5 space-y-2 text-sm text-slate-700">
+        <li><strong>กติกามารยาทในการทำงานร่วมกัน</strong> ใช้เป็นฐานของวินัยและพฤติกรรมในที่ทำงาน</li>
+        <li><strong>วันทำงาน เวลาทำงานปกติ และเวลาพัก</strong> มีหัวข้อกำกับชัดเจนในเอกสารต้นทาง</li>
+        <li><strong>การลงเวลา</strong> พบข้อมูลอ้างอิงรอบแรก เช่น ลงเวลาไม่เกิน 08:15 น.</li>
+        <li><strong>หมวดอ้างอิง</strong> ใช้ Google Slides/ไฟล์ต้นฉบับเป็น source หลักในการแยกหมวด</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3 class="font-semibold text-pp7-800 mb-3">RPLC - โครงหมวดพร้อมเติม</h3>
+      <ul class="list-disc pl-5 space-y-2 text-sm text-slate-700">
+        <li>เวลาทำงาน / เวลาพัก</li>
+        <li>การลงเวลาและการมาปฏิบัติงาน</li>
+        <li>วันลา / วันหยุด</li>
+        <li>วินัย / มารยาท / ข้อห้าม</li>
+        <li>สิทธิพื้นฐาน / เอกสารอ้างอิง</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3 class="font-semibold text-pp7-800 mb-3">RAFCO - โครงหมวดพร้อมเติม</h3>
+      <ul class="list-disc pl-5 space-y-2 text-sm text-slate-700">
+        <li>เวลาทำงาน / เวลาพัก</li>
+        <li>การลงเวลาและการมาปฏิบัติงาน</li>
+        <li>วันลา / วันหยุด</li>
+        <li>วินัย / มารยาท / ข้อห้าม</li>
+        <li>สิทธิพื้นฐาน / เอกสารอ้างอิง</li>
+      </ul>
+    </div>
+  </div>
   <div class="card">
-    <h3 class="font-semibold text-pp7-800 mb-3">สถานะข้อมูล</h3>
+    <h3 class="font-semibold text-pp7-800 mb-3">สถานะข้อมูลแยกตามหมวด</h3>
     <table data-sortable="true">
-      <thead><tr><th>ประเทศ</th><th>Code</th><th>สถานะ</th><th>หมายเหตุ</th></tr></thead>
+      <thead><tr><th>ประเทศ</th><th>หมวด</th><th>สถานะ</th><th>หมายเหตุ</th></tr></thead>
       <tbody>
-        <tr><td>ประเทศไทย</td><td>THAI</td><td><span class="badge badge-blue">พร้อมลงโครง</span></td><td>มีไฟล์อ้างอิงแล้ว, รอ extract/จัดเนื้อหา</td></tr>
-        <tr><td>สปป.ลาว</td><td>RPLC</td><td><span class="badge badge-amber">รอเติมข้อมูล</span></td><td>ใช้โครงเดียวกัน, รอเอกสารและรายละเอียด</td></tr>
-        <tr><td>กัมพูชา</td><td>RAFCO</td><td><span class="badge badge-amber">รอเติมข้อมูล</span></td><td>ใช้โครงเดียวกัน, รอเอกสารและรายละเอียด</td></tr>
+        <tr><td>ประเทศไทย</td><td>กติกามารยาทในการทำงานร่วมกัน</td><td><span class="badge badge-green">ใส่แล้วรอบแรก</span></td><td>ดึงชื่อหมวดจากเอกสารต้นฉบับแล้ว</td></tr>
+        <tr><td>ประเทศไทย</td><td>วันทำงาน เวลาทำงานปกติ และเวลาพัก</td><td><span class="badge badge-green">ใส่แล้วรอบแรก</span></td><td>มีหัวข้อชัดเจนจาก Google Slides</td></tr>
+        <tr><td>ประเทศไทย</td><td>การลงเวลา</td><td><span class="badge badge-blue">มีข้อมูลตั้งต้น</span></td><td>พบตัวอย่างกติกาเวลา 08:15 น.</td></tr>
+        <tr><td>สปป.ลาว</td><td>โครงหมวดประเทศ</td><td><span class="badge badge-amber">รอเติมข้อมูล</span></td><td>พร้อมลงเนื้อหาตามหัวข้อเดียวกัน</td></tr>
+        <tr><td>กัมพูชา</td><td>โครงหมวดประเทศ</td><td><span class="badge badge-amber">รอเติมข้อมูล</span></td><td>พร้อมลงเนื้อหาตามหัวข้อเดียวกัน</td></tr>
       </tbody>
     </table>
   </div>
